@@ -1,0 +1,330 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+body{/* Reset and base styles */
+    * {
+        margin: 0;
+        padding: 0;
+        color: white;
+    }
+    body {
+        background-color: black;
+    }
+    
+    .main-div {
+        max-width: 1050px;
+        height: 100%;
+        margin: auto;
+        margin-top: 60px;
+        display: flex;
+        justify-content: space-between;
+        background-color: #292929;
+        border-radius: 21px 21px 21px 21px;
+    }
+    
+    /* Button styling */
+    .selection-button {
+        background: none;
+        border: none;
+        padding-bottom: 7px;
+        border-bottom: 2px solid #292929;
+        font-size: 15px;
+        font-weight: 600;
+        transition: 0.7s;
+        cursor: pointer;
+    }   
+    
+    .selection-button:hover {
+        color: rgb(255, 77, 0);
+        border-bottom: 2px solid rgb(255, 77, 0);
+    }
+    
+    .active {
+        color: rgb(255, 77, 0);
+        border-bottom: 2px solid rgb(255, 77, 0);
+    }
+
+    .left-div {
+        width: 50%;
+    }
+    
+    .left-main-work {
+        margin: auto;
+    }
+    
+    .left-div-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    
+    .left-div-img img {
+        width: 260px;
+        margin: auto;
+    }
+    
+    .left-div-button {
+        width: 45%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 34px;
+    }
+    
+    /* Transitioning register and login divs */
+    .register, .login {
+        position: relative;
+        left: 105px;
+        
+        /* Hidden state */
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+        height: 0;
+        overflow: hidden;
+    }
+    
+    /* Visible state */
+    .visible {
+        opacity: 1;
+        visibility: visible;
+        height: auto; /* Restores natural height when visible */
+    }
+    
+    /* Form styling */
+    .register-ele input, .login-ele input, .forgot-ele input {
+        border: none;
+        width: 295px;
+        height: 29px;
+        border: 1px solid rgb(189, 188, 188);
+        border-radius: 17px;
+        background-color: #292929;
+        padding-left: 12px;
+        margin-bottom: 16px;
+    }
+    
+    /* Button styling */
+    .submit-button {
+        background-color: rgb(255, 77, 0);
+        border: none;
+        width: 115px;
+        height: 31px;
+        border: 1.7px solid rgb(255, 77, 0);
+        border-radius: 17px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.7s;
+    }
+    
+    .submit-button:hover {
+        background-color: #292929;
+        color: rgb(255, 77, 0);
+    }
+    
+    .register-button, .login-button , .forgot-button{
+        margin-left: 88px;
+        margin-top: 7px;
+    }
+    
+    /* Right div styling */
+    .right-div {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .right-div img {
+        width: 84%;
+        height: 520px;
+        border-radius: 0px 21px 21px 0px;
+    }
+    
+    background-color: black;
+}
+
+.main-div{
+    max-width: 1050px;
+    height: 100%;
+    margin: auto;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #292929;
+    border-radius: 21px 21px 21px 21px;
+}
+
+.selection-button{
+    background: none;
+    border: none;
+    padding-bottom: 7px;
+    border-bottom: 2px solid #292929;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.7s;
+    cursor: pointer;
+}   
+
+.selection-button:hover{
+    color: rgb(255, 77, 0);
+    border-bottom: 2px solid  rgb(255, 77, 0);
+}
+
+.left-div{
+    width: 50%;
+}
+
+.left-main-work{
+    margin: auto;
+}
+
+.left-div-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.left-div-img img{
+    width: 260px;
+    margin: auto;
+}
+
+.left-div-button{
+    width:45%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 34px;
+}
+
+.register{
+    /* display: none; */
+    position: relative;
+    left: 105px;
+    
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+    height: 0;
+    overflow: hidden;
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+    height: auto; /* Makes the div take up space again when shown */
+}
+
+
+.register-ele input{
+    border: none;
+    width: 295px;
+    height: 29px;
+    border: 1px solid rgb(189, 188, 188);
+    border-radius: 17px;
+    background-color: #292929;
+    padding-left: 12px;
+    margin-bottom: 16px;
+}
+
+.login{
+    /* display: none; */
+    position: relative;
+    left: 105px;
+    
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+    height: 0;
+    overflow: hidden;
+}
+
+
+.login-ele input{
+    border: none;
+    width: 295px;
+    height: 29px;
+    border: 1px solid rgb(189, 188, 188);
+    border-radius: 17px;
+    background-color: #292929;
+    padding-left: 12px;
+    margin-bottom: 16px;
+}
+
+input:focus{
+    outline: none;
+    border-color: rgb(189, 188, 188);
+}
+
+
+.submit-button{
+    background-color: rgb(255, 77, 0);
+    border: none;
+    width: 115px;
+    height: 31px;
+    border: 1.7px solid rgb(255, 77, 0);
+    border-radius: 17px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+.submit-button:hover {
+    background-color: #292929;
+    color: rgb(255, 77, 0);
+}
+
+.register-button{
+    margin-left: 88px;
+    margin-top: 7px;
+}
+
+.login-button{
+    margin-left: 88px;
+    margin-top: 7px;
+}
+
+.forgot{
+    /* display: none;   */
+    position: absolute;
+    left: 278px;
+    top: 228px;
+    
+    /* opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+    height: 0;
+    overflow: hidden; */
+}
+
+.forget-pass{
+    background: none;
+    border: none;
+    color: rgb(255, 77, 0);
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 8px;
+    margin-bottom: 7px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.right-div{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.right-div img{
+    width: 84%;
+    height: 520px;
+    border-radius: 0px 21px 21px 0px;
+}
