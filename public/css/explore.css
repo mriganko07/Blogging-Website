@@ -1225,6 +1225,7 @@ body.dark-theme {
   gap: 9px;
   background-color:  #212529;
   border-radius: 11px;
+  cursor: pointer;
 }
 
 .identifier:hover{
