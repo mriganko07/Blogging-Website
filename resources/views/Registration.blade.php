@@ -49,7 +49,7 @@
                             <input type="password" name="" id="" placeholder="Password" required>
                         </div>
                         <div class="login-ele">
-                            <a href="/Forgot.html"><button class="forget-pass" type="button">Forget Password?</button></a>
+                            <a href="/forgot"><button class="forget-pass" type="button">Forget Password?</button></a>
                         </div>
                         <button type="submit" class="submit-button login-button">Login</button>
                     </form>

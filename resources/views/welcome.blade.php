@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{{asset('css/comment.css')}}">
+        <link rel="stylesheet" href="{{asset('css/style.css')}}">
         <link rel="shortcut icon" href="{{asset('favicon.svg')}}" type="image/svg+xml">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
 
@@ -327,7 +327,7 @@
                         }
                     </style>
 
-                    <img src="images/4.jpeg" alt="">
+                    <img src="Pictures/4.jpeg" alt="">
                 </div>
 
                 <!-- 
