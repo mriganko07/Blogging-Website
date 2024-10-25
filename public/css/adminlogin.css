@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body{
+    *{
+        margin: 0;
+        padding: 0;
+        color: white;
+    }
+
+
+    .main-div {
+        max-width: 1050px;
+        height: 100%;
+        margin: auto;
+        margin-top: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #292929;
+        border-radius: 21px 21px 21px 21px;
+    }   
+
+    .left-div {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .left-div form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .right-div {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .right-div img {
+        width: 84%;
+        height: 520px;
+        border-radius: 0px 21px 21px 0px;
+    }
+    background-color: black;
+
+    .login-heading{
+        font-size: 31px;
+        margin-bottom: 33px;
+        text-align: center;
+        color: rgb(255, 77, 0);
+    }
+
+    .login-ele input{
+        border: none;
+        width: 295px;
+        height: 29px;
+        border: 1px solid rgb(189, 188, 188);
+        border-radius: 17px;
+        background-color: #292929;
+        padding-left: 12px;
+        margin-bottom: 16px;
+    }
+
+    .login-ele input:focus{
+        outline: none;
+    }
+
+    .submit-button {
+        background-color: rgb(255, 77, 0);
+        border: none;
+        width: 115px;
+        height: 31px;
+        border: 1.7px solid rgb(255, 77, 0);
+        border-radius: 17px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.7s;
+        margin-top: 11px;
+    }
+    
+    .submit-button:hover {
+        background-color: #292929;
+        color: rgb(255, 77, 0);
+    }
+}
