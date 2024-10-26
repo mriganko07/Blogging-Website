@@ -27,5 +27,12 @@ class ExampleController extends Controller
         return view('Registration');
     }
 
-}
+    public function adminlogin(){
+        return view('AdminLogin');
+    }
 
+    public function profile(){
+        return view('Profile');
+    }
+
+}
