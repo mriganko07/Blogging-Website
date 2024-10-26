@@ -19,3 +19,5 @@ Route::get('/forgot', [ExampleController::class, 'forgot']);
 Route::get('/registration', [ExampleController::class, 'registration']);
 
 Route::get('/admin', [ExampleController::class, 'adminlogin']);
+
+Route::get('/profile', [ExampleController::class, 'profile']);

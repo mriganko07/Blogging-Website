@@ -3,12 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{{asset('css/create.css')}}">
+        <link rel="stylesheet" href="{{asset('css/profile.css')}}">
         <link rel="shortcut icon" href="{{asset('favicon.svg')}}" type="image/svg+xml">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <title>Create Post</title>
+        <title>Explore</title>
 
         <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
 
@@ -20,7 +20,6 @@
                 border-radius: 0px 13px 13px 0px;
                 padding: 0;
             }
-
         </style>
 
     </head>
@@ -112,9 +111,9 @@
             
                 <div class="sec-center">    	
                     <input class="dropdown3" type="checkbox" id="dropdown3" name="dropdown"/>
-                    <label class="for-dropdown3" for="dropdown3"><button class="dropdown3-click-button"><i class="fa-solid fa-user"></i></button></label> 
+                    <label class="for-dropdown3" for="dropdown3"> <button class="dropdown3-click-button"><i class="fa-solid fa-user"></i></button> </label> 
                     <p class="dropdown3-floating-message">Open profile menu</p>
-
+                    
                     <div class="section-dropdown3"> 
 
                         <div class="section-dropdown3-profile">
@@ -143,7 +142,6 @@
                             </span>
                         </div>
                     </div>
-
                 </div>
             </div>
         </header>  
@@ -213,6 +211,7 @@
                             <span>Community 7</span>
                          </a>    
 
+
                      </div>
                   </div>
                </div>
@@ -234,102 +233,89 @@
    
          <main class="main container" id="main">
 
-             <div class="create-post">
+            <div class="all-element-main">
 
-                <button href="#" class="create-community-button"><i class="fa-solid fa-plus"></i> <span>Create Community</span></button>
-
-                <div class="create-post-header">
-                    <h3>Create Post</h3>
-                </div>
-
-                <div class="create-post-community">
-
-                    <button class="create-post-community-button" id="create-post-community-button" onclick="toggleSearchBar(event)">
-                        <div class="create-post-community-button-svg">
-                            <svg rpl="" aria-hidden="true" fill="currentColor" height="16" icon-name="search-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19.5 18.616 14.985 14.1a8.528 8.528 0 1 0-.884.884l4.515 4.515.884-.884ZM1.301 8.553a7.253 7.253 0 1 1 7.252 7.253 7.261 7.261 0 0 1-7.252-7.253Z"></path>
-                            </svg>
-                            <span>Search</span>
-                        </div>
-
-                        <img src="Pictures/down-arrow.svg" class="create-post-community-button-img" alt="">
-
-                    </button>
-
-                    <div id="create-post-community-search-bar" class="hidden">
-                        <input type="text" id="post-community-search-input" placeholder="Search...">
-                    </div>
-
-                    <div class="create-post-community-community-bar hidden" id="create-post-community-community-bar">
-
-                        <div class="create-post-community-community-bar-community">
-
-                            <h3>Your Community</h3>
-
-                            <p class="create-post-community-community-bar-community-para"  onclick="selectCommunity('r/IndianStockMarket')">
-                                <img src="https://styles.redditmedia.com/t5_30ke2/styles/communityIcon_7s1ojp85ocj61.png" alt="">
-                                <span>r/IndianStockMarket</span>
-                            </p>
-                            <p class="create-post-community-community-bar-community-para" onclick="selectCommunity('r/bangalore')">
-                                <img src="https://styles.redditmedia.com/t5_2qhvf/styles/communityIcon_pulpp8crshh91.png" alt="">
-                                <span>r/bangalore</span>
-                            </p>
-                            <p class="create-post-community-community-bar-community-para" onclick="selectCommunity('r/BollyBlindsNGossip')">
-                                <img src="https://styles.redditmedia.com/t5_fknyy/styles/communityIcon_z40tlzmvbyw91.png" alt="">
-                                <span>r/BollyBlindsNGossip</span>
-                            </p>
-                            <p class="create-post-community-community-bar-community-para" onclick="selectCommunity('r/AskIndia')">
-                                <img src="https://styles.redditmedia.com/t5_2s8wu/styles/communityIcon_f0eqjg7jiyja1.JPG" alt="">
-                                <span>r/AskIndia</span>
-                            </p>
-                            <p class="create-post-community-community-bar-community-para"  onclick="selectCommunity('r/IndianStockMarket')">
-                                <img src="https://styles.redditmedia.com/t5_30ke2/styles/communityIcon_7s1ojp85ocj61.png" alt="">
-                                <span>r/IndianStockMarket</span>
-                            </p>
-                            <p class="create-post-community-community-bar-community-para" onclick="selectCommunity('r/BollyBlindsNGossip')">
-                                <img src="https://styles.redditmedia.com/t5_fknyy/styles/communityIcon_z40tlzmvbyw91.png" alt="">
-                                <span>r/BollyBlindsNGossip</span>
-                            </p>
-                            <p class="create-post-community-community-bar-community-para" onclick="selectCommunity('r/bangalore')">
-                                <img src="https://styles.redditmedia.com/t5_2qhvf/styles/communityIcon_pulpp8crshh91.png" alt="">
-                                <span>r/bangalore</span>
-                            </p>
-
-                        </div>
-
-                    </div>
-                    
-                </div>
-
-                <div class="create-post-form">
-                    <form action="" method="get">
-                        <div class="form-one">
-                            <input type="text" name="" id="" class="create-post-title" style="margin-left: 0px;" placeholder="Title" required>
-                        </div>
-                        <div class="form-two">
-                            <textarea name="" id="" class="create-post-body" required placeholder="Body"></textarea>
-                        </div>
-                        <div class="form-three">
-                            <input type="file" class="" id="create-post-form-img" style="display: none;" accept="image/*">
-                            <label class="create-post-form-img-lable" for="create-post-form-img">
-                                <span id="upload-label">Upload Image</span>
+                <form action="" method="get">
+    
+                    <div class="all-element-main-img">
+                        <div class="main-img-profile-img">
+                            <input type="file" name="" id="main-img-profile-img" style="display: none;" accept="image/*">
+                            <label class="main-img-profile-img-lable" for="main-img-profile-img">
+                                <span id="upload-label">Profile Picture</span>
                                 <svg rpl="" fill="currentColor" height="16" icon-name="upload-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
                                     <path d="m10.513 5.63 3.929 3.928-.884.884-2.933-2.933V19h-1.25V7.51l-2.933 2.932-.884-.884L9.67 5.446l.589-.029.254.212Zm5.859-1.482A6.876 6.876 0 0 0 10 0a6.876 6.876 0 0 0-6.372 4.148A4.639 4.639 0 0 0 0 8.625a4.716 4.716 0 0 0 4.792 4.625V12A3.465 3.465 0 0 1 1.25 8.625 3.412 3.412 0 0 1 4.189 5.31l.364-.06.123-.35A5.607 5.607 0 0 1 10 1.25a5.607 5.607 0 0 1 5.324 3.65l.123.348.364.06a3.412 3.412 0 0 1 2.939 3.317A3.465 3.465 0 0 1 15.208 12v1.25A4.716 4.716 0 0 0 20 8.625a4.639 4.639 0 0 0-3.628-4.477Z"></path>
                                 </svg>
                             </label>
-                            <div id="image-preview"></div>
+                            <div id="image-preview-profile"></div>
                         </div>
-                        <div class="form-four">
-                            <button class="form-four-button" type="submit">Post</button>
+        
+                        <div class="main-img-cover-img">
+                            <input type="file" name="" id="main-img-cover-img" style="display: none;" accept="image/*">
+                            <label class="main-img-cover-img-lable" for="main-img-cover-img">
+                                <span id="upload-label">Cover Picture</span>
+                                <svg rpl="" fill="currentColor" height="16" icon-name="upload-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m10.513 5.63 3.929 3.928-.884.884-2.933-2.933V19h-1.25V7.51l-2.933 2.932-.884-.884L9.67 5.446l.589-.029.254.212Zm5.859-1.482A6.876 6.876 0 0 0 10 0a6.876 6.876 0 0 0-6.372 4.148A4.639 4.639 0 0 0 0 8.625a4.716 4.716 0 0 0 4.792 4.625V12A3.465 3.465 0 0 1 1.25 8.625 3.412 3.412 0 0 1 4.189 5.31l.364-.06.123-.35A5.607 5.607 0 0 1 10 1.25a5.607 5.607 0 0 1 5.324 3.65l.123.348.364.06a3.412 3.412 0 0 1 2.939 3.317A3.465 3.465 0 0 1 15.208 12v1.25A4.716 4.716 0 0 0 20 8.625a4.639 4.639 0 0 0-3.628-4.477Z"></path>
+                                </svg>
+                            </label>
+                            <div id="image-preview-cover"></div>
                         </div>
-                    </form>
-                </div>
-                
+                    </div>
+    
+                    <div>
+                        <label for="email_address">Email Address :</label>
+                        <input type="email" name="" class="main-form-input" id="email_address" placeholder="Email Addrerss">
+                    </div>
+    
+                    <div>
+                        <label for="phone_no">Phone Number :</label>
+                        <input type="number" name="" class="main-form-input" id="phone_no" placeholder="Phone Number">
+                    </div>
+    
+                    <div class="main-input-gender">
+                        <span style="color: hsl(228, 8%, 56%);">Gender : </span>
+
+                        <div class="main-input-gender-radio">
+                            <div>
+                                <input type="radio" name="gender" id="male" value="male">
+                                <label for="male">Male</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="gender" id="female" value="female">
+                                <label for="female">Female</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" name="gender" id="others" value="others">
+                                <label for="others">Others</label>
+                            </div>        
+                        </div>
+                    </div>
+    
+                    <div>
+                        <label for="date_of_birth">Date of Birth :</label>
+                        <input type="date" name="" class="main-form-input" id="date_of_birth" style="padding-right: 7px;" class="">
+                    </div>
+    
+                    <div>
+                        <label for="display_name">Display Name :</label>
+                        <input type="text" name="" class="main-form-input" id="" placeholder="Display Name">
+                    </div>
+    
+                    <div>
+                        <label for="main_username">Username :</label>
+                        <input type="text" name="" class="main-form-input" id="" placeholder="Username">
+                    </div>
+    
+                    <button type="submit" class="main-submit-button">Save</button>
+                </form>
+
             </div>
+
+
          </main>
 
 
 
-        <script src="{{asset('js/create.js')}}"></script>
+        <script src="{{asset('js/profile.js')}}"></script>
     </body>
 </html> 

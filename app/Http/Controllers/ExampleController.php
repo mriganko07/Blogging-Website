@@ -31,4 +31,8 @@ class ExampleController extends Controller
         return view('AdminLogin');
     }
 
+    public function profile(){
+        return view('Profile');
+    }
+
 }
