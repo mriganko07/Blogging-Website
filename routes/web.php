@@ -21,3 +21,5 @@ Route::get('/registration', [ExampleController::class, 'registration']);
 Route::get('/admin', [ExampleController::class, 'adminlogin']);
 
 Route::get('/profile', [ExampleController::class, 'profile']);
+
+Route::get('/createcommunity', [ExampleController::class, 'createcommunity']);

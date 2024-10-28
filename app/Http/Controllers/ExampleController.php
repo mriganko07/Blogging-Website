@@ -35,4 +35,8 @@ class ExampleController extends Controller
         return view('Profile');
     }
 
+    public function createcommunity(){
+        return view('CreateCommunity');
+    }
+
 }
