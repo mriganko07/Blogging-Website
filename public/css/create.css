@@ -1193,7 +1193,7 @@ transition: all 0.3s ease;
 
 #create-post-community-search-bar{
   position: absolute;
-  top: 3.6rem;
+  top: 7.9rem;
   display: flex;
   justify-content: space-around;
   transition: opacity 0.3s ease;
@@ -1204,7 +1204,7 @@ transition: all 0.3s ease;
   height: 19rem;
   position: absolute;
   left: 1rem;
-  top: 6.2rem;
+  top: 10.6rem;
   background-color: #282a2b ;
   border-radius: 8px;
   display: flex;
