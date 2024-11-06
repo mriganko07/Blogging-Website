@@ -61,32 +61,37 @@ document.getElementById('create-post-form-img').addEventListener('change', funct
   COMMUNITY SEARCH
 \*-----------------*/
 
-    // Function to toggle search bar and community bar when button is clicked
-    function toggleSearchBar(event) {
-      document.getElementById('create-post-community-button').style.opacity = '0';
-      document.getElementById('create-post-community-button').style.pointerEvents = 'none';
+function toggleSearchBar(event) {
+    document.getElementById('create-post-community-button').style.opacity = '0';
+    document.getElementById('create-post-community-button').style.pointerEvents = 'none';
 
-      // Show search bar and community bar
-      document.getElementById('create-post-community-search-bar').classList.remove('hidden');
-      document.getElementById('create-post-community-search-bar').classList.add('visible');
-      
-      document.getElementById('create-post-community-community-bar').classList.remove('hidden');
-      document.getElementById('create-post-community-community-bar').classList.add('visible');
-  }
+    document.getElementById('create-post-community-search-bar').classList.remove('hidden');
+    document.getElementById('create-post-community-search-bar').classList.add('visible');
+    
+    document.getElementById('create-post-community-community-bar').classList.remove('hidden');
+    document.getElementById('create-post-community-community-bar').classList.add('visible');
+}
 
-  // Function to select a community and hide the community bar
-  function selectCommunity(communityName) {
-      // Set the selected community in the input field
-      document.getElementById('post-community-search-input').value = communityName;
+function selectCommunity(communityName) {
+    document.getElementById('post-community-search-input').value = communityName;
 
-      // Hide the community bar
-      document.getElementById('create-post-community-community-bar').classList.remove('visible');
-      document.getElementById('create-post-community-community-bar').classList.add('hidden');
-  }
+    document.getElementById('create-post-community-community-bar').classList.remove('visible');
+    document.getElementById('create-post-community-community-bar').classList.add('hidden');
+}
 
-  // Event listener to make the community bar reappear when the search bar is clicked
-  document.getElementById('post-community-search-input').addEventListener('click', function() {
-      // Show the community bar again
-      document.getElementById('create-post-community-community-bar').classList.remove('hidden');
-      document.getElementById('create-post-community-community-bar').classList.add('visible');
-  });
+// Show the community bar when clicking on the search input
+document.getElementById('post-community-search-input').addEventListener('click', function() {
+    document.getElementById('create-post-community-community-bar').classList.remove('hidden');
+    document.getElementById('create-post-community-community-bar').classList.add('visible');
+});
+
+// Hide the community bar if clicking outside
+document.addEventListener('click', function(event) {
+    const communityBar = document.getElementById('create-post-community-community-bar');
+    const searchInput = document.getElementById('post-community-search-input');
+    
+    if (!communityBar.contains(event.target) && !searchInput.contains(event.target)) {
+        communityBar.classList.remove('visible');
+        communityBar.classList.add('hidden');
+    }
+});
