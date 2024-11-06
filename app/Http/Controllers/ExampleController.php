@@ -7,36 +7,80 @@ use Illuminate\Http\Request;
 class ExampleController extends Controller
 {
     
-    public function comment() {
-        return view('Comment');
+    // ADMIN
+
+    public function adminlogin(){
+        return view('Admin/AdminLogin');
     }
 
-    public function create() {
-        return view('Create');
+    public function admincommunity(){
+        return view('Admin/AdminCommunity');
     }
 
-    public function explore() {
-        return view('Explore');
+    public function admincontent(){
+        return view('Admin/AdminContent');
     }
+
+    public function adminpost(){
+        return view('Admin/AdminPost');
+    }
+
+    public function adminuser(){
+        return view('Admin/AdminUser');
+    }
+
+
+    // REGISTRATION LOGIN & FORGOT
 
     public function forgot() {
-        return view('Forgot');
+        return view('User/Forgot');
     }
 
     public function registration() {
-        return view('Registration');
+        return view('User/Registration');
     }
 
-    public function adminlogin(){
-        return view('AdminLogin');
+
+    // USER
+
+    public function comment() {
+        return view('User/Comment');
     }
 
-    public function profile(){
-        return view('Profile');
+    public function create() {
+        return view('User/Create');
     }
+
+    public function explore() {
+        return view('User/Explore');
+    }
+
+    public function profile() {
+        return view('User/Profile');
+    }
+
+    public function editprofile(){
+        return view('EditProfile');
+    }
+
+    public function viewcommunity() {
+        return view('User/ViewCommunities');
+    }
+
+    public function viewpost() {
+        return view('User/ViewPost');
+    }
+
+    
+
+    // COMMUNITY
 
     public function createcommunity(){
-        return view('CreateCommunity');
+        return view('Community/CreateCommunity');
+    }
+
+    public function community(){
+        return view('Community/Community');
     }
 
 }

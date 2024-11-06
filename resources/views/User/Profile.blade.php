@@ -5,10 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{asset('css/profile.css')}}">
         <link rel="shortcut icon" href="{{asset('favicon.svg')}}" type="image/svg+xml">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <title>Explore</title>
+        <title>Welcome</title>
 
         <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
 
@@ -25,11 +25,20 @@
     </head>
     <body>
 
+        <!-- 
+         - SECTION NAVBAR
+        -->
+
         <header>
             <a href="/" class="logo"><img src=""></a>
             <input type="text" placeholder="Search" id="searchInput">
 
             <div class="menu">
+
+                <!-- 
+                - DROPDOWN MESSAGE
+                -->
+
                 <div class="sec-center"> 	
                     <input class="dropdown" type="checkbox" id="dropdown1" name="dropdown"/>
                     <label class="for-dropdown" for="dropdown1"> <i class="fa-regular fa-message"></i> </label> 
@@ -61,6 +70,11 @@
                 </div>
             
                 <button href="#" class="create"><i class="fa-solid fa-plus"></i> <span>Create</span></button>
+
+
+                <!-- 
+                - DROPDOWN2 NOTIFICATION
+                -->
             
                 <div class="sec-center"> 	
                     <input class="dropdown2" type="checkbox" id="dropdown2" name="dropdown"/>
@@ -87,6 +101,7 @@
                                 </div>
                             </div>
                         </a>
+
                         <a href="#">
                             <div class="profile-container">
                                 <div class="profile-img"></div>
@@ -96,6 +111,9 @@
                                 </div>
                             </div>
                         </a>
+
+
+
                         <a href="#">
                             <div class="profile-container">
                                 <div class="profile-img"></div>
@@ -108,12 +126,17 @@
 
                     </div>
                 </div>
+
+
+                <!-- 
+                - DROPDOWN3 USER ICON
+                -->
             
                 <div class="sec-center">    	
                     <input class="dropdown3" type="checkbox" id="dropdown3" name="dropdown"/>
-                    <label class="for-dropdown3" for="dropdown3"> <button class="dropdown3-click-button"><i class="fa-solid fa-user"></i></button> </label> 
+                    <label class="for-dropdown3" for="dropdown3"><button class="dropdown3-click-button"><i class="fa-solid fa-user"></i></button></label> 
                     <p class="dropdown3-floating-message">Open profile menu</p>
-                    
+
                     <div class="section-dropdown3"> 
 
                         <div class="section-dropdown3-profile">
@@ -142,179 +165,851 @@
                             </span>
                         </div>
                     </div>
+
                 </div>
             </div>
-        </header>  
+        </header> 
+        
+        <!-- 
+         - SECTION SIDEBAR
+        -->
 
+        <nav  class="sidebar" id="sidebar">
 
-         <nav class="sidebar" id="sidebar">
             <div class="sidebar__container">
    
-               <div class="sidebar__content">
-                  <div>
-                     <h3 class="sidebar__title">MANAGE</h3>
-   
-                     <div class="sidebar__list">
-                        <a href="#" class="sidebar__link active-link">
-                           <i class="fa-solid fa-house"></i>
-                           <span>Home</span>
-                        </a>
-                        
+                <div class="sidebar__content">
+                   <div>
+                      <h3 class="sidebar__title">MANAGE</h3>
+    
+                      <div class="sidebar__list">
+                         <a href="#" class="sidebar__link active-link">
+                            <i class="fa-solid fa-house"></i>
+                            <span>Home</span>
+                         </a>
+                         
+                         <a href="#" class="sidebar__link">
+                             <i class="fa-solid fa-arrow-trend-up"></i>
+                            <span>Popular</span>
+                         </a>
+    
+                         <a href="#" class="sidebar__link">
+                             <i class="fa-solid fa-table"></i>
+                            <span>Explore</span>
+                         </a>
+                      </div>
+                   </div>
+    
+                   <div>
+                      <h3 class="sidebar__title">COMMUNITIES</h3>
+    
+                    <div class="sidebar__list">
                         <a href="#" class="sidebar__link">
-                            <i class="fa-solid fa-arrow-trend-up"></i>
-                           <span>Popular</span>
+                            <i class="fa-solid fa-plus"></i>
+                            <span>Create Community </span>
                         </a>
-   
                         <a href="#" class="sidebar__link">
-                            <i class="fa-solid fa-table"></i>
-                           <span>Explore</span>
-                        </a>
-                     </div>
-                  </div>
-   
-                  <div>
-                     <h3 class="sidebar__title">COMMUNITIES</h3>
-   
-                     <div class="sidebar__list">
-                        <a href="#" class="sidebar__link">
-                           <div class="profile-img1"></div>
-                           <span>Community 1</span>
+                            <div class="profile-img1"></div>
+                            <span>Community 1</span>
                         </a>
 
                         <a href="#" class="sidebar__link">
                             <div class="profile-img1"></div>
                             <span>Community 2</span>
-                         </a>
+                        </a>
 
-                         <a href="#" class="sidebar__link">
+                        <a href="#" class="sidebar__link">
                             <div class="profile-img1"></div>
                             <span>Community 3</span>
-                         </a>    
+                        </a>    
 
-                         <a href="#" class="sidebar__link">
+                        <a href="#" class="sidebar__link">
                             <div class="profile-img1"></div>
                             <span>Community 4</span>
-                         </a>    
+                        </a>    
 
-                         <a href="#" class="sidebar__link">
+                        <a href="#" class="sidebar__link">
                             <div class="profile-img1"></div>
                             <span>Community 5</span>
-                         </a>    
+                        </a>    
 
-                         <a href="#" class="sidebar__link">
+                        <a href="#" class="sidebar__link">
                             <div class="profile-img1"></div>
                             <span>Community 6</span>
-                         </a>    
+                        </a>    
 
-                         <a href="#" class="sidebar__link">
+                        <a href="#" class="sidebar__link">
                             <div class="profile-img1"></div>
                             <span>Community 7</span>
-                         </a>    
-
-
-                     </div>
-                  </div>
-               </div>
-   
-               <div class="sidebar__actions">
-                  <button>
-                     <i class="ri-moon-clear-fill sidebar__link sidebar__theme" id="theme-button">
-                        <span>Theme</span>
-                     </i>
-                  </button>
-   
-                  <button class="sidebar__link">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                     <span>Log Out</span>
-                  </button>
-               </div>
+                        </a>    
+ 
+                      </div>
+                   </div>
+                </div>
+    
+                <div class="sidebar__actions">
+                   <button>
+                      <i class="ri-moon-clear-fill sidebar__link sidebar__theme" id="theme-button">
+                         <span>Theme</span>
+                      </i>
+                   </button>
+    
+                   <button class="sidebar__link">
+                     <i class="fa-solid fa-right-from-bracket"></i>
+                      <span>Log Out</span>
+                   </button>
+                </div>
             </div>
-         </nav>
+
+        </nav>
+
+         
    
          <main class="main container" id="main">
+            <div class="profile-section">
+                <div class="profile-img3">
+                    <img src="https://styles.redditmedia.com/t5_4imbec/styles/profileIcon_asf6w9eqj1d91.jpeg?width=256&height=256&frame=1&auto=webp&crop=256:256,smart&s=3bf3f696edafbc8d35a5bcda5ecb2b61e01db7f0" alt="">
+                </div>
+                <div class="profile-info1">
+                    <h1>Adhip Halder</h1> 
+                    <p>r/adhiphalder</p>
+                </div>
+            </div>
 
-            <div class="all-element-main">
 
-                <form action="" method="get">
-    
-                    <div class="all-element-main-img">
-                        <div class="main-img-profile-img">
-                            <input type="file" name="" id="main-img-profile-img" style="display: none;" accept="image/*">
-                            <label class="main-img-profile-img-lable" for="main-img-profile-img">
-                                <span id="upload-label">Profile Picture</span>
-                                <svg rpl="" fill="currentColor" height="16" icon-name="upload-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="m10.513 5.63 3.929 3.928-.884.884-2.933-2.933V19h-1.25V7.51l-2.933 2.932-.884-.884L9.67 5.446l.589-.029.254.212Zm5.859-1.482A6.876 6.876 0 0 0 10 0a6.876 6.876 0 0 0-6.372 4.148A4.639 4.639 0 0 0 0 8.625a4.716 4.716 0 0 0 4.792 4.625V12A3.465 3.465 0 0 1 1.25 8.625 3.412 3.412 0 0 1 4.189 5.31l.364-.06.123-.35A5.607 5.607 0 0 1 10 1.25a5.607 5.607 0 0 1 5.324 3.65l.123.348.364.06a3.412 3.412 0 0 1 2.939 3.317A3.465 3.465 0 0 1 15.208 12v1.25A4.716 4.716 0 0 0 20 8.625a4.639 4.639 0 0 0-3.628-4.477Z"></path>
+
+            <div class="slide-container">
+
+                <ul class="main-slidebar">
+                    <li>
+                        <button class="identifier-button" data-target="identifier-body-all">
+                            Overview
+                        </button>
+                    </li>
+                    <li>
+                        <button class="identifier-button" data-target="identifier-body-posts">
+                            Posts
+                        </button>
+                    </li>
+                    <li>
+                        <button class="identifier-button" data-target="identifier-body-save">
+                            Saved
+                        </button>
+                    </li>
+                    <li>
+                        <button class="identifier-button" data-target="identifier-body-upvoted">
+                            Upvoted
+                        </button>
+                    </li>
+                    <li>
+                        <button class="identifier-button" data-target="identifier-body-downvoted">
+                            Downvoted
+                        </button>
+                    </li>
+                    
+                </ul>
+                    
+            </div>
+
+            <button href="#" class="create2"><i class="fa-solid fa-plus"></i> <span>Create Post</span></button>
+
+
+            <div class="identifier-body" id="identifier-body-all">
+
+                <!-- 
+                - SECTION POST-WALL1
+                -->
+
+                <div class="post-wall">
+                    <div class="username">
+                        <div class="profile-img2"></div>
+                        <span class="username-hover">adhiphalder</span>
+                        <p> • 22 hr. ago</p>
+
+                    </div>
+                    
+                    <h3>This is a title</h3>
+
+                    <div class="post-img">
+                        <style>
+                            .post-img::before {
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                height: 100%;
+                                width: 100%;
+                                background: url('images/4.jpeg') no-repeat center;
+                                background-size: cover;
+                                filter: blur(20px); 
+                                z-index: 1; 
+                            }
+                        </style>
+
+                        <img src="images/4.jpeg" alt="">
+                    </div>
+
+                    <!-- 
+                    - SECTION LIKE CMT SHARE POST-WALL1
+                    -->
+
+                    
+                    <div class="like-cmt-share">
+
+                        <div class="like-dislike">
+                            <svg class="upvote" rpl="" fill="currentColor" height="16" icon-name="upvote-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.877 19H7.123A1.125 1.125 0 0 1 6 17.877V11H2.126a1.114 1.114 0 0 1-1.007-.7 1.249 1.249 0 0 1 .171-1.343L9.166.368a1.128 1.128 0 0 1 1.668.004l7.872 8.581a1.25 1.25 0 0 1 .176 1.348 1.113 1.113 0 0 1-1.005.7H14v6.877A1.125 1.125 0 0 1 12.877 19ZM7.25 17.75h5.5v-8h4.934L10 1.31 2.258 9.75H7.25v8ZM2.227 9.784l-.012.016c.01-.006.014-.01.012-.016Z"></path>
+                            </svg>
+                            
+                            <span>151</span>
+                            <svg class="downvote" rpl="" fill="currentColor" height="16" icon-name="downvote-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 20a1.122 1.122 0 0 1-.834-.372l-7.872-8.581A1.251 1.251 0 0 1 1.118 9.7 1.114 1.114 0 0 1 2.123 9H6V2.123A1.125 1.125 0 0 1 7.123 1h5.754A1.125 1.125 0 0 1 14 2.123V9h3.874a1.114 1.114 0 0 1 1.007.7 1.25 1.25 0 0 1-.171 1.345l-7.876 8.589A1.128 1.128 0 0 1 10 20Zm-7.684-9.75L10 18.69l7.741-8.44H12.75v-8h-5.5v8H2.316Zm15.469-.05c-.01 0-.014.007-.012.013l.012-.013Z"></path>
+                            </svg>
+                        </div>
+
+                        <div class="cmt">
+                            <svg rpl="" aria-hidden="true" class="icon-comment" fill="currentColor" height="20" icon-name="comment-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.725 19.872a.718.718 0 0 1-.607-.328.725.725 0 0 1-.118-.397V16H3.625A2.63 2.63 0 0 1 1 13.375v-9.75A2.629 2.629 0 0 1 3.625 1h12.75A2.63 2.63 0 0 1 19 3.625v9.75A2.63 2.63 0 0 1 16.375 16h-4.161l-4 3.681a.725.725 0 0 1-.489.191ZM3.625 2.25A1.377 1.377 0 0 0 2.25 3.625v9.75a1.377 1.377 0 0 0 1.375 1.375h4a.625.625 0 0 1 .625.625v2.575l3.3-3.035a.628.628 0 0 1 .424-.165h4.4a1.377 1.377 0 0 0 1.375-1.375v-9.75a1.377 1.377 0 0 0-1.374-1.375H3.625Z"></path>
+                            </svg>
+                            <span>15</span>
+                        </div>
+
+                        <!-- 
+                        - SECTION SHARE POST-WALL1 
+                        -->
+
+
+                        <!-- 
+                        - DROPDOWN5 SHARE OPTOINS POST-WALL1 
+                        -->
+
+                        <div class="sec-center"> 	
+                            <input class="dropdown5" type="checkbox" id="dropdown5" name="dropdown"/>
+                            <label class="for-dropdown" for="dropdown5"> 
+                                <svg rpl="" aria-hidden="true" class="icon-share" fill="currentColor" height="20" icon-name="share-new-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m18.8 8.286-6.466-7.064a.759.759 0 0 0-1.295.537v3.277C5.623 5.365 1 9.918 1 15.082v2.907h1.274C2.516 15 5.81 12.62 9.834 12.62h1.205v3.226a.757.757 0 0 0 1.315.515l6.422-7.021A.756.756 0 0 0 19 8.8a.736.736 0 0 0-.2-.514Zm-6.508 6.3V12a.625.625 0 0 0-.625-.625H9.834A9.436 9.436 0 0 0 2.26 14.7c.228-4.536 4.525-8.435 9.4-8.435a.626.626 0 0 0 .625-.625V3.023L17.576 8.8l-5.284 5.786Zm5.586-6.107a.176.176 0 0 0-.023.024.171.171 0 0 1 .02-.028l.003.004Zm-.011.642a.53.53 0 0 0-.003-.004l.003.004Z"></path>
                                 </svg>
-                            </label>
-                            <div id="image-preview-profile"></div>
+                                <p class="sec-center-p">15</p>
+                            </label> 
+
+                            <div class="section-dropdown5"> 
+                                <a href="#">
+                                    <div class="profile-container2">
+                                        <svg rpl="" class="mt-[1px] ml-[4px]" fill="currentColor" height="20" icon-name="link-post-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14.111 12.5a3.701 3.701 0 0 1-1.09 2.41c-.479.47-.928.922-1.378 1.373-.45.45-.894.9-1.368 1.366a3.852 3.852 0 0 1-2.698 1.099 3.852 3.852 0 0 1-2.698-1.099 3.738 3.738 0 0 1-1.116-2.659c0-.997.402-1.953 1.116-2.658.479-.472.928-.923 1.378-1.375.45-.45.893-.9 1.368-1.365A3.936 3.936 0 0 1 9.638 8.59a3.968 3.968 0 0 1 2.24.258c.27-.269.546-.54.812-.806l.131-.13a5.086 5.086 0 0 0-3.182-.624A5.052 5.052 0 0 0 6.732 8.71c-.48.471-.929.922-1.377 1.373-.449.451-.894.9-1.37 1.366A4.982 4.982 0 0 0 2.5 14.992c0 1.328.534 2.602 1.486 3.543A5.13 5.13 0 0 0 7.58 20a5.13 5.13 0 0 0 3.595-1.465c.478-.471.927-.923 1.377-1.374.451-.451.894-.9 1.368-1.366a4.993 4.993 0 0 0 1.263-2.071c.243-.781.288-1.61.132-2.412L14.11 12.5Z"></path><path d="M16.017 1.467A5.123 5.123 0 0 0 12.422 0a5.123 5.123 0 0 0-3.595 1.467c-.478.471-.926.923-1.377 1.374-.45.451-.894.9-1.367 1.366a4.966 4.966 0 0 0-1.106 1.624 4.907 4.907 0 0 0-.291 2.86l1.2-1.19a3.699 3.699 0 0 1 1.092-2.41c.478-.472.928-.923 1.377-1.374.45-.45.894-.9 1.368-1.366a3.844 3.844 0 0 1 2.698-1.101c1.012 0 1.982.396 2.698 1.101a3.736 3.736 0 0 1 1.116 2.66c0 .996-.401 1.953-1.116 2.658-.478.471-.927.922-1.377 1.373-.45.451-.893.9-1.368 1.367a3.933 3.933 0 0 1-2.014 1.003 3.966 3.966 0 0 1-2.24-.26c-.273.274-.551.549-.818.818l-.123.12a5.087 5.087 0 0 0 3.183.624 5.053 5.053 0 0 0 2.906-1.423c.477-.472.926-.923 1.376-1.375.45-.452.894-.9 1.368-1.365A4.977 4.977 0 0 0 17.5 5.008a4.977 4.977 0 0 0-1.488-3.543l.005.002Z"></path>
+                                        </svg>
+                                        <div class="profile-info2">
+                                            <span>Copy link</span>
+                                        </div>
+                                    </div>
+                                </a>
+                        
+                                <a href="#">
+                                    <div class="profile-container2">
+                                        <svg rpl="" class="mt-[1px] ml-[4px]" fill="currentColor" height="20" icon-name="crosspost-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="m15.944 11.926-.888.879 1.925 1.945H12A4.873 4.873 0 0 1 7.138 10 4.873 4.873 0 0 1 12 5.25h4.971l-1.915 1.936.888.878L18.875 5.1a.727.727 0 0 0-.007-1.025l-2.929-2.9-.878.888L17.011 4H12a6.128 6.128 0 0 0-6.056 5.25H1v1.625h4.981A6.117 6.117 0 0 0 12 16h5l-1.94 1.92.878.89 2.929-2.9a.726.726 0 0 0 .006-1.025l-2.929-2.96Z"></path>
+                                        </svg>
+                                        <div class="profile-info2">
+                                            <span>Crosspost</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            
+                            </div>
                         </div>
-        
-                        <div class="main-img-cover-img">
-                            <input type="file" name="" id="main-img-cover-img" style="display: none;" accept="image/*">
-                            <label class="main-img-cover-img-lable" for="main-img-cover-img">
-                                <span id="upload-label">Cover Picture</span>
-                                <svg rpl="" fill="currentColor" height="16" icon-name="upload-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="m10.513 5.63 3.929 3.928-.884.884-2.933-2.933V19h-1.25V7.51l-2.933 2.932-.884-.884L9.67 5.446l.589-.029.254.212Zm5.859-1.482A6.876 6.876 0 0 0 10 0a6.876 6.876 0 0 0-6.372 4.148A4.639 4.639 0 0 0 0 8.625a4.716 4.716 0 0 0 4.792 4.625V12A3.465 3.465 0 0 1 1.25 8.625 3.412 3.412 0 0 1 4.189 5.31l.364-.06.123-.35A5.607 5.607 0 0 1 10 1.25a5.607 5.607 0 0 1 5.324 3.65l.123.348.364.06a3.412 3.412 0 0 1 2.939 3.317A3.465 3.465 0 0 1 15.208 12v1.25A4.716 4.716 0 0 0 20 8.625a4.639 4.639 0 0 0-3.628-4.477Z"></path>
+
+                    </div>
+                </div> 
+
+                <!-- 
+                - SECTION POST-WALL2
+                -->
+
+                <div class="post-wall2">
+                    <div class="username">
+                        <div class="profile-img2"></div>
+                        <span class="username-hover">adhiphalder</span>
+                        <p> • 22 hr. ago</p>
+                    
+                    </div>
+                    
+                    <h3>Who are you? Without reference to your name, job, culture, hobbies, family and relationships? dhfvshfvshvfskfshfshf   </h3>
+
+
+
+                    <div class="like-cmt-share">
+
+
+                        <div class="like-dislike">
+                            <svg class="upvote" fill="currentColor" height="16" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.877 19H7.123A1.125 1.125 0 0 1 6 17.877V11H2.126a1.114 1.114 0 0 1-1.007-.7 1.249 1.249 0 0 1 .171-1.343L9.166.368a1.128 1.128 0 0 1 1.668.004l7.872 8.581a1.25 1.25 0 0 1 .176 1.348 1.113 1.113 0 0 1-1.005.7H14v6.877A1.125 1.125 0 0 1 12.877 19ZM7.25 17.75h5.5v-8h4.934L10 1.31 2.258 9.75H7.25v8ZM2.227 9.784l-.012.016c.01-.006.014-.01.012-.016Z"></path>
+                            </svg>
+                            
+                            <span>151</span>
+                            
+                            <svg class="downvote" fill="currentColor" height="16" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 20a1.122 1.122 0 0 1-.834-.372l-7.872-8.581A1.251 1.251 0 0 1 1.118 9.7 1.114 1.114 0 0 1 2.123 9H6V2.123A1.125 1.125 0 0 1 7.123 1h5.754A1.125 1.125 0 0 1 14 2.123V9h3.874a1.114 1.114 0 0 1 1.007.7 1.25 1.25 0 0 1-.171 1.345l-7.876 8.589A1.128 1.128 0 0 1 10 20Zm-7.684-9.75L10 18.69l7.741-8.44H12.75v-8h-5.5v8H2.316Zm15.469-.05c-.01 0-.014.007-.012.013l.012-.013Z"></path>
+                            </svg>
+                        </div>
+
+                        
+
+                        <div class="cmt">
+                            <svg rpl="" aria-hidden="true" class="icon-comment" fill="currentColor" height="20" icon-name="comment-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.725 19.872a.718.718 0 0 1-.607-.328.725.725 0 0 1-.118-.397V16H3.625A2.63 2.63 0 0 1 1 13.375v-9.75A2.629 2.629 0 0 1 3.625 1h12.75A2.63 2.63 0 0 1 19 3.625v9.75A2.63 2.63 0 0 1 16.375 16h-4.161l-4 3.681a.725.725 0 0 1-.489.191ZM3.625 2.25A1.377 1.377 0 0 0 2.25 3.625v9.75a1.377 1.377 0 0 0 1.375 1.375h4a.625.625 0 0 1 .625.625v2.575l3.3-3.035a.628.628 0 0 1 .424-.165h4.4a1.377 1.377 0 0 0 1.375-1.375v-9.75a1.377 1.377 0 0 0-1.374-1.375H3.625Z"></path>
+                            </svg>
+                            <span>15</span>
+                        </div>
+
+
+                        <!-- 
+                        - SECTION SHARE POST-WALL2
+                        -->
+
+
+                        <!-- 
+                        - DROPDOWN7 SHARE OPTOINS POST-WALL2
+                        -->
+
+
+                        <div class="sec-center"> 	
+                            <input class="dropdown7" type="checkbox" id="dropdown7" name="dropdown"/>
+                            <label class="for-dropdown" for="dropdown7"> 
+                                <svg rpl="" aria-hidden="true" class="icon-share" fill="currentColor" height="20" icon-name="share-new-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m18.8 8.286-6.466-7.064a.759.759 0 0 0-1.295.537v3.277C5.623 5.365 1 9.918 1 15.082v2.907h1.274C2.516 15 5.81 12.62 9.834 12.62h1.205v3.226a.757.757 0 0 0 1.315.515l6.422-7.021A.756.756 0 0 0 19 8.8a.736.736 0 0 0-.2-.514Zm-6.508 6.3V12a.625.625 0 0 0-.625-.625H9.834A9.436 9.436 0 0 0 2.26 14.7c.228-4.536 4.525-8.435 9.4-8.435a.626.626 0 0 0 .625-.625V3.023L17.576 8.8l-5.284 5.786Zm5.586-6.107a.176.176 0 0 0-.023.024.171.171 0 0 1 .02-.028l.003.004Zm-.011.642a.53.53 0 0 0-.003-.004l.003.004Z"></path>
                                 </svg>
-                            </label>
-                            <div id="image-preview-cover"></div>
-                        </div>
-                    </div>
-    
-                    <div>
-                        <label for="email_address">Email Address :</label>
-                        <input type="email" name="" class="main-form-input" id="email_address" placeholder="Email Addrerss">
-                    </div>
-    
-                    <div>
-                        <label for="phone_no">Phone Number :</label>
-                        <input type="number" name="" class="main-form-input" id="phone_no" placeholder="Phone Number">
-                    </div>
-    
-                    <div class="main-input-gender">
-                        <span style="color: hsl(228, 8%, 56%);">Gender : </span>
-
-                        <div class="main-input-gender-radio">
-                            <div>
-                                <input type="radio" name="gender" id="male" value="male">
-                                <label for="male">Male</label>
+                                <p class="sec-center-p"> 17</p>
+                            </label> 
+                        
+                            <div class="section-dropdown7"> 
+                                <a href="#">
+                                    <div class="profile-container2">
+                                        <svg rpl="" class="mt-[1px] ml-[4px]" fill="currentColor" height="20" icon-name="link-post-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14.111 12.5a3.701 3.701 0 0 1-1.09 2.41c-.479.47-.928.922-1.378 1.373-.45.45-.894.9-1.368 1.366a3.852 3.852 0 0 1-2.698 1.099 3.852 3.852 0 0 1-2.698-1.099 3.738 3.738 0 0 1-1.116-2.659c0-.997.402-1.953 1.116-2.658.479-.472.928-.923 1.378-1.375.45-.45.893-.9 1.368-1.365A3.936 3.936 0 0 1 9.638 8.59a3.968 3.968 0 0 1 2.24.258c.27-.269.546-.54.812-.806l.131-.13a5.086 5.086 0 0 0-3.182-.624A5.052 5.052 0 0 0 6.732 8.71c-.48.471-.929.922-1.377 1.373-.449.451-.894.9-1.37 1.366A4.982 4.982 0 0 0 2.5 14.992c0 1.328.534 2.602 1.486 3.543A5.13 5.13 0 0 0 7.58 20a5.13 5.13 0 0 0 3.595-1.465c.478-.471.927-.923 1.377-1.374.451-.451.894-.9 1.368-1.366a4.993 4.993 0 0 0 1.263-2.071c.243-.781.288-1.61.132-2.412L14.11 12.5Z"></path>
+                                        </svg>
+                                        <div class="profile-info2">
+                                            <span>Copy link</span>
+                                        </div>
+                                    </div>
+                                </a>
+                        
+                                <a href="#">
+                                    <div class="profile-container2">
+                                        <svg rpl="" class="mt-[1px] ml-[4px]" fill="currentColor" height="20" icon-name="crosspost-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="m15.944 11.926-.888.879 1.925 1.945H12A4.873 4.873 0 0 1 7.138 10 4.873 4.873 0 0 1 12 5.25h4.971l-1.915 1.936.888.878L18.875 5.1a.727.727 0 0 0-.007-1.025l-2.929-2.9-.878.888L17.011 4H12a6.128 6.128 0 0 0-6.056 5.25H1v1.625h4.981A6.117 6.117 0 0 0 12 16h5l-1.94 1.92.878.89 2.929-2.9a.726.726 0 0 0 .006-1.025l-2.929-2.96Z"></path>
+                                        </svg>
+                                        <div class="profile-info2">
+                                            <span>Crosspost</span>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                            <div>
-                                <input type="radio" name="gender" id="female" value="female">
-                                <label for="female">Female</label>
-                            </div>
-
-                            <div>
-                                <input type="radio" name="gender" id="others" value="others">
-                                <label for="others">Others</label>
-                            </div>        
                         </div>
+
+                    </div>   
+
+                </div> 
+                
+
+                <!-- 
+                - SECTION POST-WALL3
+                -->
+
+
+                <div class="post-wall2">
+                    <div class="username">
+                        <div class="profile-img2"></div>
+                        <span class="username-hover">adhiphalder</span>
+                        <p> • 22 hr. ago</p>
+
+                    
                     </div>
-    
-                    <div>
-                        <label for="date_of_birth">Date of Birth :</label>
-                        <input type="date" name="" class="main-form-input" id="date_of_birth" style="padding-right: 7px;" class="">
-                    </div>
-    
-                    <div>
-                        <label for="display_name">Display Name :</label>
-                        <input type="text" name="" class="main-form-input" id="" placeholder="Display Name">
-                    </div>
-    
-                    <div>
-                        <label for="main_username">Username :</label>
-                        <input type="text" name="" class="main-form-input" id="" placeholder="Username">
-                    </div>
-    
-                    <button type="submit" class="main-submit-button">Save</button>
-                </form>
+                    
+                    <h3>Who are you? Without reference to your name, job, culture, hobbies, family and relationships? dhfvshfvshvfskfshfshf   </h3>
+                    <p class="post-para">Ok so I am 30 years old. Turned 30 back in March and I bought myself a PS5 after my 4 shit out finally after 12 years.
+
+                        I was excited about all the big games but was pleasantly entertained with Astro Bot. So clever! My kids would watch me play before bed and they just loved it.
+                        
+                        Never thought a sequel would come out. Finally got to try the new one and I am BLOWN AWAY at how absolutely creative and visually appealing this game is. I felt like I was a kid playing an all time classic for the first time. It’s bringing me so much joy!
+                        
+                        Don’t have many gamers in my life. So I figured I would write this just to share how great I thought it is. Anyone else feel the same?</p>
+
+
+
+                    <div class="like-cmt-share">
+
+
+                        <div class="like-dislike">
+                            <svg class="upvote" fill="currentColor" height="16" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.877 19H7.123A1.125 1.125 0 0 1 6 17.877V11H2.126a1.114 1.114 0 0 1-1.007-.7 1.249 1.249 0 0 1 .171-1.343L9.166.368a1.128 1.128 0 0 1 1.668.004l7.872 8.581a1.25 1.25 0 0 1 .176 1.348 1.113 1.113 0 0 1-1.005.7H14v6.877A1.125 1.125 0 0 1 12.877 19ZM7.25 17.75h5.5v-8h4.934L10 1.31 2.258 9.75H7.25v8ZM2.227 9.784l-.012.016c.01-.006.014-.01.012-.016Z"></path>
+                            </svg>
+                            
+                            <span>151</span>
+                            
+                            <svg class="downvote" fill="currentColor" height="16" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 20a1.122 1.122 0 0 1-.834-.372l-7.872-8.581A1.251 1.251 0 0 1 1.118 9.7 1.114 1.114 0 0 1 2.123 9H6V2.123A1.125 1.125 0 0 1 7.123 1h5.754A1.125 1.125 0 0 1 14 2.123V9h3.874a1.114 1.114 0 0 1 1.007.7 1.25 1.25 0 0 1-.171 1.345l-7.876 8.589A1.128 1.128 0 0 1 10 20Zm-7.684-9.75L10 18.69l7.741-8.44H12.75v-8h-5.5v8H2.316Zm15.469-.05c-.01 0-.014.007-.012.013l.012-.013Z"></path>
+                            </svg>
+                        </div>
+
+                        
+
+                        <div class="cmt">
+                            <svg rpl="" aria-hidden="true" class="icon-comment" fill="currentColor" height="20" icon-name="comment-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.725 19.872a.718.718 0 0 1-.607-.328.725.725 0 0 1-.118-.397V16H3.625A2.63 2.63 0 0 1 1 13.375v-9.75A2.629 2.629 0 0 1 3.625 1h12.75A2.63 2.63 0 0 1 19 3.625v9.75A2.63 2.63 0 0 1 16.375 16h-4.161l-4 3.681a.725.725 0 0 1-.489.191ZM3.625 2.25A1.377 1.377 0 0 0 2.25 3.625v9.75a1.377 1.377 0 0 0 1.375 1.375h4a.625.625 0 0 1 .625.625v2.575l3.3-3.035a.628.628 0 0 1 .424-.165h4.4a1.377 1.377 0 0 0 1.375-1.375v-9.75a1.377 1.377 0 0 0-1.374-1.375H3.625Z"></path>
+                            </svg>
+                            <span>15</span>
+                        </div>
+
+
+                        <!-- 
+                        - SECTION SHARE POST-WALL3
+                        -->
+
+
+                        <!-- 
+                        - DROPDOWN9 SHARE OPTOINS POST-WALL3
+                        -->
+
+
+                        <div class="sec-center"> 	
+                            <input class="dropdown9" type="checkbox" id="dropdown9" name="dropdown"/>
+                            <label class="for-dropdown" for="dropdown9"> 
+                                <svg rpl="" aria-hidden="true" class="icon-share" fill="currentColor" height="20" icon-name="share-new-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m18.8 8.286-6.466-7.064a.759.759 0 0 0-1.295.537v3.277C5.623 5.365 1 9.918 1 15.082v2.907h1.274C2.516 15 5.81 12.62 9.834 12.62h1.205v3.226a.757.757 0 0 0 1.315.515l6.422-7.021A.756.756 0 0 0 19 8.8a.736.736 0 0 0-.2-.514Zm-6.508 6.3V12a.625.625 0 0 0-.625-.625H9.834A9.436 9.436 0 0 0 2.26 14.7c.228-4.536 4.525-8.435 9.4-8.435a.626.626 0 0 0 .625-.625V3.023L17.576 8.8l-5.284 5.786Zm5.586-6.107a.176.176 0 0 0-.023.024.171.171 0 0 1 .02-.028l.003.004Zm-.011.642a.53.53 0 0 0-.003-.004l.003.004Z"></path>
+                                </svg>
+                                <p class="sec-center-p"> 17</p>
+                            </label> 
+                        
+                            <div class="section-dropdown9"> 
+                                <a href="#">
+                                    <div class="profile-container9">
+                                        <svg rpl="" class="mt-[1px] ml-[4px]" fill="currentColor" height="20" icon-name="link-post-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14.111 12.5a3.701 3.701 0 0 1-1.09 2.41c-.479.47-.928.922-1.378 1.373-.45.45-.894.9-1.368 1.366a3.852 3.852 0 0 1-2.698 1.099 3.852 3.852 0 0 1-2.698-1.099 3.738 3.738 0 0 1-1.116-2.659c0-.997.402-1.953 1.116-2.658.479-.472.928-.923 1.378-1.375.45-.45.893-.9 1.368-1.365A3.936 3.936 0 0 1 9.638 8.59a3.968 3.968 0 0 1 2.24.258c.27-.269.546-.54.812-.806l.131-.13a5.086 5.086 0 0 0-3.182-.624A5.052 5.052 0 0 0 6.732 8.71c-.48.471-.929.922-1.377 1.373-.449.451-.894.9-1.37 1.366A4.982 4.982 0 0 0 2.5 14.992c0 1.328.534 2.602 1.486 3.543A5.13 5.13 0 0 0 7.58 20a5.13 5.13 0 0 0 3.595-1.465c.478-.471.927-.923 1.377-1.374.451-.451.894-.9 1.368-1.366a4.993 4.993 0 0 0 1.263-2.071c.243-.781.288-1.61.132-2.412L14.11 12.5Z"></path>
+                                        </svg>
+                                        <div class="profile-info9">
+                                            <span>Copy link</span>
+                                        </div>
+                                    </div>
+                                </a>
+                        
+                                <a href="#">
+                                    <div class="profile-container9">
+                                        <svg rpl="" class="mt-[1px] ml-[4px]" fill="currentColor" height="20" icon-name="crosspost-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="m15.944 11.926-.888.879 1.925 1.945H12A4.873 4.873 0 0 1 7.138 10 4.873 4.873 0 0 1 12 5.25h4.971l-1.915 1.936.888.878L18.875 5.1a.727.727 0 0 0-.007-1.025l-2.929-2.9-.878.888L17.011 4H12a6.128 6.128 0 0 0-6.056 5.25H1v1.625h4.981A6.117 6.117 0 0 0 12 16h5l-1.94 1.92.878.89 2.929-2.9a.726.726 0 0 0 .006-1.025l-2.929-2.96Z"></path>
+                                        </svg>
+                                        <div class="profile-info9">
+                                            <span>Crosspost</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>   
+
+                </div>
+
+
 
             </div>
 
 
-         </main>
+            <div class="identifier-body" id="identifier-body-posts">
+
+                <!-- 
+                - SECTION POST-WALL1
+                -->
+
+                <div class="post-wall">
+                    <div class="username">
+                        <div class="profile-img2"></div>
+                        <span class="username-hover">adhiphalder</span>
+                        <p> • 22 hr. ago</p>
+
+                    </div>
+                    
+                    <h3>This is a title</h3>
+
+                    <div class="post-img">
+                        <style>
+                            .post-img::before {
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                height: 100%;
+                                width: 100%;
+                                background: url('images/1.jpeg') no-repeat center;
+                                background-size: cover;
+                                filter: blur(20px); 
+                                z-index: 1; 
+                            }
+                        </style>
+
+                        <img src="images/1.jpeg" alt="">
+                    </div>
+
+                    <!-- 
+                    - SECTION LIKE CMT SHARE POST-WALL1
+                    -->
+
+                    
+                    <div class="like-cmt-share">
+
+                        <div class="like-dislike">
+                            <svg class="upvote" rpl="" fill="currentColor" height="16" icon-name="upvote-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.877 19H7.123A1.125 1.125 0 0 1 6 17.877V11H2.126a1.114 1.114 0 0 1-1.007-.7 1.249 1.249 0 0 1 .171-1.343L9.166.368a1.128 1.128 0 0 1 1.668.004l7.872 8.581a1.25 1.25 0 0 1 .176 1.348 1.113 1.113 0 0 1-1.005.7H14v6.877A1.125 1.125 0 0 1 12.877 19ZM7.25 17.75h5.5v-8h4.934L10 1.31 2.258 9.75H7.25v8ZM2.227 9.784l-.012.016c.01-.006.014-.01.012-.016Z"></path>
+                            </svg>
+                            
+                            <span>151</span>
+                            <svg class="downvote" rpl="" fill="currentColor" height="16" icon-name="downvote-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 20a1.122 1.122 0 0 1-.834-.372l-7.872-8.581A1.251 1.251 0 0 1 1.118 9.7 1.114 1.114 0 0 1 2.123 9H6V2.123A1.125 1.125 0 0 1 7.123 1h5.754A1.125 1.125 0 0 1 14 2.123V9h3.874a1.114 1.114 0 0 1 1.007.7 1.25 1.25 0 0 1-.171 1.345l-7.876 8.589A1.128 1.128 0 0 1 10 20Zm-7.684-9.75L10 18.69l7.741-8.44H12.75v-8h-5.5v8H2.316Zm15.469-.05c-.01 0-.014.007-.012.013l.012-.013Z"></path>
+                            </svg>
+                        </div>
+
+                        <div class="cmt">
+                            <svg rpl="" aria-hidden="true" class="icon-comment" fill="currentColor" height="20" icon-name="comment-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.725 19.872a.718.718 0 0 1-.607-.328.725.725 0 0 1-.118-.397V16H3.625A2.63 2.63 0 0 1 1 13.375v-9.75A2.629 2.629 0 0 1 3.625 1h12.75A2.63 2.63 0 0 1 19 3.625v9.75A2.63 2.63 0 0 1 16.375 16h-4.161l-4 3.681a.725.725 0 0 1-.489.191ZM3.625 2.25A1.377 1.377 0 0 0 2.25 3.625v9.75a1.377 1.377 0 0 0 1.375 1.375h4a.625.625 0 0 1 .625.625v2.575l3.3-3.035a.628.628 0 0 1 .424-.165h4.4a1.377 1.377 0 0 0 1.375-1.375v-9.75a1.377 1.377 0 0 0-1.374-1.375H3.625Z"></path>
+                            </svg>
+                            <span>15</span>
+                        </div>
+
+                        <!-- 
+                        - SECTION SHARE POST-WALL1 
+                        -->
 
 
+                        <!-- 
+                        - DROPDOWN5 SHARE OPTOINS POST-WALL1 
+                        -->
+
+                        <div class="sec-center"> 	
+                            <input class="dropdown5" type="checkbox" id="dropdown5" name="dropdown"/>
+                            <label class="for-dropdown" for="dropdown5"> 
+                                <svg rpl="" aria-hidden="true" class="icon-share" fill="currentColor" height="20" icon-name="share-new-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m18.8 8.286-6.466-7.064a.759.759 0 0 0-1.295.537v3.277C5.623 5.365 1 9.918 1 15.082v2.907h1.274C2.516 15 5.81 12.62 9.834 12.62h1.205v3.226a.757.757 0 0 0 1.315.515l6.422-7.021A.756.756 0 0 0 19 8.8a.736.736 0 0 0-.2-.514Zm-6.508 6.3V12a.625.625 0 0 0-.625-.625H9.834A9.436 9.436 0 0 0 2.26 14.7c.228-4.536 4.525-8.435 9.4-8.435a.626.626 0 0 0 .625-.625V3.023L17.576 8.8l-5.284 5.786Zm5.586-6.107a.176.176 0 0 0-.023.024.171.171 0 0 1 .02-.028l.003.004Zm-.011.642a.53.53 0 0 0-.003-.004l.003.004Z"></path>
+                                </svg>
+                                <p class="sec-center-p">15</p>
+                            </label> 
+
+                            <div class="section-dropdown5"> 
+                                <a href="#">
+                                    <div class="profile-container2">
+                                        <svg rpl="" class="mt-[1px] ml-[4px]" fill="currentColor" height="20" icon-name="link-post-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14.111 12.5a3.701 3.701 0 0 1-1.09 2.41c-.479.47-.928.922-1.378 1.373-.45.45-.894.9-1.368 1.366a3.852 3.852 0 0 1-2.698 1.099 3.852 3.852 0 0 1-2.698-1.099 3.738 3.738 0 0 1-1.116-2.659c0-.997.402-1.953 1.116-2.658.479-.472.928-.923 1.378-1.375.45-.45.893-.9 1.368-1.365A3.936 3.936 0 0 1 9.638 8.59a3.968 3.968 0 0 1 2.24.258c.27-.269.546-.54.812-.806l.131-.13a5.086 5.086 0 0 0-3.182-.624A5.052 5.052 0 0 0 6.732 8.71c-.48.471-.929.922-1.377 1.373-.449.451-.894.9-1.37 1.366A4.982 4.982 0 0 0 2.5 14.992c0 1.328.534 2.602 1.486 3.543A5.13 5.13 0 0 0 7.58 20a5.13 5.13 0 0 0 3.595-1.465c.478-.471.927-.923 1.377-1.374.451-.451.894-.9 1.368-1.366a4.993 4.993 0 0 0 1.263-2.071c.243-.781.288-1.61.132-2.412L14.11 12.5Z"></path><path d="M16.017 1.467A5.123 5.123 0 0 0 12.422 0a5.123 5.123 0 0 0-3.595 1.467c-.478.471-.926.923-1.377 1.374-.45.451-.894.9-1.367 1.366a4.966 4.966 0 0 0-1.106 1.624 4.907 4.907 0 0 0-.291 2.86l1.2-1.19a3.699 3.699 0 0 1 1.092-2.41c.478-.472.928-.923 1.377-1.374.45-.45.894-.9 1.368-1.366a3.844 3.844 0 0 1 2.698-1.101c1.012 0 1.982.396 2.698 1.101a3.736 3.736 0 0 1 1.116 2.66c0 .996-.401 1.953-1.116 2.658-.478.471-.927.922-1.377 1.373-.45.451-.893.9-1.368 1.367a3.933 3.933 0 0 1-2.014 1.003 3.966 3.966 0 0 1-2.24-.26c-.273.274-.551.549-.818.818l-.123.12a5.087 5.087 0 0 0 3.183.624 5.053 5.053 0 0 0 2.906-1.423c.477-.472.926-.923 1.376-1.375.45-.452.894-.9 1.368-1.365A4.977 4.977 0 0 0 17.5 5.008a4.977 4.977 0 0 0-1.488-3.543l.005.002Z"></path>
+                                        </svg>
+                                        <div class="profile-info2">
+                                            <span>Copy link</span>
+                                        </div>
+                                    </div>
+                                </a>
+                        
+                                <a href="#">
+                                    <div class="profile-container2">
+                                        <svg rpl="" class="mt-[1px] ml-[4px]" fill="currentColor" height="20" icon-name="crosspost-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="m15.944 11.926-.888.879 1.925 1.945H12A4.873 4.873 0 0 1 7.138 10 4.873 4.873 0 0 1 12 5.25h4.971l-1.915 1.936.888.878L18.875 5.1a.727.727 0 0 0-.007-1.025l-2.929-2.9-.878.888L17.011 4H12a6.128 6.128 0 0 0-6.056 5.25H1v1.625h4.981A6.117 6.117 0 0 0 12 16h5l-1.94 1.92.878.89 2.929-2.9a.726.726 0 0 0 .006-1.025l-2.929-2.96Z"></path>
+                                        </svg>
+                                        <div class="profile-info2">
+                                            <span>Crosspost</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            
+                            </div>
+                        </div>
+
+                    </div>
+                </div> 
+
+                <!-- 
+                - SECTION POST-WALL2
+                -->
+
+                <div class="post-wall2">
+                    <div class="username">
+                        <div class="profile-img2"></div>
+                        <span class="username-hover">adhiphalder</span>
+                        <p> • 22 hr. ago</p>
+                    
+                    </div>
+                    
+                    <h3>Who are you? Without reference to your name, job, culture, hobbies, family and relationships? dhfvshfvshvfskfshfshf   </h3>
+
+
+
+                    <div class="like-cmt-share">
+
+
+                        <div class="like-dislike">
+                            <svg class="upvote" fill="currentColor" height="16" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.877 19H7.123A1.125 1.125 0 0 1 6 17.877V11H2.126a1.114 1.114 0 0 1-1.007-.7 1.249 1.249 0 0 1 .171-1.343L9.166.368a1.128 1.128 0 0 1 1.668.004l7.872 8.581a1.25 1.25 0 0 1 .176 1.348 1.113 1.113 0 0 1-1.005.7H14v6.877A1.125 1.125 0 0 1 12.877 19ZM7.25 17.75h5.5v-8h4.934L10 1.31 2.258 9.75H7.25v8ZM2.227 9.784l-.012.016c.01-.006.014-.01.012-.016Z"></path>
+                            </svg>
+                            
+                            <span>151</span>
+                            
+                            <svg class="downvote" fill="currentColor" height="16" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 20a1.122 1.122 0 0 1-.834-.372l-7.872-8.581A1.251 1.251 0 0 1 1.118 9.7 1.114 1.114 0 0 1 2.123 9H6V2.123A1.125 1.125 0 0 1 7.123 1h5.754A1.125 1.125 0 0 1 14 2.123V9h3.874a1.114 1.114 0 0 1 1.007.7 1.25 1.25 0 0 1-.171 1.345l-7.876 8.589A1.128 1.128 0 0 1 10 20Zm-7.684-9.75L10 18.69l7.741-8.44H12.75v-8h-5.5v8H2.316Zm15.469-.05c-.01 0-.014.007-.012.013l.012-.013Z"></path>
+                            </svg>
+                        </div>
+
+                        
+
+                        <div class="cmt">
+                            <svg rpl="" aria-hidden="true" class="icon-comment" fill="currentColor" height="20" icon-name="comment-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.725 19.872a.718.718 0 0 1-.607-.328.725.725 0 0 1-.118-.397V16H3.625A2.63 2.63 0 0 1 1 13.375v-9.75A2.629 2.629 0 0 1 3.625 1h12.75A2.63 2.63 0 0 1 19 3.625v9.75A2.63 2.63 0 0 1 16.375 16h-4.161l-4 3.681a.725.725 0 0 1-.489.191ZM3.625 2.25A1.377 1.377 0 0 0 2.25 3.625v9.75a1.377 1.377 0 0 0 1.375 1.375h4a.625.625 0 0 1 .625.625v2.575l3.3-3.035a.628.628 0 0 1 .424-.165h4.4a1.377 1.377 0 0 0 1.375-1.375v-9.75a1.377 1.377 0 0 0-1.374-1.375H3.625Z"></path>
+                            </svg>
+                            <span>15</span>
+                        </div>
+
+
+                        <!-- 
+                        - SECTION SHARE POST-WALL2
+                        -->
+
+
+                        <!-- 
+                        - DROPDOWN7 SHARE OPTOINS POST-WALL2
+                        -->
+
+
+                        <div class="sec-center"> 	
+                            <input class="dropdown7" type="checkbox" id="dropdown7" name="dropdown"/>
+                            <label class="for-dropdown" for="dropdown7"> 
+                                <svg rpl="" aria-hidden="true" class="icon-share" fill="currentColor" height="20" icon-name="share-new-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m18.8 8.286-6.466-7.064a.759.759 0 0 0-1.295.537v3.277C5.623 5.365 1 9.918 1 15.082v2.907h1.274C2.516 15 5.81 12.62 9.834 12.62h1.205v3.226a.757.757 0 0 0 1.315.515l6.422-7.021A.756.756 0 0 0 19 8.8a.736.736 0 0 0-.2-.514Zm-6.508 6.3V12a.625.625 0 0 0-.625-.625H9.834A9.436 9.436 0 0 0 2.26 14.7c.228-4.536 4.525-8.435 9.4-8.435a.626.626 0 0 0 .625-.625V3.023L17.576 8.8l-5.284 5.786Zm5.586-6.107a.176.176 0 0 0-.023.024.171.171 0 0 1 .02-.028l.003.004Zm-.011.642a.53.53 0 0 0-.003-.004l.003.004Z"></path>
+                                </svg>
+                                <p class="sec-center-p"> 17</p>
+                            </label> 
+                        
+                            <div class="section-dropdown7"> 
+                                <a href="#">
+                                    <div class="profile-container2">
+                                        <svg rpl="" class="mt-[1px] ml-[4px]" fill="currentColor" height="20" icon-name="link-post-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14.111 12.5a3.701 3.701 0 0 1-1.09 2.41c-.479.47-.928.922-1.378 1.373-.45.45-.894.9-1.368 1.366a3.852 3.852 0 0 1-2.698 1.099 3.852 3.852 0 0 1-2.698-1.099 3.738 3.738 0 0 1-1.116-2.659c0-.997.402-1.953 1.116-2.658.479-.472.928-.923 1.378-1.375.45-.45.893-.9 1.368-1.365A3.936 3.936 0 0 1 9.638 8.59a3.968 3.968 0 0 1 2.24.258c.27-.269.546-.54.812-.806l.131-.13a5.086 5.086 0 0 0-3.182-.624A5.052 5.052 0 0 0 6.732 8.71c-.48.471-.929.922-1.377 1.373-.449.451-.894.9-1.37 1.366A4.982 4.982 0 0 0 2.5 14.992c0 1.328.534 2.602 1.486 3.543A5.13 5.13 0 0 0 7.58 20a5.13 5.13 0 0 0 3.595-1.465c.478-.471.927-.923 1.377-1.374.451-.451.894-.9 1.368-1.366a4.993 4.993 0 0 0 1.263-2.071c.243-.781.288-1.61.132-2.412L14.11 12.5Z"></path>
+                                        </svg>
+                                        <div class="profile-info2">
+                                            <span>Copy link</span>
+                                        </div>
+                                    </div>
+                                </a>
+                        
+                                <a href="#">
+                                    <div class="profile-container2">
+                                        <svg rpl="" class="mt-[1px] ml-[4px]" fill="currentColor" height="20" icon-name="crosspost-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="m15.944 11.926-.888.879 1.925 1.945H12A4.873 4.873 0 0 1 7.138 10 4.873 4.873 0 0 1 12 5.25h4.971l-1.915 1.936.888.878L18.875 5.1a.727.727 0 0 0-.007-1.025l-2.929-2.9-.878.888L17.011 4H12a6.128 6.128 0 0 0-6.056 5.25H1v1.625h4.981A6.117 6.117 0 0 0 12 16h5l-1.94 1.92.878.89 2.929-2.9a.726.726 0 0 0 .006-1.025l-2.929-2.96Z"></path>
+                                        </svg>
+                                        <div class="profile-info2">
+                                            <span>Crosspost</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>   
+
+                </div> 
+                
+
+                <!-- 
+                - SECTION POST-WALL3
+                -->
+
+
+                <div class="post-wall2">
+                    <div class="username">
+                        <div class="profile-img2"></div>
+                        <span class="username-hover">adhiphalder</span>
+                        <p> • 22 hr. ago</p>
+
+                    
+                    </div>
+                    
+                    <h3>Who are you? Without reference to your name, job, culture, hobbies, family and relationships? dhfvshfvshvfskfshfshf   </h3>
+                    <p class="post-para">Ok so I am 30 years old. Turned 30 back in March and I bought myself a PS5 after my 4 shit out finally after 12 years.
+
+                        I was excited about all the big games but was pleasantly entertained with Astro Bot. So clever! My kids would watch me play before bed and they just loved it.
+                        
+                        Never thought a sequel would come out. Finally got to try the new one and I am BLOWN AWAY at how absolutely creative and visually appealing this game is. I felt like I was a kid playing an all time classic for the first time. It’s bringing me so much joy!
+                        
+                        Don’t have many gamers in my life. So I figured I would write this just to share how great I thought it is. Anyone else feel the same?</p>
+
+
+
+                    <div class="like-cmt-share">
+
+
+                        <div class="like-dislike">
+                            <svg class="upvote" fill="currentColor" height="16" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.877 19H7.123A1.125 1.125 0 0 1 6 17.877V11H2.126a1.114 1.114 0 0 1-1.007-.7 1.249 1.249 0 0 1 .171-1.343L9.166.368a1.128 1.128 0 0 1 1.668.004l7.872 8.581a1.25 1.25 0 0 1 .176 1.348 1.113 1.113 0 0 1-1.005.7H14v6.877A1.125 1.125 0 0 1 12.877 19ZM7.25 17.75h5.5v-8h4.934L10 1.31 2.258 9.75H7.25v8ZM2.227 9.784l-.012.016c.01-.006.014-.01.012-.016Z"></path>
+                            </svg>
+                            
+                            <span>151</span>
+                            
+                            <svg class="downvote" fill="currentColor" height="16" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 20a1.122 1.122 0 0 1-.834-.372l-7.872-8.581A1.251 1.251 0 0 1 1.118 9.7 1.114 1.114 0 0 1 2.123 9H6V2.123A1.125 1.125 0 0 1 7.123 1h5.754A1.125 1.125 0 0 1 14 2.123V9h3.874a1.114 1.114 0 0 1 1.007.7 1.25 1.25 0 0 1-.171 1.345l-7.876 8.589A1.128 1.128 0 0 1 10 20Zm-7.684-9.75L10 18.69l7.741-8.44H12.75v-8h-5.5v8H2.316Zm15.469-.05c-.01 0-.014.007-.012.013l.012-.013Z"></path>
+                            </svg>
+                        </div>
+
+                        
+
+                        <div class="cmt">
+                            <svg rpl="" aria-hidden="true" class="icon-comment" fill="currentColor" height="20" icon-name="comment-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.725 19.872a.718.718 0 0 1-.607-.328.725.725 0 0 1-.118-.397V16H3.625A2.63 2.63 0 0 1 1 13.375v-9.75A2.629 2.629 0 0 1 3.625 1h12.75A2.63 2.63 0 0 1 19 3.625v9.75A2.63 2.63 0 0 1 16.375 16h-4.161l-4 3.681a.725.725 0 0 1-.489.191ZM3.625 2.25A1.377 1.377 0 0 0 2.25 3.625v9.75a1.377 1.377 0 0 0 1.375 1.375h4a.625.625 0 0 1 .625.625v2.575l3.3-3.035a.628.628 0 0 1 .424-.165h4.4a1.377 1.377 0 0 0 1.375-1.375v-9.75a1.377 1.377 0 0 0-1.374-1.375H3.625Z"></path>
+                            </svg>
+                            <span>15</span>
+                        </div>
+
+
+                        <!-- 
+                        - SECTION SHARE POST-WALL3
+                        -->
+
+
+                        <!-- 
+                        - DROPDOWN9 SHARE OPTOINS POST-WALL3
+                        -->
+
+
+                        <div class="sec-center"> 	
+                            <input class="dropdown9" type="checkbox" id="dropdown9" name="dropdown"/>
+                            <label class="for-dropdown" for="dropdown9"> 
+                                <svg rpl="" aria-hidden="true" class="icon-share" fill="currentColor" height="20" icon-name="share-new-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m18.8 8.286-6.466-7.064a.759.759 0 0 0-1.295.537v3.277C5.623 5.365 1 9.918 1 15.082v2.907h1.274C2.516 15 5.81 12.62 9.834 12.62h1.205v3.226a.757.757 0 0 0 1.315.515l6.422-7.021A.756.756 0 0 0 19 8.8a.736.736 0 0 0-.2-.514Zm-6.508 6.3V12a.625.625 0 0 0-.625-.625H9.834A9.436 9.436 0 0 0 2.26 14.7c.228-4.536 4.525-8.435 9.4-8.435a.626.626 0 0 0 .625-.625V3.023L17.576 8.8l-5.284 5.786Zm5.586-6.107a.176.176 0 0 0-.023.024.171.171 0 0 1 .02-.028l.003.004Zm-.011.642a.53.53 0 0 0-.003-.004l.003.004Z"></path>
+                                </svg>
+                                <p class="sec-center-p"> 17</p>
+                            </label> 
+                        
+                            <div class="section-dropdown9"> 
+                                <a href="#">
+                                    <div class="profile-container9">
+                                        <svg rpl="" class="mt-[1px] ml-[4px]" fill="currentColor" height="20" icon-name="link-post-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14.111 12.5a3.701 3.701 0 0 1-1.09 2.41c-.479.47-.928.922-1.378 1.373-.45.45-.894.9-1.368 1.366a3.852 3.852 0 0 1-2.698 1.099 3.852 3.852 0 0 1-2.698-1.099 3.738 3.738 0 0 1-1.116-2.659c0-.997.402-1.953 1.116-2.658.479-.472.928-.923 1.378-1.375.45-.45.893-.9 1.368-1.365A3.936 3.936 0 0 1 9.638 8.59a3.968 3.968 0 0 1 2.24.258c.27-.269.546-.54.812-.806l.131-.13a5.086 5.086 0 0 0-3.182-.624A5.052 5.052 0 0 0 6.732 8.71c-.48.471-.929.922-1.377 1.373-.449.451-.894.9-1.37 1.366A4.982 4.982 0 0 0 2.5 14.992c0 1.328.534 2.602 1.486 3.543A5.13 5.13 0 0 0 7.58 20a5.13 5.13 0 0 0 3.595-1.465c.478-.471.927-.923 1.377-1.374.451-.451.894-.9 1.368-1.366a4.993 4.993 0 0 0 1.263-2.071c.243-.781.288-1.61.132-2.412L14.11 12.5Z"></path>
+                                        </svg>
+                                        <div class="profile-info9">
+                                            <span>Copy link</span>
+                                        </div>
+                                    </div>
+                                </a>
+                        
+                                <a href="#">
+                                    <div class="profile-container9">
+                                        <svg rpl="" class="mt-[1px] ml-[4px]" fill="currentColor" height="20" icon-name="crosspost-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="m15.944 11.926-.888.879 1.925 1.945H12A4.873 4.873 0 0 1 7.138 10 4.873 4.873 0 0 1 12 5.25h4.971l-1.915 1.936.888.878L18.875 5.1a.727.727 0 0 0-.007-1.025l-2.929-2.9-.878.888L17.011 4H12a6.128 6.128 0 0 0-6.056 5.25H1v1.625h4.981A6.117 6.117 0 0 0 12 16h5l-1.94 1.92.878.89 2.929-2.9a.726.726 0 0 0 .006-1.025l-2.929-2.96Z"></path>
+                                        </svg>
+                                        <div class="profile-info9">
+                                            <span>Crosspost</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>   
+
+                </div>
+
+
+            </div>
+
+            <div class="identifier-body" id="identifier-body-save">
+                <div class="not-found">
+                    <img src="https://www.redditstatic.com/shreddit/assets/hmm-snoo.png" alt="">
+                    <h3>Looks like you haven't saved anything yet</h3>
+                </div>
+            </div>
+
+            <div class="identifier-body" id="identifier-body-upvoted">
+
+                <div class="not-found">
+                    <img src="https://www.redditstatic.com/shreddit/assets/hmm-snoo.png" alt="">
+                    <h3>Looks like you haven't upvoted anything yet</h3>
+                </div>
+
+            </div>
+
+            <div class="identifier-body" id="identifier-body-downvoted">
+
+                <div class="not-found">
+                    <img src="https://www.redditstatic.com/shreddit/assets/hmm-snoo.png" alt="">
+                    <h3>Looks like you haven't downvoted anything yet</h3>
+                </div>
+
+            </div>
+
+
+            
+
+
+        </main>
+        
+
+        <!-- 
+         - SECTION RIGHTBAR
+        -->
+
+
+        <div class="rightbar">
+            <div class="profile-overview">
+                <img src="images/profile bg.jpg" alt="User Profile Picture">
+                <div class="profile-info">
+                    <h3 class="name">Adhip Halder</h3>
+                    <p class="profile-bio">Those Who Don't Appreciate Life Do Not Deserve Life</p>
+
+                     <div class="share-link-container">
+                        <button href="#" class="share2" onclick="toggleShareModal()"> <i class="fa-solid fa-share"></i> <span>Share</span></button>
+                    </div>
+                    
+                    <div id="shareModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close-btn" onclick="toggleShareModal()">&times;</span>
+                            <h3>Share Options</h3>
+                            <div class="share-options">
+                                <a href="mailto:?subject=Check%20out%20this%20profile&body=https://example.com/userprofile" target="_blank">Email</a>
+                                <a href="https://api.whatsapp.com/send?text=https://example.com/userprofile" target="_blank">WhatsApp</a>
+                                <a href="https://twitter.com/intent/tweet?url=https://example.com/userprofile" target="_blank">Twitter</a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/userprofile" target="_blank">Facebook</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="profile-stats">
+                <h3 class="stats">PROFILE STATS</h3>
+                <div>
+                    <span>Karma</span>
+                    <span>1.2k</span>
+                </div>
+                <div>
+                    <span>Followers</span>
+                    <span>300</span>
+                </div>
+                <div>
+                    <span>Posts</span>
+                    <span>50</span>
+                </div>
+                <div>
+                    <span>Comments</span>
+                    <span>120</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>SETTINGS</h3>
+                <div class="section-item">
+                    <div class="settings-img">
+                        <img src="https://styles.redditmedia.com/t5_4imbec/styles/profileIcon_asf6w9eqj1d91.jpeg?width=256&amp;height=256&amp;frame=1&amp;auto=webp&amp;crop=256:256,smart&amp;s=3bf3f696edafbc8d35a5bcda5ecb2b61e01db7f0" alt="">
+                    </div>
+                    <p>Adhip Halder</p>
+                    <a href="">
+                        <p>Edit</p>
+                    </a>
+                </div>
+
+            </div>
+        </div>
 
         <script src="{{asset('js/profile.js')}}"></script>
     </body>
