@@ -36,9 +36,9 @@ class ExampleController extends Controller
         return view('User/Forgot');
     }
 
-    public function registration() {
-        return view('User/Registration');
-    }
+    // public function registration() {
+    //     return view('User/Registration');
+    // }
 
 
     // USER

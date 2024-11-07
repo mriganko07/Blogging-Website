@@ -99,6 +99,7 @@ img{
 height: auto;
 width: 8rem;
 display: block;
+margin: auto;
 max-width: 100%;
 height: auto;
 }
@@ -606,7 +607,8 @@ transition: all 0.3s ease;
   padding: 5px;
   top: 70px;
   left: -270px;
-  height: 480px;
+  max-height: 450px;
+  height: auto;
   width: 350px;
   border-radius: 4px;
   display: block;
@@ -647,7 +649,7 @@ transition: all 0.3s ease;
 
 .section-dropdown2 h1{
   margin-top: 12px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .profile-img{
@@ -962,8 +964,8 @@ transition: all 0.3s ease;
 
 .section-dropdown3 {
   position: absolute;
-  top: 60px;
-  right: -6px;
+  top: 85px;
+  right: -70px;
   width: 203px;
   height: auto;
   border-radius: 6px;
@@ -987,7 +989,7 @@ transition: all 0.3s ease;
 .dropdown3-floating-message{
   position: absolute;
   top: 50px;
-  right: -48px;
+  right: -51px;
   font-size: 13px;
   width: 150px;
   height: 29px;
@@ -1094,12 +1096,13 @@ transition: all 0.3s ease;
   color: #ffffff;
   font-size: 14px;
   font-weight: 600;
-  padding-right: 70px;
+  margin-right: 50px;
 }
 
 .section-dropdown3-profile-text p{
   color: #ffffff7e;
-  font-size: 5px;
+  font-size: 12px;
+  font-weight: 0;
 }
 
 .section-dropdown3-settings span{
@@ -1360,6 +1363,7 @@ left: 55px;
   margin-left: 25px;
   display: flex;
   align-items: center;
+  
 }
 
 .like-dislike {
@@ -1838,9 +1842,9 @@ left: 55px;
   color: #9fa5b5;
 }
 
-.sec-center p {
+.sec-center {
   color: #878a8c;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 900;
   margin-left: 2px;
 }
@@ -2064,9 +2068,9 @@ left: 55px;
   color: #9fa5b5;
 }
 
-.sec-center p {
+.sec-center {
   color: #878a8c;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 900;
   margin-left: 2px;
 }
