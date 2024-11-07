@@ -113,7 +113,7 @@
                                     <img class="popup-content" id="popupImg">
                                 </div>             
                                 <td> 
-                                    <img src="images/4.jpeg" alt="Post Image" onclick="openPopup(this)">
+                                    <img src="/Images/4.jpeg" alt="Post Image" onclick="openPopup(this)">
                                     <a href="admin_content.html">View Posts</a>
                                 </td>
                                 
@@ -177,7 +177,7 @@
                             <small class="text-muted"></small>
                         </div>
                         <div class="profile-photo">
-                            <img src="./images/profile-1.jpg" alt="" />
+                            <img src="/Images/profile-1.jpg" alt="" />
                         </div>
                     </div>
                 </div>
