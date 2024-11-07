@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
 use App\Models\User;
 
 
@@ -15,7 +16,8 @@ Route::get('/', function () {
   #LOGIN & SIGNUP
 \*---------------------------------*/
 
-Route::get('/registration', [UserController::class, 'registration']);
+Route::get('/registration', [LoginController::class, 'registration']);
+Route::post('/register', [LoginController::class, 'store'])->name('register.store');
 
 
 

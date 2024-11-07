@@ -25,15 +25,31 @@
             <div class="left-main-work">
                 <!-- Registration Part -->
                 <div id="register" class="register visible">
-                    <form action="">
+                    <form action="{{ route('register.store') }}" method="POST">
+                        @csrf 
                         <div class="register-ele">
-                            <input type="text" name="" id="" placeholder="Name" required>
+                            <input type="text" name="name" placeholder="Name" value="{{old("name")}}">
+                            <span class="text-danger">
+                                @error('name')
+                                    {{$message}}
+                                @enderror
+                            </span>
                         </div>
                         <div class="register-ele">
-                            <input type="email" name="" id="" placeholder="Email" required>
+                            <input type="email" name="email" placeholder="Email" value="{{old("email")}}" >
+                            <span class="text-danger">
+                                @error('email')
+                                {{$message}}
+                                @enderror
+                            </span>
                         </div>
                         <div class="register-ele">
-                            <input type="password" name="" id="" placeholder="Password" required>
+                            <input type="password" name="password" placeholder="Password" >
+                            <span class="text-danger">
+                                @error('password')
+                                    {{$message}}
+                                @enderror
+                            </span>
                         </div>
                         <button type="submit" class="submit-button register-button">Join for free</button>
                     </form>
