@@ -346,7 +346,7 @@
                             }
                         </style>
 
-                        <img src="images/4.jpeg" alt="">
+                        <img src="/Images/4.jpeg" alt="">
                     </div>
 
                     <!-- 
@@ -646,7 +646,7 @@
                             }
                         </style>
 
-                        <img src="images/1.jpeg" alt="">
+                        <img src="/Images/1.jpeg" alt="">
                     </div>
 
                     <!-- 
@@ -951,7 +951,7 @@
 
         <div class="rightbar">
             <div class="profile-overview">
-                <img src="images/profile bg.jpg" alt="User Profile Picture">
+                <img src="/Images/profile bg.jpg" alt="User Profile Picture">
                 <div class="profile-info">
                     <h3 class="name">Adhip Halder</h3>
                     <p class="profile-bio">Those Who Don't Appreciate Life Do Not Deserve Life</p>
