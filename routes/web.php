@@ -53,17 +53,10 @@ Route::get('/create', [ExampleController::class, 'create']);
 
 Route::get('/explore', [ExampleController::class, 'explore']);
 
-<<<<<<< HEAD
 Route::get('/forgot', [ExampleController::class, 'forgot']);
 
-
 Route::get('/admin', [ExampleController::class, 'adminlogin']);
-=======
+
 Route::get('/editprofile', [ExampleController::class, 'editprofile']);
->>>>>>> 28844d8fcc3c8b6b565a9b2d1b24c263e87198f8
 
 Route::get('/profile', [ExampleController::class, 'profile']);
-
-Route::get('/viewcommunity', [ExampleController::class, 'viewcommunity']);
-
-Route::get('/viewpost', [ExampleController::class, 'viewpost']);
