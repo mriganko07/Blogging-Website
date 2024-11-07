@@ -268,7 +268,7 @@
    
         <main class="main container" id="main">
             <div class="cover-img">
-                <img src="images/profile bg.jpg" alt="User Profile Picture">
+                <img src="/Images/profile bg.jpg" alt="User Profile Picture">
             </div>
 
             <div class="profile-section">
@@ -352,7 +352,7 @@
                             }
                         </style>
 
-                        <img src="images/4.jpeg" alt="">
+                        <img src="/Images/4.jpeg" alt="">
                     </div>
 
                     <!-- 
@@ -652,7 +652,7 @@
                             }
                         </style>
 
-                        <img src="images/1.jpeg" alt="">
+                        <img src="/Images/1.jpeg" alt="">
                     </div>
 
                     <!-- 

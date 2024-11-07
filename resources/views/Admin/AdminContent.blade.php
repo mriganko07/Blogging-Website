@@ -106,7 +106,7 @@
                             }
                         </style>
     
-                        <img src="images/4.jpeg" alt="">
+                        <img src="/Images/4.jpeg" alt="">
                     </div>
     
                 </div> 
@@ -171,7 +171,7 @@
                             <small class="text-muted"></small>
                         </div>
                         <div class="profile-photo">
-                            <img src="./images/profile-1.jpg" alt="" />
+                            <img src="/Images/profile-1.jpg" alt="" />
                         </div>
                     </div>
                 </div>

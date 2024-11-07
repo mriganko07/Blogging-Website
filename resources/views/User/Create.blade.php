@@ -256,7 +256,7 @@
                             <span>Search</span>
                         </div>
 
-                        <img src="Pictures/down-arrow.svg" class="create-post-community-button-img" alt="">
+                        <img src="/Pictures/down-arrow.svg" class="create-post-community-button-img" alt="">
 
                     </button>
 
