@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CommunityController;
 use App\Models\User;
+use App\Models\Communities;
 
 
 
@@ -17,21 +20,24 @@ Route::get('/', function () {
 
 Route::get('/registration', [UserController::class, 'registration']);
 
+Route::get('/forgot', [UserController::class, 'forgot']);
+
+
 
 
 /*---------------*\
   #ADMIN
 \*----------------*/
 
-Route::get('/adminlogin', [ExampleController::class, 'adminlogin']);
+Route::get('/adminlogin', [AdminController::class, 'adminlogin']);
 
-Route::get('/admincommunity', [ExampleController::class, 'admincommunity']);
+Route::get('/admincommunity', [AdminController::class, 'admincommunity']);
 
-Route::get('/admincontent', [ExampleController::class, 'admincontent']);
+Route::get('/admincontent', [AdminController::class, 'admincontent']);
 
-Route::get('/adminpost', [ExampleController::class, 'adminpost']);
+Route::get('/adminpost', [AdminController::class, 'adminpost']);
 
-Route::get('/adminuser', [ExampleController::class, 'adminuser']);
+Route::get('/adminuser', [AdminController::class, 'adminuser']);
 
 
 
@@ -39,15 +45,9 @@ Route::get('/adminuser', [ExampleController::class, 'adminuser']);
   #COMMUNITY
 \*-------------------------*/
 
-Route::get('/createcommunity', [ExampleController::class, 'createcommunity']);
+Route::get('/createcommunity', [CommunityController::class, 'createcommunity']);
 
-Route::get('/community', [ExampleController::class, 'community']);
-
-
-
-// REGISTRATION LOGIN & FORGOT
-
-Route::get('/forgot', [ExampleController::class, 'forgot']);
+Route::get('/community', [CommunityController::class, 'community']);
 
 
 
@@ -56,16 +56,16 @@ Route::get('/forgot', [ExampleController::class, 'forgot']);
   #USER
 \*--------------*/
 
-Route::get('/comment', [ExampleController::class, 'comment']);
+Route::get('/comment', [UserController::class, 'comment']);
 
-Route::get('/create', [ExampleController::class, 'create']);
+Route::get('/create', [UserController::class, 'create']);
 
-Route::get('/explore', [ExampleController::class, 'explore']);
+Route::get('/explore', [UserController::class, 'explore']);
 
-Route::get('/forgot', [ExampleController::class, 'forgot']);
+Route::get('/editprofile', [UserController::class, 'editprofile']);
 
-Route::get('/admin', [ExampleController::class, 'adminlogin']);
+Route::get('/profile', [UserController::class, 'profile']);
 
-Route::get('/editprofile', [ExampleController::class, 'editprofile']);
+Route::get('/vcommunity', [UserController::class, 'viewcommunity']);
 
-Route::get('/profile', [ExampleController::class, 'profile']);
+Route::get('/vpost', [UserController::class, 'viewpost']);
