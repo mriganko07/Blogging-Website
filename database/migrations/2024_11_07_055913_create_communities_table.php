@@ -22,7 +22,7 @@ return new class extends Migration
             $table->enum('category', ["games", "technologies", "movies", "travel", "music", "education", "sport", "news_politics", "business_finance"])->nullable();
             $table->integer('community_suspend');
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
+            // $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

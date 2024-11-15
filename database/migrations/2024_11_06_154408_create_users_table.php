@@ -27,7 +27,7 @@ return new class extends Migration
             $table->integer('total_communities')->default(0);
             $table->integer('suspend_account')->default(0);
             $table->unsignedBigInteger('community_id')->nullable();
-            $table->foreign('community_id')->references('community_id')->on('communities')->onDelete('cascade');
+            // $table->foreign('community_id')->references('community_id')->on('communities')->onDelete('cascade');
             $table->timestamps();
         });
     }
