@@ -72,12 +72,11 @@ display: flex;
 align-items: center;
 margin-left: 10px;
 }
-img{
+.logo-img{
 height: auto;
-width: 8rem;
 display: block;
-max-width: 100%;
-height: auto;
+height: 50px;
+width: auto;
 }
 
 input[type="text"]::placeholder {
