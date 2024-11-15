@@ -9,6 +9,7 @@
         <link rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
         <link rel="stylesheet" href="{{asset('css/adminhome.css')}}">
+        <link rel="shortcut icon" href="{{asset('/Pictures/inkspire.png')}}" type="image/svg+xml">
     </head>
 
     <body>

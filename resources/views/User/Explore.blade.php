@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{asset('css/explore.css')}}">
-        <link rel="shortcut icon" href="{{asset('favicon.svg')}}" type="image/svg+xml">
+        <link rel="shortcut icon" href="{{asset('/Pictures/inkspire.png')}}" type="image/svg+xml">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -26,7 +26,7 @@
     <body>
 
         <header>
-            <a href="/" class="logo"><img src=""></a>
+            <a href="/" class="logo"><img class="logo-img" src="/Pictures/inkspire.png"></a>
             <input type="text" placeholder="Search" id="searchInput">
 
             <div class="menu">

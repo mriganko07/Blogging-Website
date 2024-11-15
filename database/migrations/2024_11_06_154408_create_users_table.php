@@ -14,18 +14,18 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id('user_id');
             $table->string('name');
-            $table->string('user_name')->unique();
+            $table->string('user_name')->unique()->default('default_username');
             $table->string('email')->unique();
             $table->enum('gender', ["M", "F", "O"])->nullable();
-            $table->date('DOB');
-            $table->integer('phone')->unique();
-            $table->string('bio');
+            $table->date('DOB')->nullable();
+            $table->integer('phone')->unique()->nullable();
+            $table->string('bio')->nullable();
             $table->string('password');
-            $table->string('profile_pic');
-            $table->string('cover_img');
-            $table->integer('total_posts')->default(0);
-            $table->integer('total_communities')->default(0);
-            $table->integer('suspend_account')->default(0);
+            $table->string('profile_pic')->nullable();
+            $table->string('cover_img')->nullable();
+            $table->integer('total_posts')->default(0)->nullable();
+            $table->integer('total_communities')->default(0)->nullable();
+            $table->integer('suspend_account')->default(0)->nullable();
             $table->unsignedBigInteger('community_id')->nullable();
             // $table->foreign('community_id')->references('community_id')->on('communities')->onDelete('cascade');
             $table->timestamps();
