@@ -16,17 +16,18 @@ return new class extends Migration
             $table->string('name');
             $table->string('user_name')->unique();
             $table->string('email')->unique();
-            $table->enum('gender',["M", "F", "O"])->nullable();
+            $table->enum('gender', ["M", "F", "O"])->nullable();
             $table->date('DOB');
             $table->integer('phone')->unique();
             $table->string('bio');
             $table->string('password');
             $table->string('profile_pic');
             $table->string('cover_img');
-            $table->integer('total_posts');
-            $table->integer('total_communities');
-            $table->integer('suspend_account');
-            // $table->foreign('community_id')->references('community_id')->on('communities')->onDelete('cascade');
+            $table->integer('total_posts')->default(0);
+            $table->integer('total_communities')->default(0);
+            $table->integer('suspend_account')->default(0);
+            $table->unsignedBigInteger('community_id')->nullable();
+            $table->foreign('community_id')->references('community_id')->on('communities')->onDelete('cascade');
             $table->timestamps();
         });
     }
