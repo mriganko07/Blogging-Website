@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgot Password</title>
     <link rel="stylesheet" href="{{asset('css/registration.css')}}">
+    <link rel="shortcut icon" href="{{asset('/Pictures/inkspire.png')}}" type="image/svg+xml">
 
 </head>
 <body>
@@ -12,7 +13,7 @@
         <div class="left-div">
             <div class="left-div-img">
                 <!-- Left side logo -->
-                <img src="/Pictures/logo.png" alt="">
+                <img src="/Pictures/inkspire.png" alt="">
             </div>
 
             <div class="left-div-mid">
