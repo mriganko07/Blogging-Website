@@ -8,8 +8,7 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-<<<<<<< HEAD
-=======
+
 
     public function registration() {
         return view('User.Registration');
@@ -46,6 +45,5 @@ class UserController extends Controller
     public function viewpost() {
         return view('User.ViewPost');
     }
->>>>>>> fe160108dd559cb1c3e83bb929ef3963698d3c19
     
 }
