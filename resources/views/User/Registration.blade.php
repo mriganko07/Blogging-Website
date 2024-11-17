@@ -81,8 +81,8 @@
                                 @enderror
                             </span>
                         </div>
-                        <div class="login-ele">
-                            <a href="/forgot"><button class="forget-pass" type="button">Forget Password?</button></a>
+                        <div class="login-ele" style="text-align: left;">
+                            <a href="/forgot"><button class="forget-pass" type="button" >Forget Password?</button></a>
                         </div>
                         <button type="submit" class="submit-button login-button">Login</button>
                     </form>
