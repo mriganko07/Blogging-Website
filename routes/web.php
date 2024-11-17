@@ -20,7 +20,12 @@ Route::get('/', function () {
 \*---------------------------------*/
 
 Route::get('/registration', [LoginController::class, 'registration']);
-Route::post('/register', [LoginController::class, 'store'])->name('register.store');
+
+Route::post('/register', [LoginController::class, 'signUp'])->name('register.store');
+
+Route::post('/login', [LoginController::class, 'login'])->name('login.process');
+
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/forgot', [UserController::class, 'forgot']);
 

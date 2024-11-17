@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration & Login</title>
     <link rel="stylesheet" href="{{asset('css/registration.css')}}">
+    
     <link rel="shortcut icon" href="{{asset('/Pictures/inkspire.png')}}" type="image/svg+xml">
 
 </head>
@@ -31,7 +32,7 @@
                     <form action="{{ route('register.store') }}" method="POST">
                         @csrf 
                         <div class="register-ele">
-                            <input type="text" name="name" placeholder="Name" value="{{old("name")}}">
+                            <input type="text" name="name" placeholder="Name" value="{{old("name")}}"> <br>
                             <span class="text-danger">
                                 @error('name')
                                     {{$message}}
@@ -39,7 +40,7 @@
                             </span>
                         </div>
                         <div class="register-ele">
-                            <input type="email" name="email" placeholder="Email" value="{{old("email")}}" >
+                            <input type="email" name="email" placeholder="Email" value="{{old("email")}}" > <br>
                             <span class="text-danger">
                                 @error('email')
                                 {{$message}}
@@ -47,7 +48,7 @@
                             </span>
                         </div>
                         <div class="register-ele">
-                            <input type="password" name="password" placeholder="Password" >
+                            <input type="password" name="password" placeholder="Password" > <br>
                             <span class="text-danger">
                                 @error('password')
                                     {{$message}}
@@ -60,19 +61,29 @@
 
                 <!-- Login Part -->
                 <div id="login" class="login">
-                    <form action="" method="get">
+                    <form action="{{ route('login.process') }}" method="POST">
+                        @csrf
                         <div class="login-ele">
-                            <input type="email" name="" id="" placeholder="Email" required>
+                            <input type="email" name="email" placeholder="Email" required value="{{old("email")}}">
+                            <span class="text-danger">
+                                @error('email')
+                                    {{$message}}
+                                @enderror
+                            </span>
                         </div>
                         <div class="login-ele">
-                            <input type="password" name="" id="" placeholder="Password" required>
+                            <input type="password" name="password" placeholder="Password" required>
+                            <span class="text-danger">
+                                @error('password')
+                                    {{$message}}
+                                @enderror
+                            </span>
                         </div>
                         <div class="login-ele">
                             <a href="/forgot"><button class="forget-pass" type="button">Forget Password?</button></a>
                         </div>
                         <button type="submit" class="submit-button login-button">Login</button>
                     </form>
-
                 </div>
 
             </div>

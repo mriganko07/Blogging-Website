@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -14,21 +15,57 @@ class LoginController extends Controller
         return view('User.Registration');
     }
 
-    public function store(Request $request)
-    {
 
+    public function signUp(Request $request)
+    {
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required',
         ]);
-
-        $user = new User;
+    
+        $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
+    
+        $user->user_name = strtolower(str_replace(' ', '_', $request->name)) . rand(100, 999);
+    
         $user->save();
+    
+        $request->session()->put('user', $user);
+    
+        return redirect('/')->with('success', 'Sign up successful!');
+    }
 
-        return redirect()->route('home')->with('success', 'Registration successful!');
+
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        $user = User::where("email", $request->email)->first();
+
+        if ($user && Hash::check($request->password, $user->password)) {
+            $request->session()->put('username', $user->user_name); 
+            return redirect('/')->with('success', 'Logged in successfully!');
+        } else {
+            return redirect()->back()->with('error', 'Invalid email or password');
+        }
+    }
+
+    public function logout(Request $request)
+    {
+        $request->session()->forget('user');  
+        $request->session()->forget('user_name');  
+
+        Auth::logout();  
+
+        $request->session()->invalidate(); 
+        $request->session()->regenerateToken();  
+
+        return redirect()->route('signUp')->with('success', 'Logged out successfully.');
     }
 }
