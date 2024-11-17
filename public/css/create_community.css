@@ -1050,7 +1050,7 @@ transition: all 0.3s ease;
   opacity: 1;
 }
 
-.dropdown,label:hover{
+.dropdown >label:hover{
   background-color: #f0f0f056; 
   color: #333; 
   transition: all 0.3s ease; 
@@ -1364,6 +1364,10 @@ transition: all 0.3s ease;
 
 }
 
+.main-form3-input{
+  display: none;  
+}
+
 #main-form1 > input{
 
 	width: 350px;
@@ -1570,21 +1574,11 @@ small{
   flex-wrap: wrap;
 }
 
-.main-slidebar li {
-  flex: 0 0 auto;
-}
-
-.main-container-heading{
-  font-size: 30px;
-  font-weight: 600;
-  color: white;
-}
-
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
-.main-slidebar li button{
+.identifier-button{
   color: white;
   border: 0.1px solid#5d5d5d; 
   display: flex;
@@ -1600,6 +1594,12 @@ small{
   transition: all 200ms linear;
 }
 
-.main-slidebar li button:hover{
-  background-color: #5d5d5d;
+.identifier-button:hover{
+  background-color: #5d5d5d;    
+  border-radius: 7px; 
+}
+
+.main-form3-input:checked + .identifier-button {
+  background-color: #FF4D04;
+  color: #fff;
 }

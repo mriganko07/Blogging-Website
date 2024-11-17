@@ -34,7 +34,7 @@ class UserController extends Controller
     }
 
     public function editprofile(){
-        return view('EditProfile');
+        return view('User.EditProfile');
     }
 
     public function viewcommunity() {

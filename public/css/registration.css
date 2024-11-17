@@ -105,6 +105,11 @@ body{/* Reset and base styles */
         margin-bottom: 11px;
 
     }
+    .login-ele{
+        width: 311px;
+        text-align: center;
+        margin-bottom: 11px;
+    }
     .register-ele input, .login-ele input, .forgot-ele input {
         border: none;
         width: 295px;
@@ -263,7 +268,7 @@ body{/* Reset and base styles */
     border-radius: 17px;
     background-color: #292929;
     padding-left: 12px;
-    margin-bottom: 16px;
+    /* margin-bottom: 16px; */
 }
 
 input:focus{
