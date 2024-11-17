@@ -32,24 +32,26 @@
                     <form action="{{ route('register.store') }}" method="POST">
                         @csrf 
                         <div class="register-ele">
-                            <input type="text" name="name" placeholder="Name" value="{{old("name")}}"> <br>
-                            <span class="text-danger">
+
+                            <input type="text" name="name" placeholder="Name" value="{{old("name")}}">
+                            <span class="text-danger" style="color: tomato">
                                 @error('name')
                                     {{$message}}
                                 @enderror
                             </span>
                         </div>
                         <div class="register-ele">
-                            <input type="email" name="email" placeholder="Email" value="{{old("email")}}" > <br>
-                            <span class="text-danger">
+                            <input type="email" name="email" placeholder="Email" value="{{old("email")}}" >
+                            <span class="text-danger" style="color: tomato">
                                 @error('email')
                                 {{$message}}
                                 @enderror
                             </span>
                         </div>
                         <div class="register-ele">
-                            <input type="password" name="password" placeholder="Password" > <br>
-                            <span class="text-danger">
+
+                            <input type="password" name="password" placeholder="Password" >
+                            <span class="text-danger" style="color: tomato">
                                 @error('password')
                                     {{$message}}
                                 @enderror
