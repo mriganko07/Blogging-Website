@@ -271,159 +271,182 @@
         <main class="main container" id="main">
 
             <div class="main-container">
-        
-                <form id="main-form1">
-        
-                    <h3 class="main-h3">Tell us about your community</h3>
-                    <p>A name and description help people understand what your community is all about.</p>
-                    <input type="text" id="main-h3-input-first" placeholder="Community Name" maxlength="17">
-                    <textarea name="" class="main-form1-text" id="" placeholder="Description" maxlength="252"></textarea>
-                    <div class="main-btn-box">
-                        <button type="button" id="next1">Next</button>
-                    </div>
-        
-                </form>
-        
-                <form id="main-form2">
-        
-                    <h3 class="main-h3">Style Your Community</h3>
-                    <p>Adding visual flair will catch new members attention and help establish your community’s culture! You can update this at any time.</p>
-                    <div class="main-form2-first">
-                        <span style="font-size: 14.5px; display: flex;align-items: center;">Banner</span>
-                        <label class="main-form2-first-file-lable" for="main-form2-first-file">
-                            <svg rpl="" fill="white" height="20" icon-name="image-post-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13 4a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm0 4.75a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5Z"></path><path d="M17.375 1H2.625A1.627 1.627 0 0 0 1 2.625v14.75A1.627 1.627 0 0 0 2.625 19h14.75A1.627 1.627 0 0 0 19 17.375V2.625A1.627 1.627 0 0 0 17.375 1ZM2.25 17.375v-2.683L4.9 12.04a2.332 2.332 0 0 1 3.3 0l5.71 5.71H2.625a.375.375 0 0 1-.375-.375Zm15.5 0a.375.375 0 0 1-.375.375h-1.7l-6.6-6.594a3.582 3.582 0 0 0-5.063 0L2.25 12.925v-10.3a.375.375 0 0 1 .375-.375h14.75a.375.375 0 0 1 .375.375v14.75Z"></path><!--?-->
-                            </svg>
-                            <span>Add</span>
-                        </label>
-                        <input type="file" id="main-form2-first-file" placeholder="Last Name" required>
-                    </div>
+                <form action="" method="get">
+                    <div id="main-form1">
 
-                    <div class="main-form2-sec">
-                        <span style="font-size: 14.5px; display: flex;align-items: center;">Profile</span>
-                        <label class="main-form2-sec-file-label" for="main-form2-sec-file">
-                            <svg rpl="" fill="white" height="20" icon-name="image-post-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13 4a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm0 4.75a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5Z"></path><path d="M17.375 1H2.625A1.627 1.627 0 0 0 1 2.625v14.75A1.627 1.627 0 0 0 2.625 19h14.75A1.627 1.627 0 0 0 19 17.375V2.625A1.627 1.627 0 0 0 17.375 1ZM2.25 17.375v-2.683L4.9 12.04a2.332 2.332 0 0 1 3.3 0l5.71 5.71H2.625a.375.375 0 0 1-.375-.375Zm15.5 0a.375.375 0 0 1-.375.375h-1.7l-6.6-6.594a3.582 3.582 0 0 0-5.063 0L2.25 12.925v-10.3a.375.375 0 0 1 .375-.375h14.75a.375.375 0 0 1 .375.375v14.75Z"></path><!--?-->
-                            </svg>
-                            <span class="">Add</span>
-                        </label>
-                        <input type="file" id="main-form2-sec-file" placeholder="Last Name" required>
-                    </div>        
-        
-                    <div class="main-btn-box">
-                        <button type="button" id="back1">Back</button>
-                        <button type="button" id="next2">Next</button>
-        
-                    </div>
-
-                    <div class="main-form2-img-show">
-                        <div class="main-form2-img-show-first">
-                            <img src="" alt="">
+            
+                        <h3 class="main-h3">Tell us about your community</h3>
+                        <p>A name and description help people understand what your community is all about.</p>
+                        <input type="text" id="main-h3-input-first" placeholder="Community Name" maxlength="17" required>
+                        <textarea name="" class="main-form1-text" id="" placeholder="Description" maxlength="252" required></textarea>
+                        <div class="main-btn-box">
+                            <button type="button" id="next1">Next</button>
                         </div>
-                        <div class="main-form2-img-show-sec">
-                            <img src="" alt="">
-                            <span></span>
-                            <!-- r/Rimiadhikary -->
-                        </div>
-                        <div class="main-form2-img-show-third">
-                            <span></span>
-                            <!--   Love encompasses a range of strong and positive emotional and mental states, from the most sublime virtue or good habit, the deepest interpersonal affection, to the simplest pleasure. -->
-                        </div>
+            
                     </div>
-        
-                </form>
-        
-                <form id="main-form3">
-        
-                    <h3 class="main-h3">Select Topics</h3>
-                    <div class="slide-container">
+            
+                    <div id="main-form2">
 
-                        <ul class="main-slidebar">
+            
+                        <h3 class="main-h3">Style Your Community</h3>
+                        <p>Adding visual flair will catch new members attention and help establish your community’s culture! You can update this at any time.</p>
+                        <div class="main-form2-first">
+                            <span style="font-size: 14.5px; display: flex;align-items: center;">Banner</span>
+                            <label class="main-form2-first-file-lable" for="main-form2-first-file">
+                                <svg rpl="" fill="white" height="20" icon-name="image-post-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 4a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm0 4.75a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5Z"></path><path d="M17.375 1H2.625A1.627 1.627 0 0 0 1 2.625v14.75A1.627 1.627 0 0 0 2.625 19h14.75A1.627 1.627 0 0 0 19 17.375V2.625A1.627 1.627 0 0 0 17.375 1ZM2.25 17.375v-2.683L4.9 12.04a2.332 2.332 0 0 1 3.3 0l5.71 5.71H2.625a.375.375 0 0 1-.375-.375Zm15.5 0a.375.375 0 0 1-.375.375h-1.7l-6.6-6.594a3.582 3.582 0 0 0-5.063 0L2.25 12.925v-10.3a.375.375 0 0 1 .375-.375h14.75a.375.375 0 0 1 .375.375v14.75Z"></path><!--?-->
+                                </svg>
+                                <span>Add</span>
+                            </label>
+                            <input type="file" id="main-form2-first-file" placeholder="Last Name" required>
+                        </div>
+    
+                        <div class="main-form2-sec">
+                            <span style="font-size: 14.5px; display: flex;align-items: center;">Profile</span>
+                            <label class="main-form2-sec-file-label" for="main-form2-sec-file">
+                                <svg rpl="" fill="white" height="20" icon-name="image-post-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 4a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm0 4.75a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5Z"></path><path d="M17.375 1H2.625A1.627 1.627 0 0 0 1 2.625v14.75A1.627 1.627 0 0 0 2.625 19h14.75A1.627 1.627 0 0 0 19 17.375V2.625A1.627 1.627 0 0 0 17.375 1ZM2.25 17.375v-2.683L4.9 12.04a2.332 2.332 0 0 1 3.3 0l5.71 5.71H2.625a.375.375 0 0 1-.375-.375Zm15.5 0a.375.375 0 0 1-.375.375h-1.7l-6.6-6.594a3.582 3.582 0 0 0-5.063 0L2.25 12.925v-10.3a.375.375 0 0 1 .375-.375h14.75a.375.375 0 0 1 .375.375v14.75Z"></path><!--?-->
+                                </svg>
+                                <span class="">Add</span>
+                            </label>
+                            <input type="file" id="main-form2-sec-file" placeholder="Last Name" required>
+                        </div>    
+                        
+                        <div class="main-form2-img-show">
+                            <div class="main-form2-img-show-first">
+                                <img src="" alt="">
+                            </div>
+                            <div class="main-form2-img-show-sec">
+                                <img src="" alt="">
+                                <span></span>
+                                <!-- r/Rimiadhikary -->
+                            </div>
+                            <div class="main-form2-img-show-third">
+                                <span></span>
+                                <!--   Love encompasses a range of strong and positive emotional and mental states, from the most sublime virtue or good habit, the deepest interpersonal affection, to the simplest pleasure. -->
+                            </div>
+                        </div>
+            
+                        <div class="main-btn-box">
+                            <button type="button" id="back1">Back</button>
+                            <button type="button" id="next2">Next</button>
+            
+                        </div>
+    
+            
+                    </div>
+            
+                    <div id="main-form3">
 
-                            <li>
-                                <button class="identifier-button" data-target="identifier-body-games">
+            
+                        <h3 class="main-h3">Select Topics</h3>
+                        <div class="slide-container">
+    
+                            <div class="main-slidebar">
+    
+                                <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-games">
+                                <label class="identifier-button" for="main-form3-games">
+    
                                     <svg rpl="" fill="currentColor" height="16" icon-name="topic-videogaming-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M19.929 14.17 18.277 6.6a4.631 4.631 0 0 0-4.52-3.6H5.702a4.623 4.623 0 0 0-4.58 3.908L.034 14.387a3.134 3.134 0 0 0 .735 2.5 3.227 3.227 0 0 0 5.553-1.284l.39-1.635h5.794l.39 1.635A3.2 3.2 0 0 0 16.01 18h.782a3.211 3.211 0 0 0 3.123-2.444c.109-.455.114-.929.015-1.386Zm-1.6 1.85a1.964 1.964 0 0 1-1.54.73h-.781a1.947 1.947 0 0 1-1.9-1.453l-.63-2.476H5.74L5.11 15.3a1.947 1.947 0 0 1-1.9 1.453 1.974 1.974 0 0 1-1.5-.678 1.862 1.862 0 0 1-.443-1.506l1.09-7.481A3.366 3.366 0 0 1 5.7 4.25h8.062a3.373 3.373 0 0 1 3.3 2.614l1.65 7.573a1.877 1.877 0 0 1-.383 1.583h-.001Z"></path><path d="M6.256 6.212h-1.25v1.776h-1.73v1.25h1.73v1.622h1.25V9.238h1.73v-1.25h-1.73V6.212Z"></path><path d="M11.82 8.81a1 1 0 1 0 1.71.71 1.001 1.001 0 0 0-.3-.71 1.034 1.034 0 0 0-1.41 0Z"></path><path d="M15.23 6.85a.875.875 0 0 0-.32-.22c-.246-.1-.522-.1-.77 0a.875.875 0 0 0-.32.22.975.975 0 0 0 0 1.41 1 1 0 0 0 1.41 0 1.03 1.03 0 0 0 .22-1.09.877.877 0 0 0-.22-.32Z"></path>
                                     </svg>
-                                    Games
-                                </button>
-                            </li>
-                            <li>
-                                <button class="identifier-button" data-target="identifier-body-technologies">
+                                    <span>Games</span>
+    
+                                </label>
+    
+                                <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-technologies">
+                                <label class="identifier-button" for="main-form3-technologies">
+    
                                     <svg rpl="" fill="currentColor" height="16" icon-name="topic-technology-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M11.875 7h-3.75A1.127 1.127 0 0 0 7 8.125v3.75A1.127 1.127 0 0 0 8.125 13h3.75A1.127 1.127 0 0 0 13 11.875v-3.75A1.127 1.127 0 0 0 11.875 7Zm-.125 4.75h-3.5v-3.5h3.5v3.5Z"></path><path d="M19 7.625v-1.25h-2v-1.75A1.627 1.627 0 0 0 15.375 3h-1.75V1h-1.25v2h-1.75V1h-1.25v2h-1.75V1h-1.25v2h-1.75A1.627 1.627 0 0 0 3 4.625v1.75H1v1.25h2v1.75H1v1.25h2v1.75H1v1.25h2v1.75A1.627 1.627 0 0 0 4.625 17h1.75v2h1.25v-2h1.75v2h1.25v-2h1.75v2h1.25v-2h1.75A1.627 1.627 0 0 0 17 15.375v-1.75h2v-1.25h-2v-1.75h2v-1.25h-2v-1.75h2Zm-3.25 7.75a.375.375 0 0 1-.375.375H4.625a.375.375 0 0 1-.375-.375V4.625a.375.375 0 0 1 .375-.375h10.75a.375.375 0 0 1 .375.375v10.75Z"></path>
                                     </svg>
-                                    Technologies
-                                </button>
-                            </li>
-                            <li>
-                                <button class="identifier-button" data-target="identifier-body-movies">
+                                    <span>Technologies</span>                                
+                                </label>
+    
+                                <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-movies">
+                                <label class="identifier-button" for="main-form3-movies">
+    
                                     <svg rpl="" fill="currentColor" height="16" icon-name="topic-movies-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M18.375 8H6.45L17.3 5.093a.625.625 0 0 0 .44-.765L16.709.464a.62.62 0 0 0-.522-.459.616.616 0 0 0-.244.017L.488 4.162a.624.624 0 0 0-.441.766l.969 3.618A.527.527 0 0 0 1 8.625v8.75A2.629 2.629 0 0 0 3.625 20h12.75A2.628 2.628 0 0 0 19 17.375v-8.75A.625.625 0 0 0 18.375 8ZM8.06 6.275l-2.75.737v-2.7a.61.61 0 0 0-.028-.135l2.778-.744v2.842Zm1.25-3.182 2.75-.737V5.2l-2.75.737V3.093Zm7.063.954-3.063.82V2.022l2.35-.63.713 2.656ZM4.06 4.5v2.807c0 .013.006.025.007.038l-1.94.52-.712-2.657L4.06 4.5ZM17.75 17.375a1.377 1.377 0 0 1-1.375 1.375H3.625a1.377 1.377 0 0 1-1.375-1.375V9.25h15.5v8.125Z"></path>
                                     </svg>
-                                    Movies
-                                </button>
-                            </li>
-                            <li>
-                                <button class="identifier-button" data-target="identifier-body-travel">
+                                    <span>Movies</span>
+                                    
+                                </label>
+    
+                                <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-travel">
+                                <label class="identifier-button" for="main-form3-travel">
+    
                                     <svg rpl="" fill="currentColor" height="16" icon-name="topic-travel-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
                                         <path d="m6.447 8.472-.309.372-.479.575L1.75 5.548a.626.626 0 0 1-.015-.87A3.268 3.268 0 0 1 5.16 3.9l3.867 1.59c-.292.323-.57.657-.857.984L4.711 5.068a1.976 1.976 0 0 0-1.565.106l3.301 3.298Zm.344 10.833a1.123 1.123 0 0 0 .815-.722 4.965 4.965 0 0 0-.129-3.446l2.123-1.75 5.328 5.323.442-.442a3.265 3.265 0 0 0 .747-3.425l-2.126-5.221a122.4 122.4 0 0 0 2.568-2.443 12.172 12.172 0 0 0 2.623-3.9A1.875 1.875 0 0 0 16.7.828l-.055.024a12.167 12.167 0 0 0-3.74 2.553l-.172.17c-1.7 1.7-3.339 3.5-4.873 5.343l-3 3.607a4.959 4.959 0 0 0-3.448-.13A1.128 1.128 0 0 0 1 14.255L5.746 19a1.122 1.122 0 0 0 1.045.305Zm-2.42-5.63a1.11 1.11 0 0 0 1.387-.27l3.067-3.688a76.94 76.94 0 0 1 4.8-5.257l.172-.17A10.9 10.9 0 0 1 17.148 2l.057-.024a.606.606 0 0 1 .686.127.614.614 0 0 1 .138.69 10.909 10.909 0 0 1-2.354 3.5c-.722.723-2.06 1.97-2.6 2.473a1.111 1.111 0 0 0-.274 1.245l2.15 5.279a2 2 0 0 1-.095 1.579L10.4 12.422a1.123 1.123 0 0 0-1.51-.072L6.6 14.24a1.113 1.113 0 0 0-.272 1.392c.31.742.366 1.566.161 2.344l-4.464-4.463a3.655 3.655 0 0 1 2.345.163Z"></path>
                                     </svg>
-                                    Travel
-                                </button>
-                            </li>
-                            <li>
-                                <button class="identifier-button" data-target="identifier-body-music">
+                                    <span>Travel</span>
+                                    
+                                </label>
+    
+    
+                                <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-music">
+                                <label class="identifier-button" for="main-form3-music">
+    
                                     <svg rpl="" fill="currentColor" height="16" icon-name="topic-music-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M4.741 10.094h-.124A1.587 1.587 0 0 0 3 11.645v4.708a1.582 1.582 0 0 0 1.617 1.541h.124a2.543 2.543 0 0 0 2.609-2.467v-2.866a2.544 2.544 0 0 0-2.609-2.467ZM6.1 15.427a1.3 1.3 0 0 1-1.359 1.217h-.124a.336.336 0 0 1-.367-.291v-4.708a.344.344 0 0 1 .367-.3h.124A1.3 1.3 0 0 1 6.1 12.561v2.866ZM0 10.941h1.25v5.874H0v-5.874Zm17.75-.841v-.623A7.51 7.51 0 0 0 10 2.25a7.511 7.511 0 0 0-7.75 7.227v.623H1v-.623A8.76 8.76 0 0 1 10 1a8.76 8.76 0 0 1 9 8.477v.623h-1.25Zm-2.367-.008h-.124a2.544 2.544 0 0 0-2.609 2.467v2.866a2.543 2.543 0 0 0 2.609 2.467h.124A1.582 1.582 0 0 0 17 16.353v-4.708a1.587 1.587 0 0 0-1.617-1.551v-.002Zm.367 6.259a.336.336 0 0 1-.367.291h-.124a1.3 1.3 0 0 1-1.359-1.215v-2.866a1.3 1.3 0 0 1 1.359-1.217h.124a.344.344 0 0 1 .367.3v4.707Zm4.25-5.41v5.874h-1.25v-5.874H20Z"></path>
                                     </svg>
-                                    Music
-                                </button>
-                            </li>
-                            <li>
-                                <button class="identifier-button" data-target="identifier-body-education">
+                                    <span>Music</span>
+                                    
+                                </label>
+    
+                                <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-education">
+                                <label class="identifier-button" for="main-form3-education">
+     
                                     <svg rpl="" fill="currentColor" height="16" icon-name="topic-reading-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M19.375 2h-7.292A2.688 2.688 0 0 0 10 3a2.688 2.688 0 0 0-2.083-1H.625A.625.625 0 0 0 0 2.625v14.75A.625.625 0 0 0 .625 18h7.917v-1.25H1.25V3.25h6.667a1.465 1.465 0 0 1 1.458 1.469v11.093h1.25V4.719a1.465 1.465 0 0 1 1.458-1.469h6.667v13.5h-6.667a2.64 2.64 0 0 0-2.708 2.625V20h1.25v-.625A1.388 1.388 0 0 1 12.083 18h7.292a.624.624 0 0 0 .625-.625V2.625A.625.625 0 0 0 19.375 2Z"></path>
                                     </svg>
-                                    Education
-                                </button>
-                            </li>
-                            <li>
-                                <button class="identifier-button" data-target="identifier-body-sport">
+                                    <span>Education</span>
+                                    
+                                </label>
+    
+                                <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-sport">
+                                <label class="identifier-button" for="main-form3-sport">
+    
                                     <svg rpl="" fill="currentColor" height="16" icon-name="topic-sports-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0ZM4.124 16.465l1.259-3.007a9.906 9.906 0 0 0 .261-6.964l-1.186.4a8.656 8.656 0 0 1-.228 6.087l-1.046 2.5a8.75 8.75 0 1 1 13.632 0l-1.046-2.5a8.653 8.653 0 0 1-.228-6.086l-1.186-.4a9.906 9.906 0 0 0 .261 6.964l1.259 3.007a8.7 8.7 0 0 1-11.752-.001Z"></path>
                                     </svg>
-                                    Sport
-                                </button>
-                            </li>
-                            <li>
-                                <button class="identifier-button" data-target="identifier-body-news">
+                                    <span>Sport</span>
+                                    
+                                </label>
+    
+                                <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-news">
+                                <label class="identifier-button" for="main-form3-news">
+    
                                     <svg rpl="" fill="currentColor" height="16" icon-name="topic-news-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M18.875 2H3.1v13.87a.9.9 0 0 1-.925.88.9.9 0 0 1-.925-.88V3H0v12.87a2.149 2.149 0 0 0 2.081 2.121V18h16.794A1.126 1.126 0 0 0 20 16.874V3.126A1.126 1.126 0 0 0 18.875 2Zm-.125 14.75H4.15c.13-.275.199-.576.2-.88V3.25h14.4v13.5ZM13.029 9h3.849v1.25h-3.849V9Zm-6.911 4.25V12H10v1.25H6.118ZM13.029 12h3.849v1.25h-3.849V12Zm3.847-4.75H6.118V6h10.758v1.25Zm-6.876 3H6.118V9H10v1.25Z"></path>
                                     </svg>
-                                    News & Politics
-                                </button>
-                            </li>
-                            <li>
-                                <button class="identifier-button" data-target="identifier-body-business">
+                                    <span>News & Politics</span>
+                                    
+                                </label>
+    
+                                <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-business">
+                                <label class="identifier-button" for="main-form3-business">
+    
                                     <svg rpl="" fill="currentColor" height="16" icon-name="topic-business-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M2.25 19H1v-4.5h1.25V19Zm4-7H5v7h1.25v-7Zm8 0H13v7h1.25v-7Zm4-5H17v12h1.25V7ZM6 7.557l3.206 3.2a1.126 1.126 0 0 0 1.59 0l8.647-8.646-.884-.884L10 9.79l-3.2-3.2a1.153 1.153 0 0 0-1.59 0L.559 11.231l.884.884L6 7.557Zm4.25 6.943H9V19h1.25v-4.5Z"></path>
                                     </svg>
-                                    Business & Finance
-                                </button>
-                            </li>
-
-                        </ul>
-                            
+                                    <span>Business & Finance</span>
+                                    
+                                </label>
+    
+                            </div>  
+                                
+                        </div>
+            
+                        <div class="main-btn-box">
+                            <button type="button" id="back2">Back</button>
+                            <button type="submit" value="submit">Submit</button>
+            
+                        </div>
+            
                     </div>
-        
-                    <div class="main-btn-box">
-                        <button type="button" id="back2">Back</button>
-                        <button type="submit" value="submit">Submit</button>
-        
-                    </div>
-        
                 </form>
+        
         
                 <div class="main-step-row">
                     <div id="main-progress" style="width: 200px;"></div>
@@ -438,7 +461,6 @@
         </main>
 
         <script src="{{asset('js/create_community.js')}}"></script>
-
     </body>
 
 </html>
