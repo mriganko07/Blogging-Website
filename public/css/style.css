@@ -1127,6 +1127,11 @@ transition: all 0.3s ease;
   color: white;
 }
 
+
+.user_name{
+  margin-left: -18px;
+}
+
 /*----------------------------------------*\
   # SECTION POST-WALL 1
 \*-----------------------------------------*/

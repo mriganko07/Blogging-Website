@@ -19,7 +19,7 @@ Route::get('/', function () {
   #LOGIN & SIGNUP
 \*---------------------------------*/
 
-Route::get('/registration', [LoginController::class, 'registration']);
+Route::get('/registration', [LoginController::class, 'registration'])->name('register');
 
 Route::post('/register', [LoginController::class, 'signUp'])->name('register.store');
 
@@ -53,6 +53,8 @@ Route::get('/adminuser', [AdminController::class, 'adminuser']);
 \*-------------------------*/
 
 Route::get('/createcommunity', [CommunityController::class, 'createcommunity']);
+
+Route::post('/storecommunity', [CommunityController::class, 'store'])->name('store.community');
 
 Route::get('/community', [CommunityController::class, 'community']);
 

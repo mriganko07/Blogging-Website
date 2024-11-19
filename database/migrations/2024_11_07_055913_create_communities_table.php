@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string('community_description');
             $table->string('community_pic');
             $table->string('community_coverpic');
-            $table->integer('community_total_member');
-            $table->integer('community_total_posts');
-            $table->enum('category', ["games", "technologies", "movies", "travel", "music", "education", "sport", "news_politics", "business_finance"])->nullable();
-            $table->integer('community_suspend');
+            $table->integer('community_total_member')->nullable();
+            $table->integer('community_total_posts')->nullable();
+            $table->enum('category', ["games", "technologies", "movies", "travel", "music", "education", "sport", "news_politics", "business_finance"]);
+            $table->integer('community_suspend')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             // $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
             $table->timestamps();

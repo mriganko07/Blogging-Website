@@ -92,7 +92,6 @@
         </div>
 
         <div class="right-div">
-            <!-- Right side picture -->
             <img src="/Pictures/image copy.png" alt="">
         </div>
     </div>

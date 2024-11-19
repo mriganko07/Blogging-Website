@@ -39,6 +39,23 @@ class LoginController extends Controller
     }
 
 
+    // public function login(Request $request)
+    // {
+    //     $request->validate([
+    //         'email' => 'required|email',
+    //         'password' => 'required',
+    //     ]);
+
+    //     $user = User::where("email", $request->email)->first();
+
+    //     if ($user && Hash::check($request->password, $user->password)) {
+    //         $request->session()->put('username', $user->user_name); 
+    //         return redirect('/')->with('success', 'Logged in successfully!');
+    //     } else {
+    //         return redirect()->back()->with('error', 'Invalid email or password');
+    //     }
+    // }
+
     public function login(Request $request)
     {
         $request->validate([
@@ -49,8 +66,9 @@ class LoginController extends Controller
         $user = User::where("email", $request->email)->first();
 
         if ($user && Hash::check($request->password, $user->password)) {
-            $request->session()->put('username', $user->user_name); 
-            return redirect('/')->with('success', 'Logged in successfully!');
+            $request->session()->put('user', $user); 
+            $request->session()->put('user_id', $user->user_id); 
+            return redirect('/'); 
         } else {
             return redirect()->back()->with('error', 'Invalid email or password');
         }
@@ -59,13 +77,13 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         $request->session()->forget('user');  
-        $request->session()->forget('user_name');  
+        $request->session()->forget('user_id');  
 
         Auth::logout();  
 
         $request->session()->invalidate(); 
         $request->session()->regenerateToken();  
 
-        return redirect()->route('signUp')->with('success', 'Logged out successfully.');
+        return redirect()->route('register')->with('success', 'Logged out successfully.');
     }
 }

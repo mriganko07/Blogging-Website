@@ -140,7 +140,7 @@
                             <div class="section-dropdown3-profile-text">
                                 <button>View Profile</button>
                                 {{-- <p>@username_agent07</p> --}}
-                                <p>
+                                <p class="user_name">
                                     @if(session('user'))
                                         {{ session('user')->user_name }}
                                     @else
@@ -168,7 +168,7 @@
                                 </span>
                         </div> --}}
 
-                        <div class="section-dropdown3-logout">
+                        {{-- <div class="section-dropdown3-logout">
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf
                                 <button type="submit" style="background: none; border: none; cursor: pointer;">
@@ -180,7 +180,8 @@
                                     </span>
                                 </button>
                             </form>
-                        </div>
+                        </div> --}}
+                        
 
                         
 
@@ -189,9 +190,9 @@
                 </div>
             </div>
         </header> 
-        
+            
         <!-- 
-         - SECTION SIDEBAR
+        - SECTION SIDEBAR
         -->
 
          <nav class="sidebar" id="sidebar">
@@ -269,10 +270,19 @@
                      </i>
                   </button>
    
-                  <button class="sidebar__link">
+                  {{-- <button class="sidebar__link">
                     <i class="fa-solid fa-right-from-bracket"></i>
                      <span>Log Out</span>
-                  </button>
+                  </button> --}}
+
+                  <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="sidebar__link">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                         <span>Log Out</span>
+                      </button>
+                  </form>
+
                </div>
             </div>
          </nav>
@@ -698,8 +708,6 @@
                 </div>   
 
             </div>
-
-
          </main>
 
 
