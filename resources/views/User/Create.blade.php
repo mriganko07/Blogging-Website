@@ -268,6 +268,13 @@
 
                         <div class="create-post-community-community-bar-community">
 
+                            <h3>Your Profile</h3>
+
+                            <p class="create-post-community-community-bar-community-para"  onclick="selectCommunity('r/adhiphalder')">
+                                <img src="https://styles.redditmedia.com/t5_4imbec/styles/profileIcon_asf6w9eqj1d91.jpeg?width=128&height=128&frame=1&auto=webp&crop=128:128,smart&s=7ee7532de7781e287649c54d67a8f82e35530bdf" alt="">
+                                <span>r/adhiphalder</span>
+                            </p>
+
                             <h3>Your Community</h3>
 
                             <p class="create-post-community-community-bar-community-para"  onclick="selectCommunity('r/IndianStockMarket')">
