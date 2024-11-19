@@ -26,6 +26,24 @@
     --smaller-font-size: .813rem;
   }
 }
+::-webkit-scrollbar {
+  width: 8px; 
+  height: 8px; 
+}
+
+::-webkit-scrollbar-track {
+  background-color: #1A1A1B; 
+  border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #787C7E; 
+  border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #939597; 
+}
 
 *{
   padding: 0;
