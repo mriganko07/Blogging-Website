@@ -1020,8 +1020,8 @@
                 <div class="section-item">
                     <div class="settings-img">
                         <img src="https://styles.redditmedia.com/t5_4imbec/styles/profileIcon_asf6w9eqj1d91.jpeg?width=256&amp;height=256&amp;frame=1&amp;auto=webp&amp;crop=256:256,smart&amp;s=3bf3f696edafbc8d35a5bcda5ecb2b61e01db7f0" alt="">
+                        <p>adhiphalder</p>
                     </div>
-                    <p>adhiphalder</p>
                     <a href="">
                         <p>Edit</p>
                     </a>
