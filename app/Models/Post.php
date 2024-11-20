@@ -10,5 +10,5 @@ class Post extends Model
     use HasFactory;
 
     protected $table = "posts";
-    protected $primarykey = "post_id";
+    protected $primaryKey = "post_id";
 }
