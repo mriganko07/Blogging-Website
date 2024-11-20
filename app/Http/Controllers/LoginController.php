@@ -86,4 +86,8 @@ class LoginController extends Controller
 
         return redirect()->route('register')->with('success', 'Logged out successfully.');
     }
+
+    public function forgot() {
+        return view('User.Forgot');
+    }
 }

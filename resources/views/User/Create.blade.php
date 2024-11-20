@@ -315,7 +315,7 @@
                 <div class="create-post-form">
                     <form action="" method="get">
                         <div class="form-one">
-                            <input type="text" name="" id="" class="create-post-title" style="margin-left: 0px;" placeholder="Title" required>
+                            <input type="text" name="title" id="" class="create-post-title" style="margin-left: 0px;" placeholder="Title" required>
                         </div>
                         <div class="form-two">
                             <textarea name="" id="" class="create-post-body" required placeholder="Body"></textarea>
@@ -334,6 +334,7 @@
                             <button class="form-four-button" type="submit">Post</button>
                         </div>
                     </form>
+                    
                 </div>
                 
             </div>

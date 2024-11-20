@@ -27,7 +27,7 @@ Route::post('/login', [LoginController::class, 'login'])->name('login.process');
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/forgot', [UserController::class, 'forgot']);
+Route::get('/forgot', [LoginController::class, 'forgot']);
 
 
 
@@ -40,9 +40,13 @@ Route::get('/adminlogin', [AdminController::class, 'adminlogin']);
 
 Route::get('/admincommunity', [AdminController::class, 'admincommunity']);
 
+Route::get('/vcommunity', [AdminController::class, 'viewcommunity']);
+
 Route::get('/admincontent', [AdminController::class, 'admincontent']);
 
 Route::get('/adminpost', [AdminController::class, 'adminpost']);
+
+Route::get('/vpost', [AdminController::class, 'viewpost']);
 
 Route::get('/adminuser', [AdminController::class, 'adminuser']);
 
@@ -61,6 +65,8 @@ Route::get('/community', [CommunityController::class, 'community']);
 
 
 
+
+
 /*-------------*\
   #USER
 \*--------------*/
@@ -69,12 +75,11 @@ Route::get('/comment', [UserController::class, 'comment']);
 
 Route::get('/create', [UserController::class, 'create']);
 
+Route::post('/posts/store', [UserController::class, 'storePost'])->name('posts.store');
+
 Route::get('/explore', [UserController::class, 'explore']);
 
 Route::get('/editprofile', [UserController::class, 'editprofile']);
 
 Route::get('/profile', [UserController::class, 'profile']);
 
-Route::get('/vcommunity', [UserController::class, 'viewcommunity']);
-
-Route::get('/vpost', [UserController::class, 'viewpost']);
