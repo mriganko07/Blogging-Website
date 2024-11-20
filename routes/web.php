@@ -6,8 +6,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CommunityController;
-use App\Models\User;
 use App\Models\Communities;
+use App\Models\User;
+use App\Models\Post;
 
 
 
@@ -73,13 +74,13 @@ Route::get('/community', [CommunityController::class, 'community']);
 
 Route::get('/comment', [UserController::class, 'comment']);
 
-Route::get('/create', [UserController::class, 'create']);
+Route::get('/create', [UserController::class, 'create'])->name('create');
 
-Route::post('/posts/store', [UserController::class, 'storePost'])->name('posts.store');
+Route::post('/create', [UserController::class, 'storePost'])->name('post.store');
 
 Route::get('/explore', [UserController::class, 'explore']);
 
 Route::get('/editprofile', [UserController::class, 'editprofile']);
 
-Route::get('/profile', [UserController::class, 'profile']);
+Route::get('/profile', [UserController::class, 'profile'])->name('profile');
 

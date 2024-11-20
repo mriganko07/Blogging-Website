@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Post;
 
 class UserController extends Controller
 {
-
 
 
     public function comment() {
@@ -19,40 +19,35 @@ class UserController extends Controller
         return view('User.Create');
     }
 
+
     public function storePost(Request $request)
     {
-        // Validate the incoming request data
         $request->validate([
             'post_caption' => 'required|string|max:255',
             'post_desc' => 'required|string',
             'post_img' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        // Create a new Post instance
-        $post = new Post;
-        $post->post_caption = $request->post_caption;
-        $post->post_desc = $request->post_desc;
-
-        // Handle image upload if provided
+        $postImagePath = null;
         if ($request->hasFile('post_img')) {
-            $imageName = time() . '.' . $request->post_img->extension();
-            $request->post_img->move(public_path('uploads/posts'), $imageName);
-            $post->post_img = 'uploads/posts/' . $imageName;
+            $postImagePath = $request->file('post_img')->store('posts', 'public'); 
         }
 
-        // Set additional default values (e.g., user_id, community_id)
-        $post->user_id = auth()->id(); // Assuming user authentication
-        $post->community_id = null;   // Set a community ID if applicable
-        $post->up_votes = 0;
-        $post->down_votes = 0;
-        $post->comments = 0;
-        $post->share = 0;
+        $userId = session('user_id');
 
-        // Save the post to the database
-        $post->save();
+        Post::create([
+            'post_caption' => $request->post_caption,
+            'post_desc' => $request->post_desc,
+            'post_img' => $postImagePath,
+            'user_id' => $userId, 
+            'community_id' => $request->community_id, 
+            'up_votes' => 0,
+            'down_votes' => 0,
+            'comments' => 0,
+            'share' => 0,
+        ]);
 
-        // Redirect or return a response
-        return redirect()->back()->with('success', 'Post created successfully!');
+        return redirect()->route('profile')->with('success', 'Post created successfully!');
     }
 
     public function explore() {
@@ -60,7 +55,10 @@ class UserController extends Controller
     }
 
     public function profile() {
-        return view('User.Profile');
+        // return view('User.Profile');
+        $userId = session('user_id');
+        $post = Post::where('user_id', $userId)->latest()->first(); 
+        return view('User.Profile', compact('post')); 
     }
 
     public function editprofile(){

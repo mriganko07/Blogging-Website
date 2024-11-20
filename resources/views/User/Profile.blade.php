@@ -143,7 +143,14 @@
                             <img src="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_0.png" alt="">
                             <div class="section-dropdown3-profile-text">
                                 <button>View Profile</button>
-                                <p>@username_agent07</p>
+                                {{-- <p>@username_agent07</p> --}}
+                                <p class="user_name">
+                                    @if(session('user'))
+                                        {{ session('user')->user_name }}
+                                    @else
+                                        Guest
+                                    @endif
+                                </p>
                             </div>
                         </div>
 
@@ -156,14 +163,14 @@
                             </span>
                         </div>
 
-                        <div class="section-dropdown3-logout">
+                        {{-- <div class="section-dropdown3-logout">
                             <span>
                                 <svg rpl="" fill="currentColor" height="20" icon-name="logout-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11.991 10.625H1v-1.25h10.991l-1.933-1.933.884-.884 3 3a.624.624 0 0 1 0 .884l-3 3-.884-.884 1.933-1.933ZM15.375 1h-9.75A2.629 2.629 0 0 0 3 3.625v.792h1.25v-.792A1.377 1.377 0 0 1 5.625 2.25h9.75a1.377 1.377 0 0 1 1.375 1.375v12.75a1.377 1.377 0 0 1-1.375 1.375h-9.75a1.377 1.377 0 0 1-1.375-1.375v-.792H3v.792A2.63 2.63 0 0 0 5.625 19h9.75A2.63 2.63 0 0 0 18 16.375V3.625A2.63 2.63 0 0 0 15.375 1Z"></path>
                                 </svg>
                                 <span>Log Out</span>
                             </span>
-                        </div>
+                        </div> --}}
                     </div>
 
                 </div>
@@ -253,11 +260,20 @@
                          <span>Theme</span>
                       </i>
                    </button>
+
+                   <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="sidebar__link">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <span>Log Out</span>
+                        </button>
+                  </form>
     
-                   <button class="sidebar__link">
+                   {{-- <button class="sidebar__link">
                      <i class="fa-solid fa-right-from-bracket"></i>
                       <span>Log Out</span>
-                   </button>
+                   </button> --}}
+                  
                 </div>
             </div>
 
@@ -270,9 +286,13 @@
                 <div class="profile-img3">
                     <img src="https://styles.redditmedia.com/t5_4imbec/styles/profileIcon_asf6w9eqj1d91.jpeg?width=256&height=256&frame=1&auto=webp&crop=256:256,smart&s=3bf3f696edafbc8d35a5bcda5ecb2b61e01db7f0" alt="">
                 </div>
-                <div class="profile-info1">
+                {{-- <div class="profile-info1">
                     <h1>Adhip Halder</h1> 
                     <p>r/adhiphalder</p>
+                </div> --}}
+                <div class="profile-info1">
+                    <h1>{{ session('user')->name }}</h1> 
+                    <p>r/{{ session('user')->user_name }}</p>
                 </div>
             </div>
 
@@ -323,12 +343,14 @@
                 <div class="post-wall">
                     <div class="username">
                         <div class="profile-img2"></div>
-                        <span class="username-hover">adhiphalder</span>
-                        <p> • 22 hr. ago</p>
+                        <span class="username-hover">{{ session('user')->user_name }}</span>
+                        {{-- <p> • 22 hr. ago</p> --}}
+                        <p> • {{ $post->created_at->diffForHumans() }}</p>
 
                     </div>
                     
-                    <h3>This is a title</h3>
+                    {{-- <h3>This is a title</h3> --}}
+                    <h3>{{ $post->post_caption }}</h3>
 
                     <div class="post-img">
                         <style>
@@ -339,14 +361,17 @@
                                 left: 0;
                                 height: 100%;
                                 width: 100%;
-                                background: url('images/4.jpeg') no-repeat center;
+                                /* background: url('images/4.jpeg') no-repeat center; */
+                                /* background: url('{{ asset($post->post_img) }}') no-repeat center; */
+                                background: url('{{ asset("storage/" . $post->post_img) }}') no-repeat center;
                                 background-size: cover;
                                 filter: blur(20px); 
                                 z-index: 1; 
                             }
                         </style>
 
-                        <img src="/Images/4.jpeg" alt="">
+                        {{-- <img src="/Images/4.jpeg" alt=""> --}}
+                        <img src="{{ asset('storage/' . $post->post_img) }}" alt="Post Image">
                     </div>
 
                     <!-- 

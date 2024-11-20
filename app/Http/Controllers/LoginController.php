@@ -38,24 +38,6 @@ class LoginController extends Controller
         return redirect('/')->with('success', 'Sign up successful!');
     }
 
-
-    // public function login(Request $request)
-    // {
-    //     $request->validate([
-    //         'email' => 'required|email',
-    //         'password' => 'required',
-    //     ]);
-
-    //     $user = User::where("email", $request->email)->first();
-
-    //     if ($user && Hash::check($request->password, $user->password)) {
-    //         $request->session()->put('username', $user->user_name); 
-    //         return redirect('/')->with('success', 'Logged in successfully!');
-    //     } else {
-    //         return redirect()->back()->with('error', 'Invalid email or password');
-    //     }
-    // }
-
     public function login(Request $request)
     {
         $request->validate([

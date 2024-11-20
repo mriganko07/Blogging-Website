@@ -10,6 +10,6 @@ class Admin extends Model
     use HasFactory;
 
     protected $table = "communities";
-    protected $primarykey = "community_id";
+    protected $primaryKey = "community_id";
 
 }

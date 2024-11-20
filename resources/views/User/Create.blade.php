@@ -121,7 +121,14 @@
                             <img src="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_0.png" alt="">
                             <div class="section-dropdown3-profile-text">
                                 <button>View Profile</button>
-                                <p>@username_agent07</p>
+                                {{-- <p>@username_agent07</p> --}}
+                                <p class="user_name">
+                                    @if(session('user'))
+                                        {{ session('user')->user_name }}
+                                    @else
+                                        Guest
+                                    @endif
+                                </p>
                             </div>
                         </div>
 
@@ -134,14 +141,14 @@
                             </span>
                         </div>
 
-                        <div class="section-dropdown3-logout">
+                        {{-- <div class="section-dropdown3-logout">
                             <span>
                                 <svg rpl="" fill="currentColor" height="20" icon-name="logout-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11.991 10.625H1v-1.25h10.991l-1.933-1.933.884-.884 3 3a.624.624 0 0 1 0 .884l-3 3-.884-.884 1.933-1.933ZM15.375 1h-9.75A2.629 2.629 0 0 0 3 3.625v.792h1.25v-.792A1.377 1.377 0 0 1 5.625 2.25h9.75a1.377 1.377 0 0 1 1.375 1.375v12.75a1.377 1.377 0 0 1-1.375 1.375h-9.75a1.377 1.377 0 0 1-1.375-1.375v-.792H3v.792A2.63 2.63 0 0 0 5.625 19h9.75A2.63 2.63 0 0 0 18 16.375V3.625A2.63 2.63 0 0 0 15.375 1Z"></path>
                                 </svg>
                                 <span>Log Out</span>
                             </span>
-                        </div>
+                        </div> --}}
                     </div>
 
                 </div>
@@ -228,10 +235,18 @@
                      </i>
                   </button>
    
-                  <button class="sidebar__link">
+                  {{-- <button class="sidebar__link">
                     <i class="fa-solid fa-right-from-bracket"></i>
                      <span>Log Out</span>
-                  </button>
+                  </button> --}}
+
+                  <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="sidebar__link">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                         <span>Log Out</span>
+                      </button>
+                  </form>
                </div>
             </div>
          </nav>
@@ -313,15 +328,40 @@
                 </div>
 
                 <div class="create-post-form">
-                    <form action="" method="get">
+                    {{-- <form action="" method="get">
                         <div class="form-one">
-                            <input type="text" name="title" id="" class="create-post-title" style="margin-left: 0px;" placeholder="Title" required>
+                            <label for="create-post-title">Title<span class="required-star">*</span></label>
+                            <input type="text" name="" id="create-post-title" class="create-post-title" style="margin-left: 0px;" placeholder="" required>
                         </div>
                         <div class="form-two">
                             <textarea name="" id="" class="create-post-body" required placeholder="Body"></textarea>
                         </div>
                         <div class="form-three">
                             <input type="file" class="" id="create-post-form-img" style="display: none;" accept="image/*">
+                            <label class="create-post-form-img-lable" for="create-post-form-img">
+                                <span id="upload-label">Upload Image</span>
+                                <svg rpl="" fill="currentColor" height="16" icon-name="upload-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m10.513 5.63 3.929 3.928-.884.884-2.933-2.933V19h-1.25V7.51l-2.933 2.932-.884-.884L9.67 5.446l.589-.029.254.212Zm5.859-1.482A6.876 6.876 0 0 0 10 0a6.876 6.876 0 0 0-6.372 4.148A4.639 4.639 0 0 0 0 8.625a4.716 4.716 0 0 0 4.792 4.625V12A3.465 3.465 0 0 1 1.25 8.625 3.412 3.412 0 0 1 4.189 5.31l.364-.06.123-.35A5.607 5.607 0 0 1 10 1.25a5.607 5.607 0 0 1 5.324 3.65l.123.348.364.06a3.412 3.412 0 0 1 2.939 3.317A3.465 3.465 0 0 1 15.208 12v1.25A4.716 4.716 0 0 0 20 8.625a4.639 4.639 0 0 0-3.628-4.477Z"></path>
+                                </svg>
+                            </label>
+                            <div id="image-preview"></div>
+                        </div>
+                        <div class="form-four">
+                            <button class="form-four-button" type="submit">Post</button>
+                        </div>
+                    </form> --}}
+
+                    <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-one">
+                            <label for="create-post-title">Title<span class="required-star">*</span></label>
+                            <input type="text" name="post_caption" id="create-post-title" class="create-post-title" style="margin-left: 0px;" placeholder="" required>
+                        </div>
+                        <div class="form-two">
+                            <textarea name="post_desc" id="" class="create-post-body" required placeholder="Body"></textarea>
+                        </div>
+                        <div class="form-three">
+                            <input type="file" name="post_img" class="" id="create-post-form-img" style="display: none;" accept="image/*">
                             <label class="create-post-form-img-lable" for="create-post-form-img">
                                 <span id="upload-label">Upload Image</span>
                                 <svg rpl="" fill="currentColor" height="16" icon-name="upload-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
