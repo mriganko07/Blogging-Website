@@ -1100,6 +1100,19 @@ transition: all 0.3s ease;
   border-radius: 17px;
 }
 
+.section-dropdown3-profile-text{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-right: 18px;
+}
+
+.user_name{
+  max-width: 113px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .section-dropdown3-profile-text button{
   background: none;
   border: none;

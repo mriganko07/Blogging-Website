@@ -120,7 +120,14 @@
                             <img src="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_0.png" alt="">
                             <div class="section-dropdown3-profile-text">
                                 <button>View Profile</button>
-                                <p>@username_agent07</p>
+                                {{-- <p>@username_agent07</p> --}}
+                                <p class="user_name">
+                                    @if(session('user'))
+                                        {{ session('user')->user_name }}
+                                    @else
+                                        Guest
+                                    @endif
+                                </p>
                             </div>
                         </div>
 
@@ -226,10 +233,19 @@
                      </i>
                   </button>
    
-                  <button class="sidebar__link">
+                  {{-- <button class="sidebar__link">
                     <i class="fa-solid fa-right-from-bracket"></i>
                      <span>Log Out</span>
-                  </button>
+                  </button> --}}
+
+                  <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="sidebar__link">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                         <span>Log Out</span>
+                      </button>
+                  </form>
+
                </div>
             </div>
          </nav>
