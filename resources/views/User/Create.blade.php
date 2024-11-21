@@ -185,7 +185,7 @@
                      <h3 class="sidebar__title">COMMUNITIES</h3>
    
                      <div class="sidebar__list">
-                        <a href="#" class="sidebar__link">
+                        <a href="/createcommunity" class="sidebar__link">
                             <i class="fa-solid fa-plus"></i>
                             <span>Create Community </span>
                         </a>
@@ -256,7 +256,9 @@
 
              <div class="create-post">
 
-                <button href="#" class="create-community-button"><i class="fa-solid fa-plus"></i> <span>Create Community</span></button>
+                <a href="/createcommunity">
+                    <button class="create-community-button"><i class="fa-solid fa-plus"></i> <span style="color: white">Create Community</span></button>
+                </a>
 
                 <div class="create-post-header">
                     <h3>Create Post</h3>

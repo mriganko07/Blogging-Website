@@ -1161,6 +1161,15 @@ transition: all 0.3s ease;
 
 }
 
+.post-wall-first-h3{
+  max-width: 855px;
+  max-height: 1.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 25px;
+  margin-top: 10px;
+}
+
 .profile-img2{
   position: relative;
   width: 25px;
@@ -1198,10 +1207,10 @@ transition: all 0.3s ease;
   padding-top: 2.5px;
 }
 
-.post-wall h3{
+/* .post-wall h3{
   margin-left: 25px;
   margin-top: 10px;
-}
+} */
 
 
 /*------------------------------------------------------------*\
@@ -1673,12 +1682,12 @@ left: 55px;
 }
 
 
-.post-wall2 h3{
+/* .post-wall2 h3{
   position: relative;
   margin-left: 25px;
   margin-top: 10px;
   padding-bottom: 8px;
-}
+} */
 
 
 /*------------------------------------------------------------*\
@@ -1906,6 +1915,13 @@ left: 55px;
   margin-top: 10px;
   padding-bottom: 8px;
   width: 855px;
+  max-height: 9rem;
+  overflow: auto;
+  text-overflow: ellipsis;
+}
+
+.post-para::-webkit-scrollbar {
+  width: 4px; 
 }
 
 /*------------------------------------------------------------*\

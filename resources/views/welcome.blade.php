@@ -224,7 +224,7 @@
                      <h3 class="sidebar__title">COMMUNITIES</h3>
    
                      <div class="sidebar__list">
-                        <a href="#" class="sidebar__link">
+                        <a href="/createcommunity" class="sidebar__link">
                             <i class="fa-solid fa-plus"></i>
                             <span>Create Community </span>
                         </a>
@@ -347,7 +347,7 @@
                     </div>
                 </div>
                 
-                <h3>This is a title</h3>
+                <h3 class="post-wall-first-h3">This is a title</h3>
 
                 <div class="post-img">
                     <style>
@@ -495,7 +495,7 @@
                 
                 </div>
                 
-                <h3>Who are you? Without reference to your name, job, culture, hobbies, family and relationships? dhfvshfvshvfskfshfshf   </h3>
+                <h3 class="post-wall-first-h3">Who are you? Without reference to your name, job, culture, hobbies, family and relationships? dhfvshfvshvfskfshfshf   </h3>
 
 
 
@@ -629,7 +629,7 @@
                 
                 </div>
                 
-                <h3>Who are you? Without reference to your name, job, culture, hobbies, family and relationships? dhfvshfvshvfskfshfshf   </h3>
+                <h3 class="post-wall-first-h3">Who are you? Without reference to your name, job, culture, hobbies, family and relationships? dhfvshfvshvfskfshfshf   </h3>
                 <p class="post-para">Ok so I am 30 years old. Turned 30 back in March and I bought myself a PS5 after my 4 shit out finally after 12 years.
 
                     I was excited about all the big games but was pleasantly entertained with Astro Bot. So clever! My kids would watch me play before bed and they just loved it.
