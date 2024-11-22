@@ -19,36 +19,36 @@ class UserController extends Controller
         return view('User.Create');
     }
 
-
     public function storePost(Request $request)
-    {
-        $request->validate([
-            'post_caption' => 'required|string|max:255',
-            'post_desc' => 'required|string',
-            'post_img' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
+{
+    $request->validate([
+        'post_caption' => 'required|string|max:255',
+        'post_desc' => 'required|string',
+        'post_img' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+    ]);
 
-        $postImagePath = null;
-        if ($request->hasFile('post_img')) {
-            $postImagePath = $request->file('post_img')->store('posts', 'public'); 
-        }
+    $postImagePath = null;
 
-        $userId = session('user_id');
-
-        Post::create([
-            'post_caption' => $request->post_caption,
-            'post_desc' => $request->post_desc,
-            'post_img' => $postImagePath,
-            'user_id' => $userId, 
-            'community_id' => $request->community_id, 
-            'up_votes' => 0,
-            'down_votes' => 0,
-            'comments' => 0,
-            'share' => 0,
-        ]);
-
-        return redirect()->route('profile')->with('success', 'Post created successfully!');
+    if ($request->hasFile('post_img')) {
+        $postImagePath = $request->file('post_img')->store('posts', 'public'); 
     }
+
+    $userId = session('user_id');
+
+    Post::create([
+        'post_caption' => $request->post_caption,
+        'post_desc' => $request->post_desc,
+        'post_img' => $postImagePath, 
+        'user_id' => $userId, 
+        'community_id' => $request->community_id, 
+        'up_votes' => 0,
+        'down_votes' => 0,
+        'comments' => 0,
+        'share' => 0,
+    ]);
+
+    return redirect()->route('profile')->with('success', 'Post created successfully!');
+}
 
     public function explore() {
         return view('User.Explore');

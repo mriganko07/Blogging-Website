@@ -247,6 +247,7 @@
                          <span>Log Out</span>
                       </button>
                   </form>
+
                </div>
             </div>
          </nav>

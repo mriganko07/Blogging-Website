@@ -1097,18 +1097,31 @@ transition: all 0.3s ease;
   border-radius: 17px;
 }
 
+.section-dropdown3-profile-text{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-right: 18px;
+}
+
+.user_name{
+  max-width: 113px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .section-dropdown3-profile-text button{
   background: none;
   border: none;
   color: #ffffff;
   font-size: 14px;
   font-weight: 600;
-  margin-right: 50px;
+  /* margin-right: 50px; */
 }
 
 .section-dropdown3-profile-text p{
   color: #ffffff7e;
-  margin-left: -9px;
+  /* margin-left: -9px; */
   font-size: 12px;
   font-weight: 0;
 }
