@@ -435,8 +435,8 @@ Right Side
 
 .post-wall{
   margin-top: 50px;
-  height: 514px;
-  max-height: 620px;
+  height: auto;
+  /* max-height: 620px; */
   width: 750px;
   border: 1px solid #333;
   border-radius: 10px;
@@ -525,9 +525,9 @@ Right Side
 .post-wall2{
     position: relative;
     margin-top: 55px;
-    max-height: 450px;
-    padding-bottom: 10px;
+    /* max-height: 450px; */
     height: auto;
+    padding-bottom: 10px;
     width: 750px;
     border: 1px solid #333;
     border-radius: 10px;
@@ -562,5 +562,6 @@ Right Side
     padding-bottom: 8px;
     font-size: 16px;
     width: 703px;
+    height: auto;
 }
   
