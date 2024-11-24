@@ -696,7 +696,8 @@ transition: all 0.3s ease;
   display: flex;
   flex-wrap: wrap; 
   align-items: center;
-  margin-left: 33px;
+  gap: 9px;
+  /* margin-left: 33px; */
 }
 
 .profile-info span {
@@ -706,7 +707,7 @@ transition: all 0.3s ease;
 
 .profile-info p {
   color: #9fa5b5;
-  margin-top: 5px;
+  /* margin-top: 5px; */
   /* max-width: 250px;  */
   overflow-wrap: break-word; 
 }
@@ -1202,7 +1203,7 @@ transition: all 0.3s ease;
 
 .rightbar {
   width: 300px;
-  position: fixed;
+  position: absolute;
   top: 203px;
   right: 20px;
   background-color: #000000;
@@ -1215,7 +1216,7 @@ transition: all 0.3s ease;
 .rightbar .profile-overview {
   align-items: center;
   gap: 10px;
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
 }
 
 .rightbar .profile-overview img {
@@ -1228,13 +1229,13 @@ transition: all 0.3s ease;
 .rightbar .profile-overview .profile-info {
   flex-grow: 1;
   padding: 16px;
-
+  padding-bottom: 6px;
 }
 
 .profile-stats, .section {
   padding: 16px;
   font-size: 15px;
-  
+  padding-top: 6px;
 
 }
 
@@ -1254,11 +1255,11 @@ transition: all 0.3s ease;
 }
 .name{
   text-align: center;
-  margin-left: -34px;
+  /* margin-left: -34px; */
 }
 .profile-bio{
   font-size: 12px;
-  margin-left: -34px;
+  /* margin-left: -34px; */
 }
 
 .stats{
@@ -1275,19 +1276,20 @@ transition: all 0.3s ease;
 
 .share2 {
   background-color: #1e1e1e;
-  position: relative;
+  /* position: relative; */
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 2;
-  height: 40px;
-  width: 90px;
-  margin-bottom: 15px;
+  height: 36px;
+  width: 83px;
+  /* margin-bottom: 15px; */
+  margin-top: 5px;
   transition: all 200ms linear;
   border-radius: 50px;
   border: none;
-  right: 29px;
-  top: 19px;
+  /* right: 29px;
+  top: 19px; */
   letter-spacing: 1px;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1378,10 +1380,10 @@ transition: all 0.3s ease;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    top: 15px;
-    position: absolute;
-    margin-top: 124px;
-    margin-left: -31px;
+    /* top: 15px;
+    position: absolute; */
+    /* margin-top: 124px; */
+    /* margin-left: -31px; */
 }
 
 .creation p{
@@ -1991,6 +1993,11 @@ transition: all 0.3s ease;
   font-weight: bold;
 }
 
+.profile-info1-p{
+  font-size: 16px;
+  padding-top: 2.5px;
+  max-width: 15rem;
+}
 
 /*------------------------------------------------------------------------*\
   #DROPDOWN7 SHARE OPTION POST-WALL2
