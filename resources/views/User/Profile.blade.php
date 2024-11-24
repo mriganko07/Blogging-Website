@@ -972,7 +972,7 @@
                     <h3 class="name">Adhip Halder</h3>
                     <p class="profile-bio">Those Who Don't Appreciate Life Do Not Deserve Life</p>
 
-                     <div class="share-link-container">
+                    <div class="share-link-container">
                         <button href="#" class="share2" onclick="toggleShareModal()"> <i class="fa-solid fa-share"></i> <span>Share</span></button>
                     </div>
                     
@@ -1016,9 +1016,9 @@
                 <h3>SETTINGS</h3>
                 <div class="section-item">
                     <div class="settings-img">
-                        <img src="https://styles.redditmedia.com/t5_4imbec/styles/profileIcon_asf6w9eqj1d91.jpeg?width=256&amp;height=256&amp;frame=1&amp;auto=webp&amp;crop=256:256,smart&amp;s=3bf3f696edafbc8d35a5bcda5ecb2b61e01db7f0" alt="">
+                        <img src="https://styles.redditmedia.com/t5_4imbec/styles/profileIcon_asf6w9eqj1d91.jpeg?width=256&amp;height=256&amp;frame=1&amp;auto=webp&amp;crop=256:256,smart&amp;s=3bf3f696edafbc8d35a5bcda5ecb2b61e01db7f0" alt=""> 
+                        <p class="settings-img-p" style="margin-top: 0px;">Adhip Halder</p>
                     </div>
-                    <p>Adhip Halder</p>
                     <a href="">
                         <p>Edit</p>
                     </a>
