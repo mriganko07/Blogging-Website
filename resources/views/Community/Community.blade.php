@@ -292,7 +292,7 @@
                     <img src="https://styles.redditmedia.com/t5_4imbec/styles/profileIcon_asf6w9eqj1d91.jpeg?width=256&height=256&frame=1&auto=webp&crop=256:256,smart&s=3bf3f696edafbc8d35a5bcda5ecb2b61e01db7f0" alt="">
                 </div>
                 <div class="profile-info1">
-                    <h1>r/adhiphader</h1> 
+                    <h1>r/adhiphalder</h1> 
                     <!-- <p>r/adhiphalder</p> -->
                 </div>
                 <button href="#" class="create2"><i class="fa-solid fa-plus"></i> <span>Create Post</span></button>
@@ -350,7 +350,7 @@
 
                     </div>
                     
-                    <h3 class="post-wall-first-h3">This is a title</h3>
+                    <h3 class="post-wall-first-h3">This is a title.</h3>
 
                     <div class="post-img">
                         <style>
