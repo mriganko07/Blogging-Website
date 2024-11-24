@@ -184,7 +184,7 @@
                      <h3 class="sidebar__title">COMMUNITIES</h3>
    
                      <div class="sidebar__list">
-                        <a href="#" class="sidebar__link">
+                        <a href="/createcommunity" class="sidebar__link">
                             <i class="fa-solid fa-plus"></i>
                             <span>Create Community </span>
                         </a>
@@ -256,10 +256,11 @@
 
             <div class="all-element-main">
 
-                <form action="" method="get">
+                <form action="{{ route('update.profile') }}" method="post" enctype="multipart/form-data">
+                    @csrf
     
                     <div class="all-element-main-img">
-                        <div class="main-img-profile-img">
+                        {{-- <div class="main-img-profile-img">
                             <input type="file" name="" id="main-img-profile-img" style="display: none;" accept="image/*">
                             <label class="main-img-profile-img-lable" for="main-img-profile-img">
                                 <span id="upload-label">Profile Picture</span>
@@ -268,9 +269,32 @@
                                 </svg>
                             </label>
                             <div id="image-preview-profile"></div>
+                        </div> --}}
+
+                        @if($errors->any())
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
+
+                        <div class="main-img-profile-img">
+                            <input type="file" name="profile_pic" id="main-img-profile-img" style="display: none;" accept="image/*">
+                            <label class="main-img-profile-img-lable" for="main-img-profile-img">
+                                <span id="upload-label">Profile Picture</span>
+                                <svg rpl="" fill="currentColor" height="16" icon-name="upload-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m10.513 5.63 3.929 3.928-.884.884-2.933-2.933V19h-1.25V7.51l-2.933 2.932-.884-.884L9.67 5.446l.589-.029.254.212Zm5.859-1.482A6.876 6.876 0 0 0 10 0a6.876 6.876 0 0 0-6.372 4.148A4.639 4.639 0 0 0 0 8.625a4.716 4.716 0 0 0 4.792 4.625V12A3.465 3.465 0 0 1 1.25 8.625 3.412 3.412 0 0 1 4.189 5.31l.364-.06.123-.35A5.607 5.607 0 0 1 10 1.25a5.607 5.607 0 0 1 5.324 3.65l.123.348.364.06a3.412 3.412 0 0 1 2.939 3.317A3.465 3.465 0 0 1 15.208 12v1.25A4.716 4.716 0 0 0 20 8.625a4.639 4.639 0 0 0-3.628-4.477Z"></path>
+                                </svg>
+                            </label>
+                            <div id="image-preview-profile">
+                                @if($user->profile_pic)
+                                    <img src="{{ asset('storage/'.$user->profile_pic) }}" alt="Profile Picture" style="width: 100px; height: 100px;">
+                                @endif
+                            </div>
                         </div>
         
-                        <div class="main-img-cover-img">
+                        {{-- <div class="main-img-cover-img">
                             <input type="file" name="" id="main-img-cover-img" style="display: none;" accept="image/*">
                             <label class="main-img-cover-img-lable" for="main-img-cover-img">
                                 <span id="upload-label">Cover Picture</span>
@@ -279,17 +303,32 @@
                                 </svg>
                             </label>
                             <div id="image-preview-cover"></div>
+                        </div> --}}
+
+                        <div class="main-img-cover-img">
+                            <input type="file" name="cover_img" id="main-img-cover-img" style="display: none;" accept="image/*">
+                            <label class="main-img-cover-img-lable" for="main-img-cover-img">
+                                <span id="upload-label">Cover Picture</span>
+                                <svg rpl="" fill="currentColor" height="16" icon-name="upload-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m10.513 5.63 3.929 3.928-.884.884-2.933-2.933V19h-1.25V7.51l-2.933 2.932-.884-.884L9.67 5.446l.589-.029.254.212Zm5.859-1.482A6.876 6.876 0 0 0 10 0a6.876 6.876 0 0 0-6.372 4.148A4.639 4.639 0 0 0 0 8.625a4.716 4.716 0 0 0 4.792 4.625V12A3.465 3.465 0 0 1 1.25 8.625 3.412 3.412 0 0 1 4.189 5.31l.364-.06.123-.35A5.607 5.607 0 0 1 10 1.25a5.607 5.607 0 0 1 5.324 3.65l.123.348.364.06a3.412 3.412 0 0 1 2.939 3.317A3.465 3.465 0 0 1 15.208 12v1.25A4.716 4.716 0 0 0 20 8.625a4.639 4.639 0 0 0-3.628-4.477Z"></path>
+                                </svg>
+                            </label>
+                            <div id="image-preview-cover">
+                                @if($user->cover_img)
+                                    <img src="{{ asset('storage/'.$user->cover_img) }}" alt="Cover Picture" style="width: 200px; height: 100px;">
+                                @endif
+                            </div>
                         </div>
                     </div>
     
                     <div>
                         <label for="email_address">Email Address :</label>
-                        <input type="email" name="" class="main-form-input" id="email_address" placeholder="Email Addrerss">
+                        <input type="email" name="email" class="main-form-input" id="email_address" placeholder="Email Addrerss" value="{{ $user->email }}">
                     </div>
     
                     <div>
                         <label for="phone_no">Phone Number :</label>
-                        <input type="number" name="" class="main-form-input" id="phone_no" placeholder="Phone Number">
+                        <input type="number" name="phone" class="main-form-input" id="phone_no" placeholder="Phone Number" value="{{ $user->phone }}">
                     </div>
     
                     <div class="main-input-gender">
@@ -297,38 +336,54 @@
 
                         <div class="main-input-gender-radio">
                             <div>
-                                <input type="radio" name="gender" id="male" value="male">
+                                <input type="radio" name="gender" id="male" value="M" {{ $user->gender === 'M' ? 'checked' : '' }}>
                                 <label for="male">Male</label>
                             </div>
                             <div>
-                                <input type="radio" name="gender" id="female" value="female">
+                                <input type="radio" name="gender" id="female" value="F" {{ $user->gender === 'F' ? 'checked' : '' }}>
                                 <label for="female">Female</label>
                             </div>
-
                             <div>
-                                <input type="radio" name="gender" id="others" value="others">
+                                <input type="radio" name="gender" id="others" value="O" {{ $user->gender === 'O' ? 'checked' : '' }}>
                                 <label for="others">Others</label>
-                            </div>        
+                            </div>
                         </div>
                     </div>
     
                     <div>
                         <label for="date_of_birth">Date of Birth :</label>
-                        <input type="date" name="" class="main-form-input" id="date_of_birth" style="padding-right: 7px;" class="">
+                        <input type="date" name="dob" class="main-form-input" id="date_of_birth" style="padding-right: 7px;" class="" value="{{ old('dob', $user->DOB) }}">
                     </div>
     
                     <div>
                         <label for="display_name">Display Name :</label>
-                        <input type="text" name="" class="main-form-input" id="" placeholder="Display Name">
+                        <input type="text" name="display_name" class="main-form-input" id="" placeholder="Display Name" value="{{ old('display_name', $user->name) }}">
                     </div>
     
                     <div>
                         <label for="main_username">Username :</label>
-                        <input type="text" name="" class="main-form-input" id="" placeholder="Username">
+                        <input type="text" name="username" class="main-form-input" id="" placeholder="Username" value="{{ $user->user_name }}">
                     </div>
+
+                    <div>
+                        <label for="bio">Bio :</label>
+                        <input type="text" name="bio" class="main-form-input" id="" placeholder="Bio" value="{{ old('bio', $user->bio) }}">
+                    </div>
+
+                    <div>
+                        <label for="password">New Password :</label>
+                        <input type="password" name="password" class="main-form-input" id="password" placeholder="Change your password">
+                    </div>
+                    <div>
+                        <label for="password_confirmation">Confirm Password :</label>
+                        <input type="password" name="password_confirmation" class="main-form-input" id="password_confirmation" placeholder="Confirm your new password">
+                    </div>
+                    
     
                     <button type="submit" class="main-submit-button">Save</button>
                 </form>
+
+
 
             </div>
 

@@ -69,7 +69,7 @@ body{
 \*----------------------------------------------------*/
 
 header{
-position: fixed   ;
+position: fixed ;
 width: 100%;
 height: 60px;
 flex-shrink: 0;
@@ -1475,7 +1475,7 @@ transition: all 0.3s ease;
 .not-found {
   position: relative;
   left: 155px;
-  top: -75px;
+  top: -15px;
   display: flex;
   flex-direction: column; 
   align-items: center; 
@@ -1506,6 +1506,15 @@ transition: all 0.3s ease;
   background-color: #23282c;
   transition: all 0.2s ease; 
 
+}
+
+.post-wall-first-h3{
+  max-width: 620px;
+  max-height: 1.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 25px;
+  margin-top: 10px;
 }
 
 .profile-img2{
@@ -1541,11 +1550,6 @@ transition: all 0.3s ease;
   margin-left: 7px;
   font-size: 12px;
   padding-top: 2.5px;
-}
-
-.post-wall h3{
-  margin-left: 25px;
-  margin-top: 10px;
 }
 
 .post-img {
@@ -1876,13 +1880,13 @@ transition: all 0.3s ease;
 }
 
 
-.post-wall2 h3{
+/* .post-wall2 h3{
   width: 640px;
   position: relative;
   margin-left: 25px;
   margin-top: 10px;
   padding-bottom: 8px;
-}
+} */
 
 
 /*------------------------------------------------------------*\
@@ -2109,7 +2113,15 @@ transition: all 0.3s ease;
   margin-left: 25px;
   margin-top: 10px;
   padding-bottom: 8px;
-  width: 640px;
+  width: 620px;
+  max-height: 9rem;
+  overflow: auto;
+  text-overflow: ellipsis;
+  padding-right: 7px;
+}
+
+.post-para::-webkit-scrollbar {
+  width: 4px; 
 }
 
 /*------------------------------------------------------------*\

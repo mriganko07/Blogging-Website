@@ -184,7 +184,7 @@
                      <h3 class="sidebar__title">COMMUNITIES</h3>
    
                      <div class="sidebar__list">
-                        <a href="#" class="sidebar__link">
+                        <a href="/createcommunity" class="sidebar__link">
                             <i class="fa-solid fa-plus"></i>
                             <span>Create Community </span>
                         </a>

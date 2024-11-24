@@ -53,6 +53,23 @@ document.addEventListener('click', (event) => {
     span.textContent = count;
 });
 
+// -----------------\\
+// COPY LINK \\
+// ----------------------\\
+
+function copyCurrentLink() {
+    const currentLink = window.location.href;
+
+    const tempInput = document.createElement("input");
+    tempInput.value = currentLink; 
+    document.body.appendChild(tempInput); 
+    tempInput.select(); 
+    document.execCommand("copy"); 
+    document.body.removeChild(tempInput); 
+
+    alert("Current link copied to clipboard!");
+}
+
 
 
 

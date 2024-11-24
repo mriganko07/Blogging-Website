@@ -82,5 +82,11 @@ Route::get('/explore', [UserController::class, 'explore']);
 
 Route::get('/editprofile', [UserController::class, 'editprofile']);
 
+Route::get('/profile/edit/{id}', [UserController::class, 'editprofile'])->name('profile.edit');
+
+Route::post('/update-profile', [UserController::class, 'updateProfile'])->name('update.profile');
+
+Route::get('/profile', [UserController::class, 'showProfile'])->name('profile'); 
+
 Route::get('/profile', [UserController::class, 'profile'])->name('profile');
 

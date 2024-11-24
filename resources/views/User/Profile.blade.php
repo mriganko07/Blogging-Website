@@ -211,7 +211,7 @@
                       <h3 class="sidebar__title">COMMUNITIES</h3>
     
                     <div class="sidebar__list">
-                        <a href="#" class="sidebar__link">
+                        <a href="/createcommunity" class="sidebar__link">
                             <i class="fa-solid fa-plus"></i>
                             <span>Create Community </span>
                         </a>
@@ -284,7 +284,8 @@
          <main class="main container" id="main">
             <div class="profile-section">
                 <div class="profile-img3">
-                    <img src="https://styles.redditmedia.com/t5_4imbec/styles/profileIcon_asf6w9eqj1d91.jpeg?width=256&height=256&frame=1&auto=webp&crop=256:256,smart&s=3bf3f696edafbc8d35a5bcda5ecb2b61e01db7f0" alt="">
+                    {{-- <img src="https://styles.redditmedia.com/t5_4imbec/styles/profileIcon_asf6w9eqj1d91.jpeg?width=256&height=256&frame=1&auto=webp&crop=256:256,smart&s=3bf3f696edafbc8d35a5bcda5ecb2b61e01db7f0" alt=""> --}}
+                    <img src="{{ $user->profile_pic ? asset('storage/' . $user->profile_pic) : asset('default-profile.png') }}" alt="Profile Picture">
                 </div>
                 {{-- <div class="profile-info1">
                     <h1>Adhip Halder</h1> 
@@ -350,7 +351,7 @@
                     </div>
                     
                     {{-- <h3>This is a title</h3> --}}
-                    <h3>{{ $post->post_caption }}</h3>
+                    <h3 class="post-wall-first-h3">{{ $post->post_caption }}</h3>
 
                     <div class="post-img">
                         <style>
@@ -418,7 +419,7 @@
                             </label> 
 
                             <div class="section-dropdown5"> 
-                                <a href="#">
+                                {{-- <a href="#">
                                     <div class="profile-container2">
                                         <svg rpl="" class="mt-[1px] ml-[4px]" fill="currentColor" height="20" icon-name="link-post-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M14.111 12.5a3.701 3.701 0 0 1-1.09 2.41c-.479.47-.928.922-1.378 1.373-.45.45-.894.9-1.368 1.366a3.852 3.852 0 0 1-2.698 1.099 3.852 3.852 0 0 1-2.698-1.099 3.738 3.738 0 0 1-1.116-2.659c0-.997.402-1.953 1.116-2.658.479-.472.928-.923 1.378-1.375.45-.45.893-.9 1.368-1.365A3.936 3.936 0 0 1 9.638 8.59a3.968 3.968 0 0 1 2.24.258c.27-.269.546-.54.812-.806l.131-.13a5.086 5.086 0 0 0-3.182-.624A5.052 5.052 0 0 0 6.732 8.71c-.48.471-.929.922-1.377 1.373-.449.451-.894.9-1.37 1.366A4.982 4.982 0 0 0 2.5 14.992c0 1.328.534 2.602 1.486 3.543A5.13 5.13 0 0 0 7.58 20a5.13 5.13 0 0 0 3.595-1.465c.478-.471.927-.923 1.377-1.374.451-.451.894-.9 1.368-1.366a4.993 4.993 0 0 0 1.263-2.071c.243-.781.288-1.61.132-2.412L14.11 12.5Z"></path><path d="M16.017 1.467A5.123 5.123 0 0 0 12.422 0a5.123 5.123 0 0 0-3.595 1.467c-.478.471-.926.923-1.377 1.374-.45.451-.894.9-1.367 1.366a4.966 4.966 0 0 0-1.106 1.624 4.907 4.907 0 0 0-.291 2.86l1.2-1.19a3.699 3.699 0 0 1 1.092-2.41c.478-.472.928-.923 1.377-1.374.45-.45.894-.9 1.368-1.366a3.844 3.844 0 0 1 2.698-1.101c1.012 0 1.982.396 2.698 1.101a3.736 3.736 0 0 1 1.116 2.66c0 .996-.401 1.953-1.116 2.658-.478.471-.927.922-1.377 1.373-.45.451-.893.9-1.368 1.367a3.933 3.933 0 0 1-2.014 1.003 3.966 3.966 0 0 1-2.24-.26c-.273.274-.551.549-.818.818l-.123.12a5.087 5.087 0 0 0 3.183.624 5.053 5.053 0 0 0 2.906-1.423c.477-.472.926-.923 1.376-1.375.45-.452.894-.9 1.368-1.365A4.977 4.977 0 0 0 17.5 5.008a4.977 4.977 0 0 0-1.488-3.543l.005.002Z"></path>
@@ -427,7 +428,20 @@
                                             <span>Copy link</span>
                                         </div>
                                     </div>
+                                </a> --}}
+
+                                <a href="#" onclick="copyCurrentLink()">
+                                    <div class="profile-container2">
+                                        <svg rpl="" class="mt-[1px] ml-[4px]" fill="currentColor" height="20" icon-name="link-post-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14.111 12.5a3.701..."></path>
+                                            <path d="M16.017 1.467..."></path>
+                                        </svg>
+                                        <div class="profile-info2">
+                                            <span>Copy link</span>
+                                        </div>
+                                    </div>
                                 </a>
+                                             
                         
                                 <a href="#">
                                     <div class="profile-container2">
@@ -458,7 +472,7 @@
                     
                     </div>
                     
-                    <h3>Who are you? Without reference to your name, job, culture, hobbies, family and relationships? dhfvshfvshvfskfshfshf   </h3>
+                    <h3 class="post-wall-first-h3">Who are you? Without reference to your name, job, culture, hobbies, family and relationships? dhfvshfvshvfskfshfshf   </h3>
 
 
 
@@ -507,10 +521,22 @@
                             </label> 
                         
                             <div class="section-dropdown7"> 
-                                <a href="#">
+                                {{-- <a href="#">
                                     <div class="profile-container2">
                                         <svg rpl="" class="mt-[1px] ml-[4px]" fill="currentColor" height="20" icon-name="link-post-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M14.111 12.5a3.701 3.701 0 0 1-1.09 2.41c-.479.47-.928.922-1.378 1.373-.45.45-.894.9-1.368 1.366a3.852 3.852 0 0 1-2.698 1.099 3.852 3.852 0 0 1-2.698-1.099 3.738 3.738 0 0 1-1.116-2.659c0-.997.402-1.953 1.116-2.658.479-.472.928-.923 1.378-1.375.45-.45.893-.9 1.368-1.365A3.936 3.936 0 0 1 9.638 8.59a3.968 3.968 0 0 1 2.24.258c.27-.269.546-.54.812-.806l.131-.13a5.086 5.086 0 0 0-3.182-.624A5.052 5.052 0 0 0 6.732 8.71c-.48.471-.929.922-1.377 1.373-.449.451-.894.9-1.37 1.366A4.982 4.982 0 0 0 2.5 14.992c0 1.328.534 2.602 1.486 3.543A5.13 5.13 0 0 0 7.58 20a5.13 5.13 0 0 0 3.595-1.465c.478-.471.927-.923 1.377-1.374.451-.451.894-.9 1.368-1.366a4.993 4.993 0 0 0 1.263-2.071c.243-.781.288-1.61.132-2.412L14.11 12.5Z"></path>
+                                        </svg>
+                                        <div class="profile-info2">
+                                            <span>Copy link</span>
+                                        </div>
+                                    </div>
+                                </a> --}}
+
+                                <a href="#" onclick="copyCurrentLink()">
+                                    <div class="profile-container2">
+                                        <svg rpl="" class="mt-[1px] ml-[4px]" fill="currentColor" height="20" icon-name="link-post-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14.111 12.5a3.701..."></path>
+                                            <path d="M16.017 1.467..."></path>
                                         </svg>
                                         <div class="profile-info2">
                                             <span>Copy link</span>
@@ -550,7 +576,7 @@
                     
                     </div>
                     
-                    <h3>Who are you? Without reference to your name, job, culture, hobbies, family and relationships? dhfvshfvshvfskfshfshf   </h3>
+                    <h3 class="post-wall-first-h3">Who are you? Without reference to your name, job, culture, hobbies, family and relationships? dhfvshfvshvfskfshfshf   </h3>
                     <p class="post-para">Ok so I am 30 years old. Turned 30 back in March and I bought myself a PS5 after my 4 shit out finally after 12 years.
 
                         I was excited about all the big games but was pleasantly entertained with Astro Bot. So clever! My kids would watch me play before bed and they just loved it.
@@ -606,12 +632,24 @@
                             </label> 
                         
                             <div class="section-dropdown9"> 
-                                <a href="#">
+                                {{-- <a href="#">
                                     <div class="profile-container9">
                                         <svg rpl="" class="mt-[1px] ml-[4px]" fill="currentColor" height="20" icon-name="link-post-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M14.111 12.5a3.701 3.701 0 0 1-1.09 2.41c-.479.47-.928.922-1.378 1.373-.45.45-.894.9-1.368 1.366a3.852 3.852 0 0 1-2.698 1.099 3.852 3.852 0 0 1-2.698-1.099 3.738 3.738 0 0 1-1.116-2.659c0-.997.402-1.953 1.116-2.658.479-.472.928-.923 1.378-1.375.45-.45.893-.9 1.368-1.365A3.936 3.936 0 0 1 9.638 8.59a3.968 3.968 0 0 1 2.24.258c.27-.269.546-.54.812-.806l.131-.13a5.086 5.086 0 0 0-3.182-.624A5.052 5.052 0 0 0 6.732 8.71c-.48.471-.929.922-1.377 1.373-.449.451-.894.9-1.37 1.366A4.982 4.982 0 0 0 2.5 14.992c0 1.328.534 2.602 1.486 3.543A5.13 5.13 0 0 0 7.58 20a5.13 5.13 0 0 0 3.595-1.465c.478-.471.927-.923 1.377-1.374.451-.451.894-.9 1.368-1.366a4.993 4.993 0 0 0 1.263-2.071c.243-.781.288-1.61.132-2.412L14.11 12.5Z"></path>
                                         </svg>
                                         <div class="profile-info9">
+                                            <span>Copy link</span>
+                                        </div>
+                                    </div>
+                                </a> --}}
+
+                                <a href="#" onclick="copyCurrentLink()">
+                                    <div class="profile-container2">
+                                        <svg rpl="" class="mt-[1px] ml-[4px]" fill="currentColor" height="20" icon-name="link-post-outline" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14.111 12.5a3.701..."></path>
+                                            <path d="M16.017 1.467..."></path>
+                                        </svg>
+                                        <div class="profile-info2">
                                             <span>Copy link</span>
                                         </div>
                                     </div>
@@ -653,7 +691,7 @@
 
                     </div>
                     
-                    <h3>This is a title</h3>
+                    <h3 class="post-wall-first-h3">This is a title</h3>
 
                     <div class="post-img">
                         <style>
@@ -758,7 +796,7 @@
                     
                     </div>
                     
-                    <h3>Who are you? Without reference to your name, job, culture, hobbies, family and relationships? dhfvshfvshvfskfshfshf   </h3>
+                    <h3 class="post-wall-first-h3">Who are you? Without reference to your name, job, culture, hobbies, family and relationships? dhfvshfvshvfskfshfshf   </h3>
 
 
 
@@ -850,7 +888,7 @@
                     
                     </div>
                     
-                    <h3>Who are you? Without reference to your name, job, culture, hobbies, family and relationships? dhfvshfvshvfskfshfshf   </h3>
+                    <h3 class="post-wall-first-h3">Who are you? Without reference to your name, job, culture, hobbies, family and relationships? dhfvshfvshvfskfshfshf   </h3>
                     <p class="post-para">Ok so I am 30 years old. Turned 30 back in March and I bought myself a PS5 after my 4 shit out finally after 12 years.
 
                         I was excited about all the big games but was pleasantly entertained with Astro Bot. So clever! My kids would watch me play before bed and they just loved it.
@@ -976,10 +1014,13 @@
 
         <div class="rightbar">
             <div class="profile-overview">
-                <img src="/Images/profile bg.jpg" alt="User Profile Picture">
+                {{-- <img src="/Images/profile bg.jpg" alt="User Profile Picture"> --}}
+                <img src="{{ $user->cover_img ? asset('storage/' . $user->cover_img) : asset('default-cover.png') }}" alt="Cover Picture">
                 <div class="profile-info">
-                    <h3 class="name">Adhip Halder</h3>
+                    {{-- <h3 class="name">Adhip Halder</h3> --}}
+                    <h3 class="name">{{ session('user')->name }}</h3>
                     <p class="profile-bio">Those Who Don't Appreciate Life Do Not Deserve Life</p>
+                    {{-- <p class="profile-bio">{{ session('user')->bio }}</p> --}}
 
                      <div class="share-link-container">
                         <button href="#" class="share2" onclick="toggleShareModal()"> <i class="fa-solid fa-share"></i> <span>Share</span></button>
@@ -1027,8 +1068,13 @@
                     <div class="settings-img">
                         <img src="https://styles.redditmedia.com/t5_4imbec/styles/profileIcon_asf6w9eqj1d91.jpeg?width=256&amp;height=256&amp;frame=1&amp;auto=webp&amp;crop=256:256,smart&amp;s=3bf3f696edafbc8d35a5bcda5ecb2b61e01db7f0" alt="">
                     </div>
-                    <p>Adhip Halder</p>
-                    <a href="">
+                    {{-- <p>Adhip Halder</p> --}}
+                    <p>{{ session('user')->name }}</p>
+                    {{-- <a href="{{ route('profile.edit') }}">
+                        <p>Edit</p>
+                    </a> --}}
+
+                    <a href="{{ route('profile.edit', ['id' => session('user_id')]) }}">
                         <p>Edit</p>
                     </a>
                 </div>
