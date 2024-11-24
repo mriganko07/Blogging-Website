@@ -135,4 +135,10 @@ class UserController extends Controller
         return view('profile', compact('user'));
     }
 
+    public function outprofile(){
+
+        return view('User.OutsiderProfile'); 
+        
+    }
+
 }
