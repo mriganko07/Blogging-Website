@@ -694,19 +694,21 @@ transition: all 0.3s ease;
 
 .profile-info {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap; 
-  align-items: center;
-  margin-left: 33px;
+  gap: 7px;
+    /* align-items: center;
+    margin-left: 33px; */
 }
 
 .profile-info span {
-  font-weight: bold;
+  /* font-weight: bold; */
   margin-right: 10px;
 }
 
 .profile-info p {
   color: #9fa5b5;
-  margin-top: 5px;
+  /* margin-top: 5px; */
   /* max-width: 250px;  */
   overflow-wrap: break-word; 
 }
@@ -1193,7 +1195,7 @@ transition: all 0.3s ease;
 .rightbar .profile-overview {
   align-items: center;
   gap: 10px;
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
 }
 
 .rightbar .profile-overview img {
@@ -1212,7 +1214,7 @@ transition: all 0.3s ease;
 .profile-stats, .section {
   padding: 16px;
   font-size: 15px;
-  
+  padding-top: 5px;
 
 }
 
@@ -1230,13 +1232,13 @@ transition: all 0.3s ease;
   font-weight: bold;
 
 }
-.name{
+/* .name{
   text-align: center;
   margin-left: -34px;
-}
+} */
 .profile-bio{
   font-size: 12px;
-  margin-left: -34px;
+  /* margin-left: -34px; */
 }
 
 .stats{
@@ -1253,8 +1255,9 @@ transition: all 0.3s ease;
 
 .share2 {
   background-color: #1e1e1e;
-  position: relative;
+  /* position: relative; */
   font-family: 'Roboto', sans-serif;
+  margin-top: 2px;
   font-weight: 500;
   font-size: 15px;
   line-height: 2;
@@ -1263,8 +1266,8 @@ transition: all 0.3s ease;
   transition: all 200ms linear;
   border-radius: 50px;
   border: none;
-  right: 29px;
-  top: 19px;
+  /* right: 29px;
+  top: 19px; */
   letter-spacing: 1px;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2321,6 +2324,15 @@ transition: all 0.3s ease;
 .create2 i{
   font-size: 15px;
 
+}
+
+.settings-img{
+  display: flex;
+  align-items: center;
+  /* padding-bottom: 93px; */
+}
+.settings-img-p{
+  margin-left: 11px;
 }
 
 .settings-img img{
