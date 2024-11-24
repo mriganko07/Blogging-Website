@@ -1495,11 +1495,15 @@ transition: all 0.3s ease;
 .post-wall{
   position: relative;
   margin-top: 24px;
-  height: 545px;
+  height: auto;
   width: 680px;
   border: 1px solid #333;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.post-wall::-webkit-scrollbar {
+  width: 5px; 
 }
 
 .post-wall:hover{
@@ -1510,9 +1514,6 @@ transition: all 0.3s ease;
 
 .post-wall-first-h3{
   max-width: 620px;
-  max-height: 1.5rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
   margin-left: 25px;
   margin-top: 10px;
 }
@@ -1580,6 +1581,7 @@ transition: all 0.3s ease;
 .like-cmt-share {
   margin-top: 12px;
   margin-left: 25px;
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
   
@@ -1864,7 +1866,8 @@ transition: all 0.3s ease;
 .post-wall2{
   position: relative;
   /* margin-top: 55px; */
-  max-height: 450px;
+  /* max-height: 450px; */
+  height: auto;
   padding-bottom: 10px;
   height: auto;
   width: 681px;
@@ -2100,12 +2103,12 @@ transition: all 0.3s ease;
 }
 
 
-.post-wall3 h3{
+/* .post-wall3 h3{
   position: relative;
   margin-left: 25px;
   margin-top: 10px;
   padding-bottom: 8px;
-}
+} */
 
 .post-para{
   position: relative;
@@ -2114,9 +2117,7 @@ transition: all 0.3s ease;
   margin-top: 10px;
   padding-bottom: 8px;
   width: 620px;
-  max-height: 9rem;
-  overflow: auto;
-  text-overflow: ellipsis;
+  height: auto;
   padding-right: 7px;
 }
 
