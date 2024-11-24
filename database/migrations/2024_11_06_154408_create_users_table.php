@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->enum('gender', ["M", "F", "O"])->nullable();
             $table->date('DOB')->nullable();
-            $table->integer('phone')->unique()->nullable();
+            $table->string('phone')->unique()->nullable();
             $table->string('bio')->nullable();
             $table->string('password');
             $table->string('profile_pic')->nullable();

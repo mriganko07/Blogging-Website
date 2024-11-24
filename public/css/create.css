@@ -1377,7 +1377,8 @@ transition: all 0.3s ease;
 }
 
 .form-one label .required-star {
-  color: red;
+  padding-left: 4px;
+  color: tomato;
 }
 
 .form-one label:hover{
