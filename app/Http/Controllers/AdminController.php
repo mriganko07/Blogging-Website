@@ -17,6 +17,10 @@ class AdminController extends Controller
         return view('Admin.AdminCommunity');
     }
 
+    public function viewcommunity() {
+        return view('Admin.ViewCommunities');
+    }
+
     public function admincontent(){
         return view('Admin.AdminContent');
     }
@@ -24,6 +28,11 @@ class AdminController extends Controller
     public function adminpost(){
         return view('Admin.AdminPost');
     }
+
+    public function viewpost() {
+        return view('Admin.ViewPost');
+    }
+    
 
     public function adminuser(){
         return view('Admin.AdminUser');

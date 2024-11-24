@@ -6,8 +6,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CommunityController;
-use App\Models\User;
 use App\Models\Communities;
+use App\Models\User;
+use App\Models\Post;
 
 
 
@@ -27,7 +28,7 @@ Route::post('/login', [LoginController::class, 'login'])->name('login.process');
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/forgot', [UserController::class, 'forgot']);
+Route::get('/forgot', [LoginController::class, 'forgot']);
 
 
 
@@ -40,9 +41,13 @@ Route::get('/adminlogin', [AdminController::class, 'adminlogin']);
 
 Route::get('/admincommunity', [AdminController::class, 'admincommunity']);
 
+Route::get('/vcommunity', [AdminController::class, 'viewcommunity']);
+
 Route::get('/admincontent', [AdminController::class, 'admincontent']);
 
 Route::get('/adminpost', [AdminController::class, 'adminpost']);
+
+Route::get('/vpost', [AdminController::class, 'viewpost']);
 
 Route::get('/adminuser', [AdminController::class, 'adminuser']);
 
@@ -61,20 +66,27 @@ Route::get('/community', [CommunityController::class, 'community']);
 
 
 
+
+
 /*-------------*\
   #USER
 \*--------------*/
 
 Route::get('/comment', [UserController::class, 'comment']);
 
-Route::get('/create', [UserController::class, 'create']);
+Route::get('/create', [UserController::class, 'create'])->name('create');
+
+Route::post('/create', [UserController::class, 'storePost'])->name('post.store');
 
 Route::get('/explore', [UserController::class, 'explore']);
 
 Route::get('/editprofile', [UserController::class, 'editprofile']);
 
-Route::get('/profile', [UserController::class, 'profile']);
+Route::get('/profile/edit/{id}', [UserController::class, 'editprofile'])->name('profile.edit');
 
-Route::get('/vcommunity', [UserController::class, 'viewcommunity']);
+Route::post('/update-profile', [UserController::class, 'updateProfile'])->name('update.profile');
 
-Route::get('/vpost', [UserController::class, 'viewpost']);
+Route::get('/profile', [UserController::class, 'showProfile'])->name('profile'); 
+
+Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+
