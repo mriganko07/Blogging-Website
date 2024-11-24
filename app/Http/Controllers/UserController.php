@@ -84,10 +84,9 @@ class UserController extends Controller
 
     public function updateProfile(Request $request)
     {
-
         $userId = session('user_id'); 
         $user = User::findOrFail($userId);
-    
+
         $request->validate([
             'email' => 'required|email|unique:users,email,' . $userId . ',user_id',
             'display_name' => 'required|string|max:255',
@@ -100,31 +99,33 @@ class UserController extends Controller
             'profile_pic' => 'nullable|image|mimes:jpeg,png,jpg,gif',
             'cover_img' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ]);
-    
+
         $user->email = $request->email;
         $user->name = $request->display_name;
-        $user->user_name = $request->username;
+        $user->user_name = $request->username; 
         $user->phone = $request->phone;
         $user->DOB = $request->dob;
         $user->gender = $request->gender;
         $user->bio = $request->bio;
-    
+
         if ($request->filled('password')) {
             $user->password = bcrypt($request->password);
         }
-    
+
         if ($request->hasFile('profile_pic')) {
             $profilePicPath = $request->file('profile_pic')->store('profile_pictures', 'public');
             $user->profile_pic = $profilePicPath;
         }
-    
+
         if ($request->hasFile('cover_img')) { 
             $coverImgPath = $request->file('cover_img')->store('cover_pictures', 'public'); 
             $user->cover_img = $coverImgPath; 
         }
-    
+
         $user->save();
-    
+
+        session(['user' => $user]); 
+
         return redirect()->route('profile')->with('success', 'Profile updated successfully!');
     }
 

@@ -283,10 +283,19 @@
    
          <main class="main container" id="main">
             <div class="profile-section">
-                <div class="profile-img3">
-                    {{-- <img src="https://styles.redditmedia.com/t5_4imbec/styles/profileIcon_asf6w9eqj1d91.jpeg?width=256&height=256&frame=1&auto=webp&crop=256:256,smart&s=3bf3f696edafbc8d35a5bcda5ecb2b61e01db7f0" alt=""> --}}
+                {{-- <div class="profile-img3">
+                    <img src="https://styles.redditmedia.com/t5_4imbec/styles/profileIcon_asf6w9eqj1d91.jpeg?width=256&height=256&frame=1&auto=webp&crop=256:256,smart&s=3bf3f696edafbc8d35a5bcda5ecb2b61e01db7f0" alt="">
                     <img src="{{ $user->profile_pic ? asset('storage/' . $user->profile_pic) : asset('default-profile.png') }}" alt="Profile Picture">
+                </div> --}}
+
+                <div class="profile-img3">
+                    @if($user->profile_pic)
+                        <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture">
+                    @else
+                        <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Default Profile Picture">
+                    @endif
                 </div>
+                
                 {{-- <div class="profile-info1">
                     <h1>Adhip Halder</h1> 
                     <p>r/adhiphalder</p>
@@ -343,7 +352,9 @@
 
                 <div class="post-wall">
                     <div class="username">
-                        <div class="profile-img2"></div>
+                        <div class="profile-img2">
+                            <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture">
+                        </div>
                         <span class="username-hover">{{ session('user')->user_name }}</span>
                         {{-- <p> • 22 hr. ago</p> --}}
                         <p> • {{ $post->created_at->diffForHumans() }}</p>
@@ -466,9 +477,12 @@
 
                 <div class="post-wall2">
                     <div class="username">
-                        <div class="profile-img2"></div>
-                        <span class="username-hover">adhiphalder</span>
-                        <p> • 22 hr. ago</p>
+                        <div class="profile-img2">
+                            <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture">
+                        </div>
+                        <span class="username-hover">{{ session('user')->user_name }}</span>
+                        {{-- <p> • 22 hr. ago</p> --}}
+                        <p> • {{ $post->created_at->diffForHumans() }}</p>
                     
                     </div>
                     
@@ -569,7 +583,9 @@
 
                 <div class="post-wall2">
                     <div class="username">
-                        <div class="profile-img2"></div>
+                        <div class="profile-img2">
+                            <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture">
+                        </div>
                         <span class="username-hover">adhiphalder</span>
                         <p> • 22 hr. ago</p>
 
@@ -685,7 +701,9 @@
 
                 <div class="post-wall">
                     <div class="username">
-                        <div class="profile-img2"></div>
+                        <div class="profile-img2">
+                            <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture">
+                        </div>
                         <span class="username-hover">adhiphalder</span>
                         <p> • 22 hr. ago</p>
 
@@ -790,7 +808,9 @@
 
                 <div class="post-wall2">
                     <div class="username">
-                        <div class="profile-img2"></div>
+                        <div class="profile-img2">
+                            <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture">
+                        </div>
                         <span class="username-hover">adhiphalder</span>
                         <p> • 22 hr. ago</p>
                     
@@ -881,7 +901,9 @@
 
                 <div class="post-wall2">
                     <div class="username">
-                        <div class="profile-img2"></div>
+                        <div class="profile-img2">
+                            <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture">
+                        </div>
                         <span class="username-hover">adhiphalder</span>
                         <p> • 22 hr. ago</p>
 
@@ -1015,14 +1037,19 @@
         <div class="rightbar">
             <div class="profile-overview">
                 {{-- <img src="/Images/profile bg.jpg" alt="User Profile Picture"> --}}
-                <img src="{{ $user->cover_img ? asset('storage/' . $user->cover_img) : asset('default-cover.png') }}" alt="Cover Picture">
+                @if($user->cover_img)
+                    <img src="{{ asset('storage/' . $user->cover_img) }}" alt="Cover Picture">
+                @else
+                    <img src="https://img.pikbest.com/wp/202344/brick-wall-texture-background-of-a-dimly-lit-street-at-night-with-and-subtle-overhead-light_9936171.jpg!w700wp" alt="Default Cover Picture">
+                @endif
                 <div class="profile-info">
                     {{-- <h3 class="name">Adhip Halder</h3> --}}
                     <h3 class="name">{{ session('user')->name }}</h3>
-                    <p class="profile-bio">Those Who Don't Appreciate Life Do Not Deserve Life</p>
-                    {{-- <p class="profile-bio">{{ session('user')->bio }}</p> --}}
 
-                     <div class="share-link-container">
+                    {{-- <p class="profile-bio">Those Who Don't Appreciate Life Do Not Deserve Life</p> --}}
+                    <p class="profile-bio"> {{ $user->bio ?? 'No bio available' }}</p>
+
+                    <div class="share-link-container">
                         <button href="#" class="share2" onclick="toggleShareModal()"> <i class="fa-solid fa-share"></i> <span>Share</span></button>
                     </div>
                     
