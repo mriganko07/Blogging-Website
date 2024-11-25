@@ -22,36 +22,36 @@ document.addEventListener('DOMContentLoaded', function() {
 // ---------------------------------------\\
            // IMAGE UPLOADATION \\
 // -------------------------------------------\\
+
+
+document.querySelector('#main-h3-input-first').addEventListener('input', function() {
+    const communityName = this.value;
+    document.querySelector('.main-form2-img-show-sec-first').innerText = communityName;
+});
+
+document.querySelector('#main-form1-text').addEventListener('input', function() {
+    const communityName = this.value;
+    document.querySelector('.main-form2-img-show-sec-second').innerText = communityName;
+});
  
+document.getElementById('com-cover-pic').setAttribute('accept', 'image/*');
+document.getElementById('com-profile-pic').setAttribute('accept', 'image/*');
 
-// document.querySelector('#main-h3-input-first').addEventListener('input', function() {
-//     const communityName = this.value;
-//     document.querySelector('.main-form2-img-show-sec span').innerText = communityName;
-// });
+document.getElementById('com-cover-pic').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file && file.type.startsWith('image/')) {
+        const imgUrl = URL.createObjectURL(file);
+        document.querySelector('.main-form2-img-show-first img').src = imgUrl;
+    }
+});
 
-// document.querySelector('.main-form1-text').addEventListener('input', function() {
-//     const description = this.value;
-//     document.querySelector('.main-form2-img-show-third span').innerText = description;
-// });
-
-// document.getElementById('main-form2-first-file').setAttribute('accept', 'image/*');
-// document.getElementById('main-form2-sec-file').setAttribute('accept', 'image/*');
-
-// document.getElementById('main-form2-first-file').addEventListener('change', function(event) {
-//     const file = event.target.files[0];
-//     if (file && file.type.startsWith('image/')) {
-//         const imgUrl = URL.createObjectURL(file);
-//         document.querySelector('.main-form2-img-show-first img').src = imgUrl;
-//     }
-// });
-
-// document.getElementById('main-form2-sec-file').addEventListener('change', function(event) {
-//     const file = event.target.files[0];
-//     if (file && file.type.startsWith('image/')) {
-//         const imgUrl = URL.createObjectURL(file);
-//         document.querySelector('.main-form2-img-show-sec img').src = imgUrl;
-//     }
-// });
+document.getElementById('com-profile-pic').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file && file.type.startsWith('image/')) {
+        const imgUrl = URL.createObjectURL(file);
+        document.querySelector('.main-form2-img-show-sec img').src = imgUrl;
+    }
+});
 
 
 // // ---------------------------------------\\
