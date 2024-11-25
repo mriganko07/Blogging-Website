@@ -25,8 +25,8 @@ class UserController extends Controller
     {
         $request->validate([
             'post_caption' => 'required|string|max:255',
-            'post_desc' => 'required|string',
-            'post_img' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'post_desc' => 'string|nullable',
+            'post_img' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ]);
 
         $postImagePath = null;
@@ -66,11 +66,11 @@ class UserController extends Controller
         if (!$userId) {
             return redirect()->route('login')->with('error', 'Please login to access your profile.');
         }
-    
+
         $user = User::findOrFail($userId); 
-        $post = Post::where('user_id', $userId)->latest()->first(); 
-    
-        return view('User.Profile', compact('user', 'post')); 
+        $posts = Post::where('user_id', $userId)->latest()->get(); // Retrieve all posts for the user
+
+        return view('User.Profile', compact('user', 'posts')); // Removed $post_caption as it is not defined
     }
 
     public function editprofile()
@@ -129,10 +129,22 @@ class UserController extends Controller
         return redirect()->route('profile')->with('success', 'Profile updated successfully!');
     }
 
+    public function showUserPosts()
+    {
+        $userId = session('user')->id; 
+        $posts = Post::where('user_id', $userId)->get(); 
+
+        return view('user.posts', compact('posts'));
+    }
+
     public function showProfile()
     {
-        $user = auth()->user(); 
-        return view('profile', compact('user'));
+        // $user = auth()->user(); 
+        // return view('profile', compact('user'));
+
+        $post = Post::findOrFail($postId);
+
+        return view('User.ShowPost', compact('post'));
     }
 
 }

@@ -1855,7 +1855,7 @@ transition: all 0.3s ease;
 
 .post-wall2{
   position: relative;
-  /* margin-top: 55px; */
+  margin-top: 24px;
   /* max-height: 450px; */
   height: auto;
   padding-bottom: 10px;

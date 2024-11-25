@@ -241,6 +241,14 @@
                   </button> --}}
 
                   <form action="{{ route('logout') }}" method="POST">
+
+                    @if($errors->any())
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
                     @csrf
                     <button type="submit" class="sidebar__link">
                         <i class="fa-solid fa-right-from-bracket"></i>
@@ -361,7 +369,7 @@
                             <input type="text" name="post_caption" id="create-post-title" class="create-post-title" style="margin-left: 0px;" placeholder="" required>
                         </div>
                         <div class="form-two">
-                            <textarea name="post_desc" id="" class="create-post-body" required placeholder="Body"></textarea>
+                            <textarea name="post_desc" id="" class="create-post-body" placeholder="Body"></textarea>
                         </div>
                         <div class="form-three">
                             <input type="file" name="post_img" class="" id="create-post-form-img" style="display: none;" accept="image/*">
