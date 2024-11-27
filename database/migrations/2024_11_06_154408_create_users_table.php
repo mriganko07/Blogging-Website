@@ -24,6 +24,9 @@ return new class extends Migration
             $table->string('profile_pic')->nullable();
             $table->string('cover_img')->nullable();
             $table->integer('total_posts')->default(0)->nullable();
+            $table->integer('saved_posts')->nullable();
+            $table->integer('upvoted_posts')->nullable();
+            $table->integer('downvoted_posts')->nullable();
             $table->integer('total_communities')->default(0)->nullable();
             $table->integer('suspend_account')->default(0)->nullable();
             $table->unsignedBigInteger('community_id')->nullable();

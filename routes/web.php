@@ -92,3 +92,4 @@ Route::get('/profile', [UserController::class, 'showProfile'])->name('profile');
 
 Route::get('/profile', [UserController::class, 'profile'])->name('profile');
 
+Route::get('/viewprofile', [UserController::class, 'outprofile'])->name('viewprofile');

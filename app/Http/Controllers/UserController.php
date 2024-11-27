@@ -68,9 +68,9 @@ class UserController extends Controller
         }
 
         $user = User::findOrFail($userId); 
-        $posts = Post::where('user_id', $userId)->latest()->get(); // Retrieve all posts for the user
+        $posts = Post::where('user_id', $userId)->latest()->get(); 
 
-        return view('User.Profile', compact('user', 'posts')); // Removed $post_caption as it is not defined
+        return view('User.Profile', compact('user', 'posts')); 
     }
 
     public function editprofile()
@@ -94,7 +94,7 @@ class UserController extends Controller
             'phone' => 'nullable|string|max:15',
             'dob' => 'nullable|date',
             'gender' => 'required|in:M,F,O',
-            'bio' => 'nullable|string|max:255',
+            'bio' => 'nullable|string|max:50',
             'password' => 'nullable|string|confirmed', 
             'profile_pic' => 'nullable|image|mimes:jpeg,png,jpg,gif',
             'cover_img' => 'nullable|image|mimes:jpeg,png,jpg,gif',
@@ -145,6 +145,12 @@ class UserController extends Controller
         $post = Post::findOrFail($postId);
 
         return view('User.ShowPost', compact('post'));
+    }
+
+    public function outprofile(){
+
+        return view('User.OutsiderProfile'); 
+        
     }
 
 }
