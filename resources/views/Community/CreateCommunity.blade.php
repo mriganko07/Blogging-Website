@@ -545,7 +545,7 @@
 
             
                         <h3 class="main-h3">Select Topics</h3>
-                        <div class="slide-container">
+                         <div class="slide-container">
     
                             <div class="main-slidebar">
     
@@ -681,7 +681,7 @@
                     </div>
 
                     <div>
-                        <textarea name="community_description" class="main-form1-text" id="" placeholder="Description" maxlength="252" required></textarea>
+                        <textarea name="community_description" class="main-form1-text" id="main-form1-text" placeholder="Description" maxlength="50" required></textarea>
                     </div>
 
                     <div class="com-pic com-pic-first">
@@ -793,6 +793,19 @@
                     </div>
 
                 </form>
+
+                <div class="main-form2-img-show">
+                    <div class="main-form2-img-show-first">
+                        <img src="" onerror="this.src='/Pictures/white.png';">
+                    </div>
+                    <div class="main-form2-img-show-sec">
+                        <img src="" onerror="this.src='/Pictures/white.png';">
+                        <div class="main-form2-img-show-sec-div">
+                            <span class="main-form2-img-show-sec-first"></span>
+                            <span class="main-form2-img-show-sec-second"></span>
+                        </div>
+                    </div>
+                </div>
 
             </div>
 
