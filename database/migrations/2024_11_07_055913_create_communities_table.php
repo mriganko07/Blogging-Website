@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('communities', function (Blueprint $table) {
             $table->id('community_id');
             $table->string('community_name');
-            $table->string('community_description');
-            $table->string('community_pic');
-            $table->string('community_coverpic');
+            $table->string('community_description')->nullable();
+            $table->string('community_pic')->nullable();
+            $table->string('community_coverpic')->nullable();
             $table->integer('community_total_member')->nullable();
             $table->integer('community_total_posts')->nullable();
             $table->enum('category', ["games", "technologies", "movies", "travel", "music", "education", "sport", "news_politics", "business_finance"]);

@@ -669,7 +669,12 @@
 
             <div class="form-main">
 
-                <form class="main-form-comm" action="" method="">
+                <form class="main-form-comm" action="{{ route('store.community') }}" method="POST">
+                    @csrf
+
+                    @foreach ($errors->all() as $error)
+                        <div class="alert alert-danger">{{ $error }}</div>
+                    @endforeach
 
                     <div>
                         <h3 class="main-h3">Tell us about your community</h3>    
@@ -677,21 +682,21 @@
                     </div>
 
                     <div>
-                        <input type="text"  name="community_name" id="main-h3-input-first" placeholder="Community Name" maxlength="17" required>
+                        <input type="text"  name="community_name" id="main-h3-input-first" placeholder="Community Name" maxlength="17" required value="{{ old('community_name') }}">
                     </div>
 
                     <div>
-                        <textarea name="community_description" class="main-form1-text" id="main-form1-text" placeholder="Description" maxlength="50" required></textarea>
+                        <textarea name="community_description" class="main-form1-text" id="main-form1-text" placeholder="Description" maxlength="50" required></textarea value="{{ old('community_description') }}">
                     </div>
 
                     <div class="com-pic com-pic-first">
                         <label class="com-cover-pic-label" for="com-cover-pic">Cover Picture</label>
-                        <input type="file" name="com-cover-pic" id="com-cover-pic" class="com-cover-pic" required>
+                        <input type="file" name="community_coverpic" id="com-cover-pic" class="com-cover-pic" required>
                     </div>
 
                     <div class="com-pic com-pic-first">
                         <label class="com-profile-pic-label" for="com-profile-pic">Profile Picture</label>
-                        <input type="file" name="com-profile-pic" id="com-profile-pic" class="com-profile-pic" required>
+                        <input type="file" name="community_pic" id="com-profile-pic" class="com-profile-pic" required>
                     </div>
 
                     <div class="main-slidebar">
@@ -789,7 +794,7 @@
                     </div>  
 
                     <div>
-                        <button class="form-submit">Submit</button>
+                        <button type="submit" class="form-submit">Submit</button>
                     </div>
 
                 </form>

@@ -15,18 +15,19 @@ class CommunityController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function storeCommunity(Request $request)
     {
     
         $request->validate([
             'community_name' => 'required|string|max:17',
-            'community_description' => 'required|string|max:252',
-            'community_coverpic' => 'required|image|mimes:jpeg,png,jpg|max:2048',
-            'community_pic' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'community_description' => 'string|max:252',
+            'community_coverpic' => 'image|mimes:jpeg,png,jpg',
+            'community_pic' => 'image|mimes:jpeg,png,jpg',
         ]);
     
-        $coverPicPath = $request->file('community_coverpic')->store('community_banners', 'public');
-        $profilePicPath = $request->file('community_pic')->store('community_profiles', 'public');
+        $coverPicPath = $request->hasFile('community_coverpic') ? $request->file('community_coverpic')->store('community_banners', 'public') : null;
+        $profilePicPath = $request->hasFile('community_pic') ? $request->file('community_pic')->store('community_profiles', 'public') : null;
+
     
         $community = new Communities();
         $community->community_name = $request->community_name;

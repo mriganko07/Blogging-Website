@@ -59,7 +59,7 @@ Route::get('/adminuser', [AdminController::class, 'adminuser']);
 
 Route::get('/createcommunity', [CommunityController::class, 'createcommunity']);
 
-Route::post('/storecommunity', [CommunityController::class, 'store'])->name('store.community');
+Route::post('/storecommunity', [CommunityController::class, 'storeCommunity'])->name('store.community');
 
 Route::get('/community', [CommunityController::class, 'community']);
 
