@@ -282,3 +282,18 @@ function copyCurrentLink() {
 }
 
 
+// ---------------------------------------\\
+// JOIN & JOINED BUTTON \\
+// ------------------------------------------\\
+
+function toggleButton(button) {
+    if (button.classList.contains("join")) {
+        button.classList.remove("join");
+        button.classList.add("joined");
+        button.querySelector("span").textContent = "Joined";
+    } else {
+        button.classList.remove("joined");
+        button.classList.add("join");
+        button.querySelector("span").textContent = "Join";
+    }
+}   
