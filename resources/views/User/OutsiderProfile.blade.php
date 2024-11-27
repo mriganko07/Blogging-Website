@@ -302,6 +302,7 @@
                     <h1>{{ session('user')->name }}</h1> 
                     <p>r/{{ session('user')->user_name }}</p>
                 </div>
+                <button onclick="toggleButton(this)" class="join"><span>Join</span></button>
             </div>
 
 
