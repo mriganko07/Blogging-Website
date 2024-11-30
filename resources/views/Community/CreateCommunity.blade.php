@@ -686,7 +686,7 @@
                     </div>
 
                     <div>
-                        <textarea name="community_description" class="main-form1-text" id="main-form1-text" placeholder="Description" maxlength="50" required></textarea value="{{ old('community_description') }}">
+                        <textarea name="community_description" class="main-form1-text" id="main-form1-text" placeholder="Description" maxlength="50" required value="{{ old('community_description') }}"></textarea>
                     </div>
 
                     <div class="com-pic com-pic-first">

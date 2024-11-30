@@ -14,30 +14,34 @@ class CommunityController extends Controller
         return view('Community.CreateCommunity');
     }
 
-
     public function storeCommunity(Request $request)
     {
-    
-        $request->validate([
+        $validatedData = $request->validate([
             'community_name' => 'required|string|max:17',
-            'community_description' => 'string|max:252',
-            'community_coverpic' => 'image|mimes:jpeg,png,jpg',
-            'community_pic' => 'image|mimes:jpeg,png,jpg',
+            'community_description' => 'required|string|max:50',
+            'community_coverpic' => 'required',
+            'community_pic' => 'required',
+            'main-form3-name' => 'required|string|in:games,technologies,movies,travel,music,education,sport',
         ]);
     
-        $coverPicPath = $request->hasFile('community_coverpic') ? $request->file('community_coverpic')->store('community_banners', 'public') : null;
-        $profilePicPath = $request->hasFile('community_pic') ? $request->file('community_pic')->store('community_profiles', 'public') : null;
-
-    
         $community = new Communities();
-        $community->community_name = $request->community_name;
-        $community->community_description = $request->community_description;
-        $community->community_pic = $profilePicPath;
-        $community->community_coverpic = $coverPicPath;
+        $community->community_name = $validatedData['community_name'];
+        $community->community_description = $validatedData['community_description'];
+        $community->category = $validatedData['main-form3-name']; 
+    
+        if ($request->hasFile('community_coverpic')) {
+            $coverPicPath = $request->file('community_coverpic')->store('community_banners', 'public');
+            $community->community_coverpic = $coverPicPath;
+        }
+    
+        if ($request->hasFile('community_pic')) {
+            $profilePicPath = $request->file('community_pic')->store('community_profiles', 'public');
+            $community->community_pic = $profilePicPath;
+        }
     
         $community->save();
     
-        return redirect()->back()->with('success', 'Community created successfully!');
+        return redirect()->route('communities.index')->with('success', 'Community created successfully!');
     }
     
 
