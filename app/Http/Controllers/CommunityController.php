@@ -19,8 +19,8 @@ class CommunityController extends Controller
         $validatedData = $request->validate([
             'community_name' => 'required|string|max:17',
             'community_description' => 'required|string|max:50',
-            'community_coverpic' => 'required',
-            'community_pic' => 'required',
+            'community_coverpic' => 'required|image|mimes:jpeg,png,jpg',
+            'community_pic' => 'required|image|mimes:jpeg,png,jpg',
             'main-form3-name' => 'required|string|in:games,technologies,movies,travel,music,education,sport',
         ]);
     
