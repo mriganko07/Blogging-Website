@@ -187,73 +187,87 @@
             <div class="sidebar__container">
    
                 <div class="sidebar__content">
-                   <div>
-                      <h3 class="sidebar__title">MANAGE</h3>
+                    <div>
+                       <h3 class="sidebar__title">MANAGE</h3>
+     
+                       <div class="sidebar__list">
+                          <a href="#" class="sidebar__link active-link">
+                             <i class="fa-solid fa-house"></i>
+                             <span>Home</span>
+                          </a>
+                          
+                          <a href="#" class="sidebar__link">
+                              <i class="fa-solid fa-arrow-trend-up"></i>
+                             <span>Popular</span>
+                          </a>
+     
+                          <a href="#" class="sidebar__link">
+                              <i class="fa-solid fa-table"></i>
+                             <span>Explore</span>
+                          </a>
+                       </div>
+                    </div>
+  
+                    <div>
+                      <h3 class="sidebar__title">YOUR COMMUNITIES</h3>
     
                       <div class="sidebar__list">
-                         <a href="#" class="sidebar__link active-link">
-                            <i class="fa-solid fa-house"></i>
-                            <span>Home</span>
+                         <a href="/createcommunity" class="sidebar__link">
+                             <i class="fa-solid fa-plus"></i>
+                             <span>Create Community </span>
                          </a>
-                         
                          <a href="#" class="sidebar__link">
-                             <i class="fa-solid fa-arrow-trend-up"></i>
-                            <span>Popular</span>
-                         </a>
-    
-                         <a href="#" class="sidebar__link">
-                             <i class="fa-solid fa-table"></i>
-                            <span>Explore</span>
-                         </a>
-                      </div>
-                   </div>
-    
-                   <div>
-                      <h3 class="sidebar__title">COMMUNITIES</h3>
-    
-                      <div class="sidebar__list">
-                        <a href="#" class="sidebar__link">
-                            <i class="fa-solid fa-plus"></i>
-                            <span>Create Community </span>
-                        </a>
-                        <a href="#" class="sidebar__link">
                             <div class="profile-img1"></div>
                             <span>Community 1</span>
-                        </a>
- 
-                        <a href="#" class="sidebar__link">
-                             <div class="profile-img1"></div>
-                             <span>Community 2</span>
-                        </a>
- 
-                        <a href="#" class="sidebar__link">
-                             <div class="profile-img1"></div>
-                             <span>Community 3</span>
-                        </a>    
- 
-                        <a href="#" class="sidebar__link">
-                             <div class="profile-img1"></div>
-                             <span>Community 4</span>
-                        </a>    
- 
-                        <a href="#" class="sidebar__link">
-                             <div class="profile-img1"></div>
-                             <span>Community 5</span>
-                        </a>    
- 
-                        <a href="#" class="sidebar__link">
-                             <div class="profile-img1"></div>
-                             <span>Community 6</span>
-                        </a>    
- 
-                        <a href="#" class="sidebar__link">
-                             <div class="profile-img1"></div>
-                             <span>Community 7</span>
-                        </a>    
- 
-                    </div>
+                         </a>
+  
+                           
+  
+                      </div>
                    </div>
-                </div>
+     
+                    <div>
+                       <h3 class="sidebar__title">OTHER COMMUNITIES</h3>
+     
+                       <div class="sidebar__list">
+                          <a href="#" class="sidebar__link">
+                             <div class="profile-img1"></div>
+                             <span>Community 1</span>
+                          </a>
+  
+                          <a href="#" class="sidebar__link">
+                              <div class="profile-img1"></div>
+                              <span>Community 2</span>
+                           </a>
+  
+                           <a href="#" class="sidebar__link">
+                              <div class="profile-img1"></div>
+                              <span>Community 3</span>
+                           </a>    
+  
+                           <a href="#" class="sidebar__link">
+                              <div class="profile-img1"></div>
+                              <span>Community 4</span>
+                           </a>    
+  
+                           <a href="#" class="sidebar__link">
+                              <div class="profile-img1"></div>
+                              <span>Community 5</span>
+                           </a>    
+  
+                           <a href="#" class="sidebar__link">
+                              <div class="profile-img1"></div>
+                              <span>Community 6</span>
+                           </a>    
+  
+                           <a href="#" class="sidebar__link">
+                              <div class="profile-img1"></div>
+                              <span>Community 7</span>
+                           </a>    
+  
+                       </div>
+                    </div>
+                 </div>
     
                 <div class="sidebar__actions">
                    <button>
