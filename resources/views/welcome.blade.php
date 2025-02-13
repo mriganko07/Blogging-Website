@@ -219,15 +219,29 @@
                         </a>
                      </div>
                   </div>
+
+                  <div>
+                    <h3 class="sidebar__title">YOUR COMMUNITIES</h3>
+  
+                    <div class="sidebar__list">
+                       <a href="/createcommunity" class="sidebar__link">
+                           <i class="fa-solid fa-plus"></i>
+                           <span>Create Community </span>
+                       </a>
+                       <a href="#" class="sidebar__link">
+                          <div class="profile-img1"></div>
+                          <span>Community 1</span>
+                       </a>
+
+                         
+
+                    </div>
+                 </div>
    
                   <div>
-                     <h3 class="sidebar__title">COMMUNITIES</h3>
+                     <h3 class="sidebar__title">OTHER COMMUNITIES</h3>
    
                      <div class="sidebar__list">
-                        <a href="/createcommunity" class="sidebar__link">
-                            <i class="fa-solid fa-plus"></i>
-                            <span>Create Community </span>
-                        </a>
                         <a href="#" class="sidebar__link">
                            <div class="profile-img1"></div>
                            <span>Community 1</span>
