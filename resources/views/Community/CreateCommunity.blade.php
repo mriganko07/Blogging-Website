@@ -669,7 +669,7 @@
 
             <div class="form-main">
 
-                <form class="main-form-comm" action="{{ route('store.community') }}" method="POST">
+                <form class="main-form-comm" action="{{ route('store.community') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     @foreach ($errors->all() as $error)
@@ -801,10 +801,10 @@
 
                 <div class="main-form2-img-show">
                     <div class="main-form2-img-show-first">
-                        <img src="" onerror="this.src='/Pictures/white.png';">
+                        <img src="" onerror="this.src='https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';">
                     </div>
                     <div class="main-form2-img-show-sec">
-                        <img src="" onerror="this.src='/Pictures/white.png';">
+                        <img src="" onerror="this.src='https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';">
                         <div class="main-form2-img-show-sec-div">
                             <span class="main-form2-img-show-sec-first"></span>
                             <span class="main-form2-img-show-sec-second"></span>

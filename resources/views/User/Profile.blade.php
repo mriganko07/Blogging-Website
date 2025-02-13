@@ -365,7 +365,7 @@
                                     @if($user->profile_pic)
                                         <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture">
                                     @else
-                                        <img src="">
+                                        <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
                                     @endif
                                 </div>
 
@@ -495,7 +495,12 @@
                         <div class="post-wall2">
                             <div class="username">
                                 <div class="profile-img2">
-                                    <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture">
+                                    {{-- <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture"> --}}
+                                    @if($user->profile_pic)
+                                        <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture">
+                                    @else
+                                        <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                                    @endif
                                 </div>
                                 <span class="username-hover">{{ session('user')->user_name }}</span>
                                 <p> • 22 hr. ago</p>
@@ -609,7 +614,12 @@
                         <div class="post-wall2">
                             <div class="username">
                                 <div class="profile-img2">
-                                    <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture">
+                                    {{-- <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture"> --}}
+                                    @if($user->profile_pic)
+                                        <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture">
+                                    @else
+                                        <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                                    @endif
                                 </div>
                                 <span class="username-hover">{{ session('user')->user_name }}</span>
                                 {{-- <p> • 22 hr. ago</p> --}}
@@ -735,7 +745,7 @@
                                     @if($user->profile_pic)
                                         <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture">
                                     @else
-                                        <img src="">
+                                        <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D  ">
                                     @endif
                                 </div>
 
@@ -865,7 +875,12 @@
                         <div class="post-wall2">
                             <div class="username">
                                 <div class="profile-img2">
-                                    <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture">
+                                    {{-- <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture"> --}}
+                                    @if($user->profile_pic)
+                                        <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture">
+                                    @else
+                                        <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                                    @endif
                                 </div>
                                 <span class="username-hover">{{ session('user')->user_name }}</span>
                                 <p> • 22 hr. ago</p>
@@ -979,7 +994,12 @@
                         <div class="post-wall2">
                             <div class="username">
                                 <div class="profile-img2">
-                                    <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture">
+                                    {{-- <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture"> --}}
+                                    @if($user->profile_pic)
+                                        <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture">
+                                    @else
+                                        <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                                    @endif
                                 </div>
                                 <span class="username-hover">{{ session('user')->user_name }}</span>
                                 {{-- <p> • 22 hr. ago</p> --}}
@@ -1178,7 +1198,12 @@
                 <h3>SETTINGS</h3>
                 <div class="section-item">
                     <div class="settings-img">
-                        <img src="https://styles.redditmedia.com/t5_4imbec/styles/profileIcon_asf6w9eqj1d91.jpeg?width=256&amp;height=256&amp;frame=1&amp;auto=webp&amp;crop=256:256,smart&amp;s=3bf3f696edafbc8d35a5bcda5ecb2b61e01db7f0" alt="">
+                        {{-- <img src="https://styles.redditmedia.com/t5_4imbec/styles/profileIcon_asf6w9eqj1d91.jpeg?width=256&amp;height=256&amp;frame=1&amp;auto=webp&amp;crop=256:256,smart&amp;s=3bf3f696edafbc8d35a5bcda5ecb2b61e01db7f0" alt=""> --}}
+                        @if($user->profile_pic)
+                            <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture">
+                        @else
+                            <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        @endif
                         <p class="settings-img-p" style="margin-top: 0px;">Adhip Halder</p>
                     </div>
                     <a href="">
