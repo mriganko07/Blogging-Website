@@ -669,7 +669,7 @@
 
             <div class="form-main">
 
-                <form class="main-form-comm" action="{{ route('store.community') }}" method="POST">
+                <form class="main-form-comm" action="{{ route('store.community') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     @foreach ($errors->all() as $error)
