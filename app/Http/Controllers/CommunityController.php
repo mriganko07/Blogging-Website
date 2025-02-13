@@ -41,7 +41,7 @@ class CommunityController extends Controller
     
         $community->save();
     
-        return redirect()->route('communities.index')->with('success', 'Community created successfully!');
+        return redirect()->route('home')->with('success', 'Community created successfully!');
     }
     
 
