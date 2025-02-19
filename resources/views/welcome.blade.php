@@ -55,7 +55,7 @@
 
                         <div class="section-dropdown-two-body-second">
                             <div class="section-dropdown-two-body-second-img">
-                                <img src="https://www.redditstatic.com/chat-web/images/welcome-6AUNLRD4.png" alt="">
+                                <img style="width: 82px" src="https://www.redditstatic.com/chat-web/images/welcome-6AUNLRD4.png" alt="">
                             </div>
                             <div class="section-dropdown-two-body-second-para">
                                 <p>Welcome to chat</p>
@@ -404,7 +404,7 @@
                             left: 0;
                             height: 100%;
                             width: 100%;
-                            background: url('images/4.jpeg') no-repeat center;
+                            background: url('Images/4.jpeg') no-repeat center;
                             background-size: cover;
                             filter: blur(20px); 
                             z-index: 1; 

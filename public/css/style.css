@@ -1416,18 +1416,18 @@ left: 55px;
   color: #FF4D04;
 }
 
-/* .highlight-upvote {
+.highlight-upvote {
   background-color: #fd9f7a !important;
-} */
+} 
 
 
 .like-dislike .downvote:hover {
   color: #3f2dfd;
 }
 
-/* .highlight-downvote {
+.highlight-downvote {
   background-color: #887dfa !important;
-} */
+}
 
 .like-dislike span {
   font-size: 14px;
