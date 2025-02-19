@@ -668,6 +668,7 @@
 
 
             <div class="form-main">
+                
 
                 <form class="main-form-comm" action="{{ route('store.community') }}" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -677,6 +678,7 @@
                     @endforeach
 
                     <div>
+                        {{-- <h3>{{ session('user_id') }}</h3> --}}
                         <h3 class="main-h3">Tell us about your community</h3>    
                         <p class="main-p">A name and description help people understand what your community is all about.</p>
                     </div>
@@ -686,7 +688,8 @@
                     </div>
 
                     <div>
-                        <textarea name="community_description" class="main-form1-text" id="main-form1-text" placeholder="Description" maxlength="50" required value="{{ old('community_description') }}"></textarea>
+                        {{-- <textarea name="community_description" class="main-form1-text" id="main-form1-text" placeholder="Description" maxlength="50" required value="{{ old('community_description') }}"></textarea> --}}
+                        <textarea name="community_description" class="main-form1-text" id="main-form1-text" placeholder="Description" maxlength="50" required>{{ old('community_description') }}</textarea>
                     </div>
 
                     <div class="com-pic com-pic-first">

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('community_total_posts')->nullable();
             $table->enum('category', ["games", "technologies", "movies", "travel", "music", "education", "sport", "news_politics", "business_finance"]);
             $table->integer('community_suspend')->nullable();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             // $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

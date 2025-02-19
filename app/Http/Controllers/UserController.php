@@ -131,7 +131,19 @@ class UserController extends Controller
 
     public function showUserPosts()
     {
-        $userId = session('user')->id; 
+        // $userId = session('user')->id; 
+        // $posts = Post::where('user_id', $userId)->get(); 
+
+        // return view('user.posts', compact('posts'));
+
+
+
+        $userId = session('user_id'); 
+
+        if (!$userId) {
+            return redirect()->route('login')->with('error', 'Please log in to view your posts.');
+        }
+
         $posts = Post::where('user_id', $userId)->get(); 
 
         return view('user.posts', compact('posts'));
@@ -142,9 +154,15 @@ class UserController extends Controller
         // $user = auth()->user(); 
         // return view('profile', compact('user'));
 
-        $post = Post::findOrFail($postId);
+        $userId = session('user_id'); 
 
-        return view('User.ShowPost', compact('post'));
+        if (!$userId) {
+            return redirect()->route('login')->with('error', 'Please log in to view your profile.');
+        }
+
+        $user = User::findOrFail($userId); 
+
+        return view('User.Profile', compact('user'));
     }
 
     public function outprofile(){
