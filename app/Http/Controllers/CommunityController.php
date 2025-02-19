@@ -80,4 +80,7 @@ class CommunityController extends Controller
         return view('Community.Community');
     }
 
+    public function mycommunity(){
+        return view('Community.MyCommunity');
+    }
 }

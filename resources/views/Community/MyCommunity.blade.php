@@ -310,8 +310,8 @@
                     <p class="profile-info1-p">rimi_koley_adhikary342</p>
                     <!-- <p>r/adhiphalder</p> -->
                 </div>
-                <button href="#" class="create2"><i class="fa-solid fa-plus"></i> <span>Create Post</span></button>
-                <button onclick="toggleButton(this)" class="join"><span>Join</span></button>
+                <button href="#" class="create2" style="margin-left: 221px"><i class="fa-solid fa-plus"></i> <span>Create Post</span></button>
+                {{-- <button onclick="toggleButton(this)" class="join"><span>Join</span></button> --}}
             </div>
 
 
