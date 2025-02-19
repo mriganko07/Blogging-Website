@@ -1,22 +1,28 @@
 <?php
 
-namespace App\Models;
+namespace App\Models; 
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable; 
+use Illuminate\Notifications\Notifiable;
 
-class User extends Model
+class User extends Authenticatable 
 {
-    use HasFactory;
-     protected $table = "users";
-     protected $primaryKey = "user_id" ;
-     protected $fillable = 
-     [
-        'email', 
-        'name', 
-        'user_name', 
-        'phone', 'dob', 
-        'profile_picture', 
+    use HasFactory, Notifiable;
+
+    protected $table = "users";
+    protected $primaryKey = "user_id";
+    public $incrementing = true;
+    protected $keyType = 'int';
+
+    protected $fillable = [
+        'email',
+        'name',
+        'user_name',
+        'phone',
+        'dob',
+        'profile_picture',
         'cover_picture',
-     ];
+        'password', 
+    ];
 }

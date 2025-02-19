@@ -16,6 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+
 /*---------------------------------*\
   #LOGIN & SIGNUP
 \*---------------------------------*/
@@ -63,10 +64,9 @@ Route::post('/storecommunity', [CommunityController::class, 'storeCommunity'])->
 
 Route::get('/community', [CommunityController::class, 'community']);
 
+Route::get('/user-communities', [CommunityController::class, 'userCommunities'])->name('user.communities');
+
 Route::get('/mycommunity', [CommunityController::class, 'mycommunity']);
-
-
-
 
 
 

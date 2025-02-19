@@ -221,59 +221,91 @@
                   </div>
 
                   <div>
-                    <h3 class="sidebar__title">YOUR COMMUNITIES</h3>
-  
-                    <div class="sidebar__list">
-                       <a href="/createcommunity" class="sidebar__link">
-                           <i class="fa-solid fa-plus"></i>
-                           <span>Create Community </span>
-                       </a>
-                       <a href="#" class="sidebar__link">
-                          <div class="profile-img1"></div>
-                          <span>Community 1</span>
-                       </a>
+                        <h3 class="sidebar__title">YOUR COMMUNITIES</h3>
+    
+                        <div class="sidebar__list">
+                            <a href="/createcommunity" class="sidebar__link">
+                                <i class="fa-solid fa-plus"></i>
+                                <span>Create Community </span>
+                            </a>
+                            {{-- <a href="#" class="sidebar__link">
+                                <div class="profile-img1">
+                                    <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
 
-                         
+                                </div>
+                                <span>Community 1</span>
+                            </a> --}}
 
+                            @php
+                                $communities = App\Models\Communities::where('user_id', session('user_id'))->get();
+                            @endphp
+
+                            @if ($communities->isNotEmpty())
+                                @foreach ($communities as $community)
+                                    <a href="#" class="sidebar__link">
+                                        <div class="profile-img1">
+                                            <img src="{{ asset('storage/' . $community->community_pic) }}" alt="{{ $community->community_name }}">
+                                        </div>
+                                        <span>{{ $community->community_name }}</span>
+                                    </a>
+                                @endforeach
+                            @endif
+
+                            
+
+                        </div>
                     </div>
-                 </div>
    
                   <div>
                      <h3 class="sidebar__title">OTHER COMMUNITIES</h3>
    
                      <div class="sidebar__list">
                         <a href="#" class="sidebar__link">
-                           <div class="profile-img1"></div>
+                            <div class="profile-img1">
+                                <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                            </div>
                            <span>Community 1</span>
                         </a>
 
                         <a href="#" class="sidebar__link">
-                            <div class="profile-img1"></div>
+                            <div class="profile-img1">
+                                <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                            </div>
                             <span>Community 2</span>
                          </a>
 
                          <a href="#" class="sidebar__link">
-                            <div class="profile-img1"></div>
+                            <div class="profile-img1">
+                                <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                            </div>
                             <span>Community 3</span>
                          </a>    
 
                          <a href="#" class="sidebar__link">
-                            <div class="profile-img1"></div>
+                            <div class="profile-img1">
+                                <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                            </div>
                             <span>Community 4</span>
                          </a>    
 
                          <a href="#" class="sidebar__link">
-                            <div class="profile-img1"></div>
+                            <div class="profile-img1">
+                                <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                            </div>
                             <span>Community 5</span>
                          </a>    
 
                          <a href="#" class="sidebar__link">
-                            <div class="profile-img1"></div>
+                            <div class="profile-img1">
+                                <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                            </div>
                             <span>Community 6</span>
                          </a>    
 
                          <a href="#" class="sidebar__link">
-                            <div class="profile-img1"></div>
+                            <div class="profile-img1">
+                                <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                            </div>
                             <span>Community 7</span>
                          </a>    
 

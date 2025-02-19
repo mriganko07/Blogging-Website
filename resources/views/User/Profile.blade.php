@@ -315,8 +315,11 @@
                     <p>r/adhiphalder</p>
                 </div> --}}
                 <div class="profile-info1">
-                    <h1>{{ session('user')->name }}</h1> 
-                    <p>r/{{ session('user')->user_name }}</p>
+                    {{-- <h1>{{ session('user')->name }}</h1> 
+                    <p>r/{{ session('user')->user_name }}</p> --}}
+
+                    <h1>{{ session('user')->name ?? '' }}</h1> 
+                     <p>r/{{ session('user')->user_name ?? '' }}</p>
                 </div>
             </div>
 
