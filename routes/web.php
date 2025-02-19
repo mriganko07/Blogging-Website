@@ -63,6 +63,8 @@ Route::post('/storecommunity', [CommunityController::class, 'storeCommunity'])->
 
 Route::get('/community', [CommunityController::class, 'community']);
 
+Route::get('/mycommunity', [CommunityController::class, 'mycommunity']);
+
 
 
 
