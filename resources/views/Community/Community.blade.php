@@ -55,7 +55,7 @@
 
                         <div class="section-dropdown-two-body-second">
                             <div class="section-dropdown-two-body-second-img">
-                                <img src="https://www.redditstatic.com/chat-web/images/welcome-6AUNLRD4.png" alt="">
+                                <img style="82px" src="https://www.redditstatic.com/chat-web/images/welcome-6AUNLRD4.png" alt="">
                             </div>
                             <div class="section-dropdown-two-body-second-para">
                                 <p>Welcome to chat</p>
