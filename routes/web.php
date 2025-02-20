@@ -68,6 +68,8 @@ Route::get('/user-communities', [CommunityController::class, 'userCommunities'])
 
 Route::get('/mycommunity', [CommunityController::class, 'mycommunity']);
 
+Route::get('/mycommunity/{community_name}', [CommunityController::class, 'showCommunity'])->name('show.community');
+
 
 
 /*-------------*\

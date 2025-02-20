@@ -236,7 +236,8 @@
                                 <span>Community 1</span>
                             </a> --}}
 
-                            @php
+
+                            {{-- @php
                                 $communities = App\Models\Communities::where('user_id', session('user_id'))->get();
                             @endphp
 
@@ -244,7 +245,31 @@
                                 @foreach ($communities as $community)
                                     <a href="#" class="sidebar__link">
                                         <div class="profile-img1">
-                                            <img src="{{ asset('storage/' . $community->community_pic) }}" alt="{{ $community->community_name }}">
+                                            @if (!empty($community->community_pic))
+                                                <img src="{{ asset('storage/' . $community->community_pic) }}" alt="{{ $community->community_name }}">
+                                            @else
+                                                <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Default Community">
+                                            @endif
+                                        </div>
+                                        <span>{{ $community->community_name }}</span>
+                                    </a>
+                                @endforeach
+                            @endif --}}
+
+
+                            @php
+                                $communities = App\Models\Communities::where('user_id', session('user_id'))->get();
+                            @endphp
+
+                            @if ($communities->isNotEmpty())
+                                @foreach ($communities as $community)
+                                    <a href="{{ route('show.community', ['community_name' => $community->community_name]) }}" class="sidebar__link">
+                                        <div class="profile-img1">
+                                            @if (!empty($community->community_pic))
+                                                <img src="{{ asset('storage/' . $community->community_pic) }}" alt="{{ $community->community_name }}">
+                                            @else
+                                                <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Default Community">
+                                            @endif
                                         </div>
                                         <span>{{ $community->community_name }}</span>
                                     </a>

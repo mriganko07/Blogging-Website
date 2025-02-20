@@ -15,13 +15,12 @@ class CommunityController extends Controller
 
     public function storeCommunity(Request $request)
     {
-
         if (!$request->session()->has('user_id')) {
             return redirect()->route('register')->with('error', 'You must be logged in to create a community.');
         }
     
         $validatedData = $request->validate([
-            'community_name' => 'required|string|max:17',
+            'community_name' => 'required|string|max:17|unique:communities,community_name',
             'community_description' => 'required|string|max:50',
             'community_coverpic' => 'required|image|mimes:jpeg,png,jpg',
             'community_pic' => 'required|image|mimes:jpeg,png,jpg',
@@ -70,5 +69,16 @@ class CommunityController extends Controller
 
     public function mycommunity(){
         return view('Community.MyCommunity');
+    }
+
+
+    public function showCommunity($community_name){
+        $community = Communities::where('community_name', $community_name)->first();
+
+        if (!$community) {
+            return redirect()->route('home')->with('error', 'Community not found.');
+        }
+
+        return view('Community.mycommunity', compact('community'));
     }
 }
