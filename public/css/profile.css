@@ -1597,18 +1597,18 @@ transition: all 0.3s ease;
   color: #FF4D04;
 }
 
-/* .highlight-upvote {
+.highlight-upvote {
   background-color: #fd9f7a !important;
-} */
+}
 
 
 .like-dislike .downvote:hover {
   color: #3f2dfd;
 }
 
-/* .highlight-downvote {
+.highlight-downvote {
   background-color: #887dfa !important;
-} */
+}
 
 .like-dislike span {
   font-size: 14px;
@@ -1645,7 +1645,7 @@ transition: all 0.3s ease;
 
 .cmt svg{
   width: 15px;
-  height: 15px;
+  height: 17px;
   cursor: pointer;
   margin-left: 4px;
   font-weight: 700;

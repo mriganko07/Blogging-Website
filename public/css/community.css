@@ -1168,7 +1168,7 @@ transition: all 0.3s ease;
 .cover-img img{
     /* width: 987px;
     height: 100%; */
-    width: 100%;
+    width: 87%;
     height: 120px;
     object-fit: cover;
     border-radius: 8px;
@@ -1654,7 +1654,7 @@ transition: all 0.3s ease;
 
 .cmt svg{
   width: 15px;
-  height: 15px;
+  height: 17px;
   cursor: pointer;
   margin-left: 4px;
   font-weight: 700;

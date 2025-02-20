@@ -1174,7 +1174,7 @@ transition: all 0.3s ease;
 .cover-img img{
     /* width: 987px;
     height: 100%; */
-    width: 100%;
+    width: 87%;
     height: 120px;
     object-fit: cover;
     border-radius: 8px;
@@ -1637,7 +1637,7 @@ small{
 .cover-img img{
     /* width: 987px;
     height: 100%; */
-    width: 100%;
+    width: 87%;
     height: 120px;
     object-fit: cover;
     border-radius: 8px;
