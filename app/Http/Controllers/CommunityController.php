@@ -88,7 +88,6 @@ class CommunityController extends Controller
         if (!$community) {
             return redirect()->route('home')->with('error', 'Community not found.');
         }
-
         return view('Community.Community', compact('community'));
     }
 }

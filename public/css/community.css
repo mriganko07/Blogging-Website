@@ -712,6 +712,13 @@ transition: all 0.3s ease;
   overflow-wrap: break-word; 
 }
 
+.profile-info-int{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 4px;
+}
+
 /*-----------------*\
   #SIDEBAR 
 \*-----------------*/
@@ -1254,7 +1261,7 @@ transition: all 0.3s ease;
 
 }
 .name{
-  text-align: center;
+  /* text-align: center; */
   /* margin-left: -34px; */
 }
 .profile-bio{
@@ -1284,7 +1291,7 @@ transition: all 0.3s ease;
   height: 36px;
   width: 83px;
   /* margin-bottom: 15px; */
-  margin-top: 5px;
+  margin-top: 3px;
   transition: all 200ms linear;
   border-radius: 50px;
   border: none;
