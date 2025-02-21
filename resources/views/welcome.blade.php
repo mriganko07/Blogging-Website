@@ -281,7 +281,7 @@
                         </div>
                     </div>
    
-                  <div>
+                  {{-- <div>
                      <h3 class="sidebar__title">OTHER COMMUNITIES</h3>
    
                      <div class="sidebar__list">
@@ -300,9 +300,9 @@
                          </a>
 
                      </div>
-                  </div>
+                  </div> --}}
 
-                  {{-- @php
+                  @php
                         $otherCommunities = App\Models\Communities::where('user_id', '!=', session('user_id'))->get();
                     @endphp
 
@@ -324,7 +324,7 @@
                                 @endforeach
                             </div>
                         </div>
-                    @endif --}}
+                    @endif
 
                </div>
    

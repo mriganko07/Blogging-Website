@@ -367,11 +367,10 @@
                                 @if (!empty($user->profile_pic))
                                     <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="{{ $user->user_name }}">
                                 @else
-                                    <div class="profile-img2">
-                                        <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Default Profile">
-                                    </div>
+                                    <img class="profile-img2-img" style="height: 26px" src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Default Profile">
                                 @endif
-                                <span>r/{{ $user->user_name }}</span>
+                                
+                                <span class="create-post-community-community-bar-community-para-span" style="font-size: 12px; color: rgb(198, 198, 198);" onMouseOver="this.style.color='rgb(255, 77, 0)'"  onMouseOut="this.style.color='rgb(198, 198, 198)'">r/{{ $user->user_name }}</span>
                             </p>
 
                             <h3>Your Community</h3>
@@ -392,8 +391,8 @@
                             @else
                                 {{-- <p class="create-post-community-community-bar-community-para"> --}}
                                     <div class="profile-img3">
-                                        <img class="profile-img2-img" style="width: 33px" src="https://www.redditstatic.com/shreddit/assets/hmm-snoo.png" alt="">
-                                        <span style="font-size: 12px; color: rgb(198, 198, 198);">You have No Community Yet</span>
+                                        <img class="profile-img2-img" style="width: 33px; height:auto; border:none; box-shadow:none;" src="https://www.redditstatic.com/shreddit/assets/hmm-snoo.png" alt="">
+                                        <span style="font-size: 11px; color: rgb(198, 198, 198);">You have No Community Yet</span>
                                     </div>
                                 {{-- </p> --}}
                             @endif
