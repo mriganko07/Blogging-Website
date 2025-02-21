@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{{asset('css/community.css')}}">
+        <link rel="stylesheet" href="{{asset('css/mycommunity.css')}}">
         <link rel="shortcut icon" href="{{asset('/Pictures/inkspire.png')}}" type="image/svg+xml">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
 
@@ -336,7 +336,7 @@
                     <p class="profile-info1-p">{{ $community->category }}</p>
                 </div>
                 
-                <button href="#" class="create2" style="position: fixed; right: 499px">
+                <button href="#" class="create2" style="right: 461px; top:190px">
                     <i class="fa-solid fa-plus"></i> <span>Create Post</span>
                 </button>
             </div>
