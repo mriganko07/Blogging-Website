@@ -378,19 +378,24 @@
 
                             @if ($communities->isNotEmpty())
                                 @foreach ($communities as $community)
-                                    <p class="create-post-community-community-bar-community-para" onclick="selectCommunity('r/{{ $community->community_name }}')">
+                                    {{-- <p class="create-post-community-community-bar-community-para" onclick="selectCommunity('r/{{ $community->community_name }}')"> --}}
                                         <div class="profile-img2">
                                             @if (!empty($community->community_pic))
-                                                <img src="{{ asset('storage/' . $community->community_pic) }}" alt="{{ $community->community_name }}">
+                                                <img class="profile-img2-img"  src="{{ asset('storage/' . $community->community_pic) }}" alt="{{ $community->community_name }}">
+                                                <span>r/{{ $community->community_name }}</span>
                                             @else
                                                 <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Default Profile">
                                             @endif
                                         </div>
-                                        <span>r/{{ $community->community_name }}</span>
-                                    </p>
+                                    {{-- </p> --}}
                                 @endforeach
                             @else
-                                <p class="create-post-community-community-bar-community-para">You have No Community Yet</p>
+                                {{-- <p class="create-post-community-community-bar-community-para"> --}}
+                                    <div class="profile-img3">
+                                        <img class="profile-img2-img" style="width: 33px" src="https://www.redditstatic.com/shreddit/assets/hmm-snoo.png" alt="">
+                                        <span style="font-size: 12px; color: rgb(198, 198, 198);">You have No Community Yet</span>
+                                    </div>
+                                {{-- </p> --}}
                             @endif
 
 

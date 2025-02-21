@@ -336,7 +336,7 @@
                     <p class="profile-info1-p">{{ $community->category }}</p>
                 </div>
                 
-                <button href="#" class="create2" style="margin-left: 221px">
+                <button href="#" class="create2" style="position: fixed; right: 499px">
                     <i class="fa-solid fa-plus"></i> <span>Create Post</span>
                 </button>
             </div>
@@ -1016,14 +1016,17 @@
         <div class="rightbar">
             <div class="profile-overview">
                 <div class="profile-info">
-                    {{-- <h3 class="name">adhiphader</h3> --}}
-                    <h3 class="name">{{ $community->community_name }}</h3>
-                    {{-- <p class="profile-bio">Those Who Don't Appreciate Life Do Not Deserve Life</p> --}}
-                    <p class="profile-bio">{{ $community->community_description ?? 'No description available' }}</p>
 
-                    
-                    <div class="share-link-container">
-                        <button href="#" class="share2" onclick="toggleShareModal()"> <i class="fa-solid fa-share"></i> <span>Share</span></button>
+                    <div class="profile-info-int">
+                        {{-- <h3 class="name">adhiphader</h3> --}}
+                        <h3 class="name">{{ $community->community_name }}</h3>
+                        {{-- <p class="profile-bio">Those Who Don't Appreciate Life Do Not Deserve Life</p> --}}
+                        <p class="profile-bio">{{ $community->community_description ?? 'No description available' }}</p>
+    
+                        
+                        <div class="share-link-container">
+                            <button href="#" class="share2" onclick="toggleShareModal()"> <i class="fa-solid fa-share"></i> <span>Share</span></button>
+                        </div>
                     </div>
                     
                     <div class="creation">
