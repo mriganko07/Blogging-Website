@@ -72,6 +72,16 @@ class CommunityController extends Controller
     }
 
 
+    public function showMyCommunity($community_name){
+        $community = Communities::where('community_name', $community_name)->first();
+
+        if (!$community) {
+            return redirect()->route('home')->with('error', 'Community not found.');
+        }
+
+        return view('Community.MyCommunity', compact('community'));
+    }
+
     public function showCommunity($community_name){
         $community = Communities::where('community_name', $community_name)->first();
 
@@ -79,6 +89,6 @@ class CommunityController extends Controller
             return redirect()->route('home')->with('error', 'Community not found.');
         }
 
-        return view('Community.mycommunity', compact('community'));
+        return view('Community.Community', compact('community'));
     }
 }
