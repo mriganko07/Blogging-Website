@@ -365,7 +365,7 @@
 
                             <p class="create-post-community-community-bar-community-para" onclick="selectCommunity('r/{{ $user->user_name }}')">
                                 @if (!empty($user->profile_pic))
-                                    <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="{{ $user->user_name }}">
+                                    <img style=" width: 26px; object-fit: cover; border: 2px solid #4A4D70; box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); height: 26px" src="{{ asset('storage/' . $user->profile_pic) }}" alt="{{ $user->user_name }}">
                                 @else
                                     <img class="profile-img2-img" style="height: 26px" src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Default Profile">
                                 @endif
