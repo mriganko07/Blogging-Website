@@ -270,6 +270,11 @@
 
             <div class="slide-container">
 
+                <!-- 
+                - TAB SECTION
+                -->
+            
+
                 <ul class="main-slidebar">
                     <li>
                         <button class="identifier-button" data-target="identifier-body-all">All</button>
@@ -353,122 +358,69 @@
             
 
             <!-- All -->
+            {{-- <div class="identifier-body" id="identifier-body-all">
+
+                <div class="identifier">
+                    <div class="identifier-upper">
+                        <div class="identifier-upper-left">
+                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
+                            <div>
+                                <div>@Username</div>
+                                <div>21k members</div>
+                            </div>
+                        </div>
+                        <button>Join</button>
+                    </div>
+                    <div class="identifier-middle">
+                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
+                    </div>
+                    <div class="identifier-lower">
+                        <img src="/Pictures/body.webp" alt="">
+                    </div>
+                </div>
+
+                <div class="identifier">
+                    <div class="identifier-upper">
+                        <div class="identifier-upper-left">
+                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
+                            <div>
+                                <div>@Username</div>
+                                <div>21k members</div>
+                            </div>
+                        </div>
+                        <button>Join</button>
+                    </div>
+                    <div class="identifier-middle">
+                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
+                    </div>
+                    <div class="identifier-lower">
+                        <img src="/Pictures/body.webp" alt="">
+                    </div>
+                </div>
+
+            </div> --}}
+
             <div class="identifier-body" id="identifier-body-all">
-
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
+                @foreach ($otherCommunities as $community)
+                    <div class="identifier">
+                        <div class="identifier-upper">
+                            <div class="identifier-upper-left">
+                                <img src="{{ asset('storage/' . $community->community_pic) }}" alt="{{ $community->community_name }}">
+                                <div>
+                                    <div>r/{{ $community->community_name }}</div>
+                                    <div>{{ $community->members_count ?? '0' }} members</div>
+                                </div>
                             </div>
+                            <button>Join</button>
                         </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body.webp" alt="">
-                    </div>
-                </div>
-
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
+                        <div class="identifier-middle">
+                            <p>{{ $community->community_description }}</p>
                         </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body.webp" alt="">
-                    </div>
-                </div>
-
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
+                        <div class="identifier-lower">
+                            <img src="{{ asset('storage/' . $community->community_coverpic) }}" alt="{{ $community->community_name }} Cover">
                         </div>
-                        <button>Join</button>
                     </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body.webp" alt="">
-                    </div>
-                </div>
-
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
-                        </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="Pictures/body.webp" alt="">
-                    </div>
-                </div>
-
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
-                        </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body.webp" alt="">
-                    </div>
-                </div>
-
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
-                        </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body.webp" alt="">
-                    </div>
-                </div>
-
+                @endforeach
             </div>
 
             <!-- Games -->

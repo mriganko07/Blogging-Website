@@ -90,4 +90,15 @@ class CommunityController extends Controller
         }
         return view('Community.Community', compact('community'));
     }
+
+    public function explore() 
+    {
+        // return view('Community.Explore');
+
+        $userId = session('user_id'); 
+
+        $otherCommunities = Communities::where('user_id', '!=', $userId)->get();
+
+        return view('Community.Explore', compact('otherCommunities'));
+    }
 }

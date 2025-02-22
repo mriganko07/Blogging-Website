@@ -72,6 +72,9 @@ Route::get('/mycommunity/{community_name}', [CommunityController::class, 'showMy
 
 Route::get('/community/{community_name}', [CommunityController::class, 'showCommunity'])->name('show.community');
 
+Route::get('/explore', [CommunityController::class, 'explore']);
+
+
 
 /*-------------*\
   #USER
@@ -82,8 +85,6 @@ Route::get('/comment', [UserController::class, 'comment']);
 Route::get('/create', [UserController::class, 'create'])->name('create');
 
 Route::post('/create', [UserController::class, 'storePost'])->name('post.store');
-
-Route::get('/explore', [UserController::class, 'explore']);
 
 Route::get('/editprofile', [UserController::class, 'editprofile']);
 

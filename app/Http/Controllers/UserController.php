@@ -52,11 +52,6 @@ class UserController extends Controller
         return redirect()->route('profile')->with('success', 'Post created successfully!');
     }
 
-    public function explore() 
-    {
-        return view('User.Explore');
-    }
-
     public function profile() 
     {
         // return view('User.Profile');
