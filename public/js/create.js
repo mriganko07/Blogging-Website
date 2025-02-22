@@ -72,9 +72,17 @@ function toggleSearchBar(event) {
     document.getElementById('create-post-community-community-bar').classList.add('visible');
 }
 
-function selectCommunity(communityName) {
-    document.getElementById('post-community-search-input').value = communityName;
+// function selectCommunity(communityName) {
+//     document.getElementById('post-community-search-input').value = communityName;
 
+//     document.getElementById('create-post-community-community-bar').classList.remove('visible');
+//     document.getElementById('create-post-community-community-bar').classList.add('hidden');
+// }
+
+function selectCommunity(entity) {
+    document.getElementById('selected_entity').value = entity;
+
+    document.getElementById('post-community-search-input').value = entity;
     document.getElementById('create-post-community-community-bar').classList.remove('visible');
     document.getElementById('create-post-community-community-bar').classList.add('hidden');
 }
