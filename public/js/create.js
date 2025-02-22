@@ -22,12 +22,15 @@ document.addEventListener('DOMContentLoaded', function() {
   IMAGE UPLODATION
 \*-----------------*/
 
+
 document.getElementById('create-post-form-img').addEventListener('change', function() {
     const fileInput = this;
     const imagePreview = document.getElementById('image-preview');
+    const imagePreviewBg = document.getElementById('image-preview-bg');
     const label = document.getElementById('upload-label');
 
     imagePreview.innerHTML = '';
+    imagePreview.appendChild(imagePreviewBg);
 
     if (fileInput.files && fileInput.files.length > 0) {
         const file = fileInput.files[0];
@@ -38,14 +41,16 @@ document.getElementById('create-post-form-img').addEventListener('change', funct
             reader.onload = function(e) {
                 const img = document.createElement('img');
                 img.src = e.target.result;
+                img.style = "position: relative; z-index: 2; max-width: 100%; max-height: 100%; display: block; margin: auto;";
 
                 imagePreview.classList.add('active');
-
                 imagePreview.appendChild(img);
+
+                // Update blurred background
+                imagePreviewBg.style.backgroundImage = `url('${e.target.result}')`;
             };
 
             reader.readAsDataURL(file);
-
             label.innerHTML = `File selected: ${file.name}`;
         } else {
             label.innerHTML = 'Please select an image';
@@ -56,6 +61,8 @@ document.getElementById('create-post-form-img').addEventListener('change', funct
         imagePreview.classList.remove('active');
     }
 });
+
+
 
 /*-----------------*\
   COMMUNITY SEARCH

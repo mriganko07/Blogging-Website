@@ -392,7 +392,7 @@
                     
                     <h3 class="post-wall-first-h3">This is a title.</h3>
 
-                    <div class="post-img">
+                    {{-- <div class="post-img">
                         <style>
                             .post-img::before {
                                 content: "";
@@ -409,6 +409,21 @@
                         </style>
 
                         <img src="/Images/4.jpeg" alt="">
+                    </div> --}}
+
+                    <div class="post-img" style="position: relative; display: inline-block; overflow: hidden;">
+                        <div style="
+                            position: absolute;
+                            top: -10%;
+                            left: -10%;
+                            height: 120%;
+                            width: 120%;
+                            background: url('/Images/4.jpeg') no-repeat center;
+                            background-size: cover;
+                            filter: blur(20px);
+                            z-index: 1;
+                        "></div>
+                        <img src="/Images/4.jpeg" alt="" style="position: relative; z-index: 2;">
                     </div>
 
                     <!-- 
@@ -692,7 +707,7 @@
                     
                     <h3 class="post-wall-first-h3">This is a title</h3>
 
-                    <div class="post-img">
+                    {{-- <div class="post-img">
                         <style>
                             .post-img::before {
                                 content: "";
@@ -709,6 +724,21 @@
                         </style>
 
                         <img src="/Images/1.jpeg" alt="">
+                    </div> --}}
+
+                    <div class="post-img" style="position: relative; display: inline-block; overflow: hidden;">
+                        <div style="
+                            position: absolute;
+                            top: -10%;
+                            left: -10%;
+                            height: 120%;
+                            width: 120%;
+                            background: url('/Images/1.jpeg') no-repeat center;
+                            background-size: cover;
+                            filter: blur(20px);
+                            z-index: 1;
+                        "></div>
+                        <img src="/Images/1.jpeg" alt="" style="position: relative; z-index: 2;">
                     </div>
 
                     <!-- 
@@ -1014,14 +1044,16 @@
         <div class="rightbar">
             <div class="profile-overview">
                 <div class="profile-info">
-                    {{-- <h3 class="name">adhiphader</h3> --}}
-                    <h3 class="name">{{ $community->community_name }}</h3>
-                    {{-- <p class="profile-bio">Those Who Don't Appreciate Life Do Not Deserve Life</p> --}}
-                    <p class="profile-bio">{{ $community->community_description ?? 'No description available' }}</p>
+                    <div class="profile-info-int">
+                        {{-- <h3 class="name">adhiphader</h3> --}}
+                        <h3 class="name">{{ $community->community_name }}</h3>
+                        {{-- <p class="profile-bio">Those Who Don't Appreciate Life Do Not Deserve Life</p> --}}
+                        <p class="profile-bio">{{ $community->community_description ?? 'No description available' }}</p>
 
-                    
-                    <div class="share-link-container">
-                        <button href="#" class="share2" onclick="toggleShareModal()"> <i class="fa-solid fa-share"></i> <span>Share</span></button>
+                        
+                        <div class="share-link-container">
+                            <button href="#" class="share2" onclick="toggleShareModal()"> <i class="fa-solid fa-share"></i> <span>Share</span></button>
+                        </div>
                     </div>
                     
                     <div class="creation">

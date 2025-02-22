@@ -1164,7 +1164,7 @@ transition: all 0.3s ease;
 }
 
 .cover-img{
-    width: 1136px;
+    width: 1009px;
     height: 100%;
     border: none;
     /* background-color: #102770; */
@@ -1175,7 +1175,7 @@ transition: all 0.3s ease;
 .cover-img img{
     /* width: 987px;
     height: 100%; */
-    width: 87%;
+    width: 98%;
     height: 120px;
     object-fit: cover;
     border-radius: 8px;

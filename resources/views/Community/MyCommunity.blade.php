@@ -336,7 +336,7 @@
                     <p class="profile-info1-p">{{ $community->category }}</p>
                 </div>
                 
-                <button href="#" class="create2" style="right: 461px; top:190px">
+                <button href="#" class="create2" style="right: 292px; top:190px">
                     <i class="fa-solid fa-plus"></i> <span>Create Post</span>
                 </button>
             </div>

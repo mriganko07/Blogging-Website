@@ -1164,7 +1164,7 @@ transition: all 0.3s ease;
 }
 
 .cover-img{
-    width: 1136px;
+    width: 1009px;
     height: 100%;
     border: none;
     /* background-color: #102770; */
@@ -1175,7 +1175,7 @@ transition: all 0.3s ease;
 .cover-img img{
     /* width: 987px;
     height: 100%; */
-    width: 87%;
+    width: 98%;
     height: 120px;
     object-fit: cover;
     border-radius: 8px;
@@ -2328,7 +2328,7 @@ transition: all 0.3s ease;
 .create2 {
   position: absolute;
   top: 195px;
-  right: 548px;
+  right: 399px;
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
   font-size: 15px;
@@ -2375,7 +2375,7 @@ transition: all 0.3s ease;
 .join {
 position: absolute;
 top: 196px;
-left: 959px;
+left: 949px;
 font-family: 'Roboto', sans-serif;
 font-weight: 900;
 font-size: 15px;
@@ -2415,7 +2415,7 @@ transition: all 0.3s ease;
 .joined {
 position: absolute;
 top: 196px;
-left: 959px;
+left: 926px;
 font-family: 'Roboto', sans-serif;
 font-weight: 900;
 font-size: 15px;
