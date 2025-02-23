@@ -305,7 +305,7 @@
                                     <img src="{{ asset('storage/'.$user->profile_pic) }}" alt="Profile Picture" style="width: 100px; height: 100px;">
                                 @endif
                             </div>
-                        </div>
+                        </div> 
         
                         {{-- <div class="main-img-cover-img">
                             <input type="file" name="" id="main-img-cover-img" style="display: none;" accept="image/*">
