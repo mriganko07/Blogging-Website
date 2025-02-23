@@ -213,7 +213,7 @@
                            <span>Popular</span>
                         </a>
    
-                        <a href="#" class="sidebar__link">
+                        <a href="/explore" class="sidebar__link">
                             <i class="fa-solid fa-table"></i>
                            <span>Explore</span>
                         </a>

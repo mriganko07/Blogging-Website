@@ -694,8 +694,9 @@ transition: all 0.3s ease;
 
 .profile-info {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap; 
-  align-items: center;
+  /* align-items: center; */
   gap: 9px;
   /* margin-left: 33px; */
 }
