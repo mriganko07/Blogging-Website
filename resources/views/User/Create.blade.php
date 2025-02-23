@@ -479,8 +479,6 @@
             </div>
          </main>
 
-
-
         <script src="{{asset('js/create.js')}}"></script>
     </body>
 </html> 

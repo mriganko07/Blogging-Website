@@ -66,9 +66,13 @@ Route::get('/community', [CommunityController::class, 'community']);
 
 Route::get('/user-communities', [CommunityController::class, 'userCommunities'])->name('user.communities');
 
-Route::get('/mycommunity', [CommunityController::class, 'mycommunity']);
+Route::get('/mycommunity', [CommunityController::class, 'mycommunity'])->name('mycommunity');
+
+// Route::get('/mycommunity/{community_name?}', [CommunityController::class, 'showMyCommunity'])->name('mycommunity');
 
 Route::get('/mycommunity/{community_name}', [CommunityController::class, 'showMyCommunity'])->name('show.mycommunity');
+
+Route::post('/mycommunity/{community_name}', [CommunityController::class, 'showMyCommunity'])->name('show.mycommunity');
 
 Route::get('/community/{community_name}', [CommunityController::class, 'showCommunity'])->name('show.community');
 
@@ -97,5 +101,7 @@ Route::get('/user/posts', [PostController::class, 'showUserPosts'])->name('user.
 Route::get('/profile', [UserController::class, 'showProfile'])->name('profile'); 
 
 Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+
+Route::post('/profile', [UserController::class, 'profile'])->name('profile');
 
 Route::get('/viewprofile', [UserController::class, 'outprofile'])->name('viewprofile');

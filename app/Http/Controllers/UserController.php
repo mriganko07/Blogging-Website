@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Post;
+use App\Models\Communities;
+
 
 class UserController extends Controller
 {
@@ -23,11 +25,11 @@ class UserController extends Controller
 
     public function storePost(Request $request)
     {
-
         $request->validate([
             'post_caption' => 'required|string|max:255',
             'post_desc' => 'string|nullable',
             'post_img' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+            'selected_entity' => 'required'
         ]);
     
         $postImagePath = null;
@@ -37,34 +39,44 @@ class UserController extends Controller
         }
     
         $userId = session('user_id');
-        $selectedEntity = $request->selected_entity; 
+        $selectedEntity = $request->selected_entity;
     
         $user_id = null;
         $community_id = null;
+        $redirectRoute = 'profile'; 
     
         if (strpos($selectedEntity, 'r/') !== false) {
             $selectedEntity = str_replace('r/', '', $selectedEntity);
             if ($selectedEntity === User::find($userId)->user_name) {
-                $user_id = $userId; 
+                $user_id = $userId;
             } else {
                 $community = \App\Models\Communities::where('community_name', $selectedEntity)->first();
                 if ($community) {
                     $community_id = $community->community_id;
+                    $redirectRoute = 'mycommunity'; 
                 }
             }
+        }
+    
+        if (is_null($user_id) && is_null($community_id)) {
+            return redirect()->back()->withInput()->with('error', 'Please select any option.');
         }
     
         Post::create([
             'post_caption' => $request->post_caption,
             'post_desc' => $request->post_desc,
             'post_img' => $postImagePath,
-            'user_id' => $user_id, 
-            'community_id' => $community_id, 
+            'user_id' => $user_id,
+            'community_id' => $community_id,
             'up_votes' => 0,
             'down_votes' => 0,
             'comments' => 0,
             'share' => 0,
         ]);
+    
+        if ($redirectRoute === 'mycommunity') {
+            return redirect()->route('show.mycommunity', $selectedEntity)->with('success', 'Post created successfully!');
+        }
     
         return redirect()->route('profile')->with('success', 'Post created successfully!');
     }

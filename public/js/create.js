@@ -46,7 +46,6 @@ document.getElementById('create-post-form-img').addEventListener('change', funct
                 imagePreview.classList.add('active');
                 imagePreview.appendChild(img);
 
-                // Update blurred background
                 imagePreviewBg.style.backgroundImage = `url('${e.target.result}')`;
             };
 
@@ -79,13 +78,6 @@ function toggleSearchBar(event) {
     document.getElementById('create-post-community-community-bar').classList.add('visible');
 }
 
-// function selectCommunity(communityName) {
-//     document.getElementById('post-community-search-input').value = communityName;
-
-//     document.getElementById('create-post-community-community-bar').classList.remove('visible');
-//     document.getElementById('create-post-community-community-bar').classList.add('hidden');
-// }
-
 function selectCommunity(entity) {
     document.getElementById('selected_entity').value = entity;
 
@@ -94,13 +86,11 @@ function selectCommunity(entity) {
     document.getElementById('create-post-community-community-bar').classList.add('hidden');
 }
 
-// Show the community bar when clicking on the search input
 document.getElementById('post-community-search-input').addEventListener('click', function() {
     document.getElementById('create-post-community-community-bar').classList.remove('hidden');
     document.getElementById('create-post-community-community-bar').classList.add('visible');
 });
 
-// Hide the community bar if clicking outside
 document.addEventListener('click', function(event) {
     const communityBar = document.getElementById('create-post-community-community-bar');
     const searchInput = document.getElementById('post-community-search-input');
