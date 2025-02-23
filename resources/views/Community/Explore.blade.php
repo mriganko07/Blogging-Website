@@ -117,7 +117,8 @@
                     <div class="section-dropdown3"> 
 
                         <div class="section-dropdown3-profile">
-                            <img src="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_0.png" alt="">
+                            {{-- <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">  --}}
+                            <img src="{{ session('user') && session('user')->profile_pic ? asset('storage/' . session('user')->profile_pic) : 'https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}"  alt="Profile Picture" >
                             <div class="section-dropdown3-profile-text">
                                 <button>View Profile</button>
                                 {{-- <p>@username_agent07</p> --}}
