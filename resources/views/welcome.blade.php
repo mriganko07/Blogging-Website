@@ -214,7 +214,7 @@
                            <span>Popular</span>
                         </a>
    
-                        <a href="#" class="sidebar__link">
+                        <a href="/explore" class="sidebar__link">
                             <i class="fa-solid fa-table"></i>
                            <span>Explore</span>
                         </a>
@@ -411,23 +411,19 @@
                 
                 <h3 class="post-wall-first-h3">This is a title</h3>
 
-                <div class="post-img">
-                    <style>
-                        .post-img::before {
-                            content: "";
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            height: 100%;
-                            width: 100%;
-                            background: url('Images/4.jpeg') no-repeat center;
-                            background-size: cover;
-                            filter: blur(20px); 
-                            z-index: 1; 
-                        }
-                    </style>
-
-                    <img src="Pictures/4.jpeg" alt="">
+                <div class="post-img" style="position: relative; display: inline-block; overflow: hidden;">
+                    <div style="
+                        position: absolute;
+                        top: -10%;
+                        left: -10%;
+                        height: 120%;
+                        width: 120%;
+                        background: url('{{ asset('Images/4.jpeg') }}') no-repeat center;
+                        background-size: cover;
+                        filter: blur(20px);
+                        z-index: 1;
+                    "></div>
+                    <img src="{{ asset('Images/4.jpeg') }}" alt="Post Image"style="position: relative; z-index: 2;">
                 </div>
 
                 <!-- 
