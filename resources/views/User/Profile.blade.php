@@ -398,25 +398,19 @@
                             {{-- <h3>This is a title</h3> --}}
                             <h3 class="post-wall-first-h3">{{ $post->post_caption }}</h3>
 
-                            <div class="post-img">
-                                <style>
-                                    .post-img::before {
-                                        content: "";
-                                        position: absolute;
-                                        top: 0;
-                                        left: 0;
-                                        height: 100%;
-                                        width: 100%;
-                                        /* background: url('images/4.jpeg') no-repeat center; */
-                                        background: url('{{ asset("storage/" . $post->post_img) }}') no-repeat center;
-                                        background-size: cover;
-                                        filter: blur(20px); 
-                                        z-index: 1; 
-                                    }
-                                </style>
-
-                                {{-- <img src="/Images/4.jpeg" alt=""> --}}
-                                <img src="{{ asset('storage/' . $post->post_img) }}" alt="Post Image">
+                            <div class="post-img" style="position: relative; display: inline-block; overflow: hidden;">
+                                <div style="
+                                    position: absolute;
+                                    top: -10%;
+                                    left: -10%;
+                                    height: 120%;
+                                    width: 120%;
+                                    background: url('{{ asset("storage/" . $post->post_img) }}') no-repeat center;
+                                    background-size: cover;
+                                    filter: blur(20px);
+                                    z-index: 1;
+                                "></div>
+                                <img src="{{ asset('storage/' . $post->post_img) }}" alt="Post Image"style="position: relative; z-index: 2;">
                             </div>
 
                             <!-- 
@@ -1223,7 +1217,8 @@
                         @else
                             <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
                         @endif
-                        <p class="settings-img-p" style="margin-top: 0px;">Adhip Halder</p>
+                        {{-- <p class="settings-img-p" style="margin-top: 0px;">Adhip Halder</p> --}}
+                        <p class="settings-img-p" style="margin-top: 0px;">{{ session('user')->name ?? '' }}</p>
                     </div>
                     <a href="/editprofile">
                         <p>Edit</p>

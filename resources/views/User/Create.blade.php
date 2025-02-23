@@ -352,7 +352,7 @@
                             $user = \App\Models\User::find(session('user_id')); 
                             $communities = \App\Models\Communities::where('user_id', session('user_id'))->get();
                         @endphp
-
+                        
                         <div class="create-post-community-community-bar-community">
                             <h3>Your Profile</h3>
 
@@ -362,39 +362,44 @@
                                     <span>r/{{ $user->user_name }}</span>
                                 </p>
                             @endif --}}
-
+                        
                             <p class="create-post-community-community-bar-community-para" onclick="selectCommunity('r/{{ $user->user_name }}')">
                                 @if (!empty($user->profile_pic))
-                                    <img style=" width: 26px; object-fit: cover; border: 2px solid #4A4D70; box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); height: 26px" src="{{ asset('storage/' . $user->profile_pic) }}" alt="{{ $user->user_name }}">
+                                    <img style="width: 26px; object-fit: cover; border: 2px solid #4A4D70; box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); height: 26px" 
+                                        src="{{ asset('storage/' . $user->profile_pic) }}" 
+                                        alt="{{ $user->user_name }}">
                                 @else
-                                    <img class="profile-img2-img" style="height: 26px" src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Default Profile">
+                                    <img class="profile-img2-img" style="height: 26px" 
+                                        src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                                        alt="Default Profile">
                                 @endif
-                                
-                                <span class="create-post-community-community-bar-community-para-span" style="font-size: 12px; color: rgb(198, 198, 198);" onMouseOver="this.style.color='rgb(255, 77, 0)'"  onMouseOut="this.style.color='rgb(198, 198, 198)'">r/{{ $user->user_name }}</span>
+                                <span class="create-post-community-community-bar-community-para-span" 
+                                    style="font-size: 12px; color: rgb(198, 198, 198);" 
+                                    onMouseOver="this.style.color='rgb(255, 77, 0)'"  
+                                    onMouseOut="this.style.color='rgb(198, 198, 198)'">
+                                    r/{{ $user->user_name }}
+                                </span>
                             </p>
-
+                        
                             <h3>Your Community</h3>
-
+                        
                             @if ($communities->isNotEmpty())
                                 @foreach ($communities as $community)
-                                    {{-- <p class="create-post-community-community-bar-community-para" onclick="selectCommunity('r/{{ $community->community_name }}')"> --}}
-                                        <div class="profile-img2">
-                                            @if (!empty($community->community_pic))
-                                                <img class="profile-img2-img"  src="{{ asset('storage/' . $community->community_pic) }}" alt="{{ $community->community_name }}">
-                                                <span>r/{{ $community->community_name }}</span>
-                                            @else
-                                                <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Default Profile">
-                                            @endif
-                                        </div>
-                                    {{-- </p> --}}
+                                    <div class="profile-img2" onclick="selectCommunity('r/{{ $community->community_name }}')">
+                                        @if (!empty($community->community_pic))
+                                            <img class="profile-img2-img" src="{{ asset('storage/' . $community->community_pic) }}" alt="{{ $community->community_name }}">
+                                            <span>r/{{ $community->community_name }}</span>
+                                        @else
+                                            <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Default Profile">
+                                        @endif
+                                    </div>
                                 @endforeach
                             @else
-                                {{-- <p class="create-post-community-community-bar-community-para"> --}}
-                                    <div class="profile-img3">
-                                        <img class="profile-img2-img" style="width: 33px; height:auto; border:none; box-shadow:none;" src="https://www.redditstatic.com/shreddit/assets/hmm-snoo.png" alt="">
-                                        <span style="font-size: 11px; color: rgb(198, 198, 198);">You have No Community Yet</span>
-                                    </div>
-                                {{-- </p> --}}
+                                <div class="profile-img3">
+                                    <img class="profile-img2-img" style="width: 33px; height:auto; border:none; box-shadow:none;" 
+                                        src="https://www.redditstatic.com/shreddit/assets/hmm-snoo.png" alt="">
+                                    <span style="font-size: 11px; color: rgb(198, 198, 198);">You have No Community Yet</span>
+                                </div>
                             @endif
 
 
@@ -430,6 +435,8 @@
 
                     <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
+                        <input type="hidden" name="selected_entity" id="selected_entity" value="">
+
                         <div class="form-one">
                             <label for="create-post-title">Title<span class="required-star">*</span></label>
                             <input type="text" name="post_caption" id="create-post-title" class="create-post-title" style="margin-left: 0px;" placeholder="" required>
@@ -445,7 +452,22 @@
                                     <path d="m10.513 5.63 3.929 3.928-.884.884-2.933-2.933V19h-1.25V7.51l-2.933 2.932-.884-.884L9.67 5.446l.589-.029.254.212Zm5.859-1.482A6.876 6.876 0 0 0 10 0a6.876 6.876 0 0 0-6.372 4.148A4.639 4.639 0 0 0 0 8.625a4.716 4.716 0 0 0 4.792 4.625V12A3.465 3.465 0 0 1 1.25 8.625 3.412 3.412 0 0 1 4.189 5.31l.364-.06.123-.35A5.607 5.607 0 0 1 10 1.25a5.607 5.607 0 0 1 5.324 3.65l.123.348.364.06a3.412 3.412 0 0 1 2.939 3.317A3.465 3.465 0 0 1 15.208 12v1.25A4.716 4.716 0 0 0 20 8.625a4.639 4.639 0 0 0-3.628-4.477Z"></path>
                                 </svg>
                             </label>
-                            <div id="image-preview"></div>
+                            {{-- <div id="image-preview"></div> --}}
+
+                            <div id="image-preview" style="position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                                <div id="image-preview-bg" style="
+                                    position: absolute;
+                                    top: -10%;
+                                    left: -10%;
+                                    height: 120%;
+                                    width: 120%;
+                                    background: no-repeat center;
+                                    background-size: cover;
+                                    filter: blur(20px);
+                                    z-index: 1;
+                                "></div>
+                            </div>
+
                         </div>
                         <div class="form-four">
                             <button class="form-four-button" type="submit">Post</button>

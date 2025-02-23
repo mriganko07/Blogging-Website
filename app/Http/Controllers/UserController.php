@@ -23,32 +23,76 @@ class UserController extends Controller
 
     public function storePost(Request $request)
     {
+        // $request->validate([
+        //     'post_caption' => 'required|string|max:255',
+        //     'post_desc' => 'string|nullable',
+        //     'post_img' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+        // ]);
+
+        // $postImagePath = null;
+
+        // if ($request->hasFile('post_img')) {
+        //     $postImagePath = $request->file('post_img')->store('posts', 'public'); 
+        // }
+
+        // $userId = session('user_id');
+
+        // Post::create([
+        //     'post_caption' => $request->post_caption,
+        //     'post_desc' => $request->post_desc,
+        //     'post_img' => $postImagePath, 
+        //     'user_id' => $userId, 
+        //     'community_id' => $request->community_id, 
+        //     'up_votes' => 0,
+        //     'down_votes' => 0,
+        //     'comments' => 0,
+        //     'share' => 0,
+        // ]);
+
+        // return redirect()->route('profile')->with('success', 'Post created successfully!');
+
         $request->validate([
             'post_caption' => 'required|string|max:255',
             'post_desc' => 'string|nullable',
             'post_img' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ]);
-
+    
         $postImagePath = null;
-
+    
         if ($request->hasFile('post_img')) {
-            $postImagePath = $request->file('post_img')->store('posts', 'public'); 
+            $postImagePath = $request->file('post_img')->store('posts', 'public');
         }
-
+    
         $userId = session('user_id');
-
+        $selectedEntity = $request->selected_entity; 
+    
+        $user_id = null;
+        $community_id = null;
+    
+        if (strpos($selectedEntity, 'r/') !== false) {
+            $selectedEntity = str_replace('r/', '', $selectedEntity);
+            if ($selectedEntity === User::find($userId)->user_name) {
+                $user_id = $userId; 
+            } else {
+                $community = \App\Models\Communities::where('community_name', $selectedEntity)->first();
+                if ($community) {
+                    $community_id = $community->community_id;
+                }
+            }
+        }
+    
         Post::create([
             'post_caption' => $request->post_caption,
             'post_desc' => $request->post_desc,
-            'post_img' => $postImagePath, 
-            'user_id' => $userId, 
-            'community_id' => $request->community_id, 
+            'post_img' => $postImagePath,
+            'user_id' => $user_id, 
+            'community_id' => $community_id, 
             'up_votes' => 0,
             'down_votes' => 0,
             'comments' => 0,
             'share' => 0,
         ]);
-
+    
         return redirect()->route('profile')->with('success', 'Post created successfully!');
     }
 
