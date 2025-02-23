@@ -40,30 +40,6 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        // $request->validate([
-        //     'email' => 'required|email',
-        //     'password' => 'required',
-        // ]);
-
-        // $user = User::where("email", $request->email)->first();
-
-        // if ($user && Hash::check($request->password, $user->password)) {
-        //     $request->session()->put('user', $user); 
-        //     $request->session()->put('user_id', $user->user_id); 
-        //     return redirect('/'); 
-        // } else {
-        //     return redirect()->back()->with('error', 'Invalid email or password');
-        // }
-
-        // if ($user && Hash::check($request->password, $user->password)) {
-        //     Auth::login($user);  
-        //     return redirect()->route('home');
-        // } else {
-        //     return redirect()->back()->with('error', 'Invalid email or password');
-        // }
-
-
-
         $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required'
