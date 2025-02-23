@@ -1543,3 +1543,8 @@ transition: all 0.3s ease;
     color: rgb(255, 77, 0);
     border: 1px solid rgb(255, 77, 0);
 }
+
+.error {
+  color: tomato;
+  /* font-weight: bold; */
+}

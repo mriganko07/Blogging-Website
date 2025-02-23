@@ -256,14 +256,6 @@
                   </button> --}}
 
                   <form action="{{ route('logout') }}" method="POST">
-
-                    @if($errors->any())
-                            <ul>
-                                @foreach($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        @endif
                     @csrf
                     <button type="submit" class="sidebar__link">
                         <i class="fa-solid fa-right-from-bracket"></i>
@@ -409,6 +401,14 @@
                     </div>
                     
                 </div>
+
+                @if($errors->any())
+                    <ul class="error">
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                @endif
 
                 <div class="create-post-form">
                     {{-- <form action="" method="get">
