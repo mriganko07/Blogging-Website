@@ -1497,6 +1497,10 @@ transition: all 0.3s ease;
   margin-top: 10px;
 }
 
+.profile-img2{
+  max-height: 26px;
+}
+
 .profile-img2 img{
   position: relative;
   width: 25px;
@@ -1869,7 +1873,7 @@ transition: all 0.3s ease;
 .post-wall2{
   position: relative;
   margin-top: 24px;
-  /* max-height: 450px; */
+  max-height: 143px;
   height: auto;
   padding-bottom: 10px;
   height: auto;
