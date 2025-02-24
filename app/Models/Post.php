@@ -23,4 +23,8 @@ class Post extends Model
         'comments',
         'share',
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

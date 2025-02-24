@@ -1537,11 +1537,12 @@ transition: all 0.3s ease;
   margin-top: 10px;
 }
 
-.profile-img2{
+.profile-img2 img{
   position: relative;
   width: 25px;
   height: 25px;
   flex-shrink: 0;
+  object-fit: cover;
   border-radius: 50%;
   margin-left: 25px;
   border: 2px solid #4A4D70;

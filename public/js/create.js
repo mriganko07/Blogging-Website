@@ -19,9 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /*-----------------*\
-  IMAGE UPLODATION
+  IMAGE UPLOAD
 \*-----------------*/
-
 
 document.getElementById('create-post-form-img').addEventListener('change', function() {
     const fileInput = this;
@@ -61,8 +60,6 @@ document.getElementById('create-post-form-img').addEventListener('change', funct
     }
 });
 
-
-
 /*-----------------*\
   COMMUNITY SEARCH
 \*-----------------*/
@@ -79,9 +76,11 @@ function toggleSearchBar(event) {
 }
 
 function selectCommunity(entity) {
+    console.log("Selected entity:", entity); 
     document.getElementById('selected_entity').value = entity;
 
     document.getElementById('post-community-search-input').value = entity;
+
     document.getElementById('create-post-community-community-bar').classList.remove('visible');
     document.getElementById('create-post-community-community-bar').classList.add('hidden');
 }
@@ -99,4 +98,22 @@ document.addEventListener('click', function(event) {
         communityBar.classList.remove('visible');
         communityBar.classList.add('hidden');
     }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const communityElements = document.querySelectorAll('.profile-img2');
+    communityElements.forEach(element => {
+        element.addEventListener('click', function () {
+            const communityName = this.querySelector('span').textContent; 
+            selectCommunity(`r/${communityName}`);
+        });
+    });
+
+    const usernameElements = document.querySelectorAll('.your-profile-selector'); 
+    usernameElements.forEach(usernameElement => {
+        usernameElement.addEventListener('click', function () {
+            const username = this.textContent.trim(); 
+            selectCommunity(`r/${username}`);
+        });
+    });
 });

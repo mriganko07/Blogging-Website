@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Communities;
 use App\Models\User;
+use App\Models\Post; 
 
 
 class CommunityController extends Controller
@@ -75,13 +76,31 @@ class CommunityController extends Controller
 
 
     public function showMyCommunity($community_name){
+
+        // $community = Communities::where('community_name', $community_name)->first();
+
+        // if (!$community) {
+        //     return redirect()->route('home')->with('error', 'Community not found.');
+        // }
+    
+        // $posts = \App\Models\Post::where('community_id', $community->community_id)->latest()->get();
+    
+        // return view('Community.MyCommunity', compact('community', 'posts'));
+
+
         $community = Communities::where('community_name', $community_name)->first();
 
         if (!$community) {
             return redirect()->route('home')->with('error', 'Community not found.');
         }
 
-        return view('Community.MyCommunity', compact('community'));
+        // Fetch posts along with user details
+        $posts = Post::with('user') // Assuming you have a relationship defined in the Post model
+            ->where('community_id', $community->community_id)
+            ->latest()
+            ->get();
+
+        return view('Community.MyCommunity', compact('community', 'posts'));
     }
 
     public function showCommunity($community_name){
