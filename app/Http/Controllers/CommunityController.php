@@ -77,16 +77,6 @@ class CommunityController extends Controller
 
     public function showMyCommunity($community_name){
 
-        // $community = Communities::where('community_name', $community_name)->first();
-
-        // if (!$community) {
-        //     return redirect()->route('home')->with('error', 'Community not found.');
-        // }
-    
-        // $posts = \App\Models\Post::where('community_id', $community->community_id)->latest()->get();
-    
-        // return view('Community.MyCommunity', compact('community', 'posts'));
-
 
         $community = Communities::where('community_name', $community_name)->first();
 
@@ -94,8 +84,7 @@ class CommunityController extends Controller
             return redirect()->route('home')->with('error', 'Community not found.');
         }
 
-        // Fetch posts along with user details
-        $posts = Post::with('user') // Assuming you have a relationship defined in the Post model
+        $posts = Post::with('user') 
             ->where('community_id', $community->community_id)
             ->latest()
             ->get();
