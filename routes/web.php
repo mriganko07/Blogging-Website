@@ -76,7 +76,9 @@ Route::get('/community/{community_name}', [CommunityController::class, 'showComm
 
 Route::get('/explore', [CommunityController::class, 'explore']);
 
+Route::get('/editcommunity/{community_name}', [CommunityController::class, 'editCommunity'])->name('edit.community');
 
+Route::post('/updatecommunity/{community_name}', [CommunityController::class, 'updateCommunity'])->name('update.community');
 
 /*-------------*\
   #USER

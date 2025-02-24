@@ -683,43 +683,40 @@
 
 
             <div class="form-main">
-                
 
-                <form class="main-form-comm" action="{{ route('store.community') }}" method="POST" enctype="multipart/form-data">
+                <form class="main-form-comm" action="{{ isset($community) ? route('update.community', ['community_name' => $community->community_name]) : route('store.community') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-
+                
                     @foreach ($errors->all() as $error)
                         <div class="alert alert-danger">{{ $error }}</div>
                     @endforeach
-
+                
                     <div>
-                        {{-- <h3>{{ session('user_id') }}</h3> --}}
                         <h3 class="main-h3">Tell us about your community</h3>    
                         <p class="main-p">A name and description help people understand what your community is all about.</p>
                     </div>
-
+                
                     <div>
-                        <input type="text"  name="community_name" id="main-h3-input-first" placeholder="Community Name" maxlength="17" required value="{{ old('community_name') }}">
+                        <input type="text" name="community_name" id="main-h3-input-first" placeholder="Community Name" maxlength="17" required value="{{ old('community_name', $community->community_name ?? '') }}">
                     </div>
-
+                
                     <div>
-                        {{-- <textarea name="community_description" class="main-form1-text" id="main-form1-text" placeholder="Description" maxlength="50" required value="{{ old('community_description') }}"></textarea> --}}
-                        <textarea name="community_description" class="main-form1-text" id="main-form1-text" placeholder="Description" maxlength="50" required>{{ old('community_description') }}</textarea>
+                        <textarea name="community_description" class="main-form1-text" id="main-form1-text" placeholder="Description" maxlength="50" required>{{ old('community_description', $community->community_description ?? '') }}</textarea>
                     </div>
-
+                
                     <div class="com-pic com-pic-first">
                         <label class="com-cover-pic-label" for="com-cover-pic">Cover Picture</label>
-                        <input type="file" name="community_coverpic" id="com-cover-pic" class="com-cover-pic" required>
+                        <input type="file" name="community_coverpic" id="com-cover-pic" class="com-cover-pic">
                     </div>
-
+                
                     <div class="com-pic com-pic-first">
                         <label class="com-profile-pic-label" for="com-profile-pic">Profile Picture</label>
-                        <input type="file" name="community_pic" id="com-profile-pic" class="com-profile-pic" required>
+                        <input type="file" name="community_pic" id="com-profile-pic" class="com-profile-pic">
                     </div>
-
+                
                     <div class="main-slidebar">
 
-                        <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-games" value="games">
+                        <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-games" value="games"  {{ (isset($community) && $community->category == 'games') ? 'checked' : '' }}>
                         <label class="identifier-button" for="main-form3-games">
 
                             <svg rpl="" fill="currentColor" height="16" icon-name="topic-videogaming-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
@@ -729,7 +726,7 @@
 
                         </label>
 
-                        <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-technologies" value="technologies">
+                        <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-technologies" value="technologies"  {{ (isset($community) && $community->category == 'technologies') ? 'checked' : '' }}>
                         <label class="identifier-button" for="main-form3-technologies">
 
                             <svg rpl="" fill="currentColor" height="16" icon-name="topic-technology-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
@@ -738,7 +735,7 @@
                             <span>Technologies</span>                                
                         </label>
 
-                        <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-movies" value="movies">
+                        <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-movies" value="movies"  {{ (isset($community) && $community->category == 'movies') ? 'checked' : '' }}>
                         <label class="identifier-button" for="main-form3-movies">
 
                             <svg rpl="" fill="currentColor" height="16" icon-name="topic-movies-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
@@ -748,7 +745,7 @@
                             
                         </label>
 
-                        <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-travel" value="travel">
+                        <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-travel" value="travel"  {{ (isset($community) && $community->category == 'travel') ? 'checked' : '' }}>
                         <label class="identifier-button" for="main-form3-travel">
 
                             <svg rpl="" fill="currentColor" height="16" icon-name="topic-travel-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
@@ -759,7 +756,7 @@
                         </label>
 
 
-                        <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-music" value="music">
+                        <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-music" value="music"  {{ (isset($community) && $community->category == 'music') ? 'checked' : '' }}>
                         <label class="identifier-button" for="main-form3-music">
 
                             <svg rpl="" fill="currentColor" height="16" icon-name="topic-music-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
@@ -769,7 +766,7 @@
                             
                         </label>
 
-                        <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-education" value="education">
+                        <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-education" value="education"  {{ (isset($community) && $community->category == 'education') ? 'checked' : '' }}>
                         <label class="identifier-button" for="main-form3-education">
 
                             <svg rpl="" fill="currentColor" height="16" icon-name="topic-reading-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
@@ -779,7 +776,7 @@
                             
                         </label>
 
-                        <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-sport" value="sport">
+                        <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-sport" value="sport"  {{ (isset($community) && $community->category == 'sport') ? 'checked' : '' }}>
                         <label class="identifier-button" for="main-form3-sport">
 
                             <svg rpl="" fill="currentColor" height="16" icon-name="topic-sports-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
@@ -789,7 +786,7 @@
                             
                         </label>
 
-                        <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-news" value="news_politics">
+                        <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-news" value="news_politics"  {{ (isset($community) && $community->category == 'news_politics') ? 'checked' : '' }}>
                         <label class="identifier-button" for="main-form3-news">
 
                             <svg rpl="" fill="currentColor" height="16" icon-name="topic-news-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
@@ -809,23 +806,25 @@
                             
                         </label>
 
-                    </div>  
-
+                    </div> 
+                
                     <div>
-                        <button type="submit" class="form-submit">Submit</button>
+                        <button type="submit" class="form-submit">{{ isset($community) ? 'Update' : 'Submit' }}</button>
                     </div>
+                </form> 
 
-                </form>
 
                 <div class="main-form2-img-show">
                     <div class="main-form2-img-show-first">
-                        <img src="" onerror="this.src='https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';">
+                        <img src="{{ isset($community) && $community->community_coverpic ? asset('storage/' . $community->community_coverpic) : '' }}" 
+                             onerror="this.src='https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';">
                     </div>
                     <div class="main-form2-img-show-sec">
-                        <img src="" onerror="this.src='https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';">
+                        <img src="{{ isset($community) && $community->community_pic ? asset('storage/' . $community->community_pic) : '' }}" 
+                             onerror="this.src='https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';">
                         <div class="main-form2-img-show-sec-div">
-                            <span class="main-form2-img-show-sec-first"></span>
-                            <span class="main-form2-img-show-sec-second"></span>
+                            <span class="main-form2-img-show-sec-first">{{ old('community_name', $community->community_name ?? '') }}</span>
+                            <span class="main-form2-img-show-sec-second">{{ old('community_description', $community->community_description ?? '') }}</span>
                         </div>
                     </div>
                 </div>
