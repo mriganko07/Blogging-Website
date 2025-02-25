@@ -509,7 +509,8 @@
                         <div class="profile-img2"></div>
                         <span class="username-hover">adhiphalder</span>
                         <p> • 22 hr. ago</p>
-                    
+                        <span class="post-wall-admin" style="color: #d0d3da;">Admin</span>
+                        <span class="post-wall-member" style="color: #d0d3da;">Members</span>
                     </div>
                     
                     <h3 class="post-wall-first-h3">Who are you? Without reference to your name, job, culture, hobbies, family and relationships? dhfvshfvshvfskfshfshf   </h3>
@@ -600,7 +601,8 @@
                         <div class="profile-img2"></div>
                         <span class="username-hover">adhiphalder</span>
                         <p> • 22 hr. ago</p>
-
+                        <span class="post-wall-admin" style="color: #d0d3da;">Admin</span>
+                        <span class="post-wall-member" style="color: #d0d3da;">Members</span>
                     
                     </div>
                     
@@ -704,7 +706,8 @@
                         <div class="profile-img2"></div>
                         <span class="username-hover">adhiphalder</span>
                         <p> • 22 hr. ago</p>
-
+                        <span class="post-wall-admin" style="color: #d0d3da;">Admin</span>
+                        <span class="post-wall-member" style="color: #d0d3da;">Members</span>
                     </div>
                     
                     <h3 class="post-wall-first-h3">This is a title</h3>
@@ -824,7 +827,8 @@
                         <div class="profile-img2"></div>
                         <span class="username-hover">adhiphalder</span>
                         <p> • 22 hr. ago</p>
-                    
+                        <span class="post-wall-admin" style="color: #d0d3da;">Admin</span>
+                        <span class="post-wall-member" style="color: #d0d3da;">Members</span>
                     </div>
                     
                     <h3 class="post-wall-first-h3">Who are you? Without reference to your name, job, culture, hobbies, family and relationships? dhfvshfvshvfskfshfshf   </h3>
@@ -915,7 +919,8 @@
                         <div class="profile-img2"></div>
                         <span class="username-hover">adhiphalder</span>
                         <p> • 22 hr. ago</p>
-
+                        <span class="post-wall-admin" style="color: #d0d3da;">Admin</span>
+                        <span class="post-wall-member" style="color: #d0d3da;">Members</span>
                     
                     </div>
                     
