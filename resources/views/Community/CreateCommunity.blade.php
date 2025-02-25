@@ -796,7 +796,7 @@
                             
                         </label>
 
-                        <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-business" value="business_finance">
+                        <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-business" value="business_finance" {{ (isset($community) && $community->category == 'business_finance') ? 'checked' : '' }}>
                         <label class="identifier-button" for="main-form3-business">
 
                             <svg rpl="" fill="currentColor" height="16" icon-name="topic-business-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
