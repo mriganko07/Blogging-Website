@@ -1823,7 +1823,8 @@
                 </div>
                 <div>
                     <span>Posts</span>
-                    <span>50</span>
+                    {{-- <span>50</span> --}}
+                    <span>{{ $totalPosts }}</span>
                 </div>
                 <div>
                     <span>Active</span>
@@ -1848,7 +1849,11 @@
 
 
                     </div>
-                    <a href="">
+                    {{-- <a href="">
+                        <p>Edit</p>
+                    </a> --}}
+
+                    <a href="{{ route('edit.community', ['community_name' => $community->community_name]) }}">
                         <p>Edit</p>
                     </a>
                 </div>

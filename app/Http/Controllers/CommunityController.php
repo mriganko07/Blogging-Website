@@ -18,38 +18,37 @@ class CommunityController extends Controller
 
     public function storeCommunity(Request $request)
     {
-        if (!$request->session()->has('user_id')) {
-            return redirect()->route('register')->with('error', 'You must be logged in to create a community.');
+        $community = Communities::where('community_name', $community_name)->first();
+
+        if (!$community) {
+            return redirect()->route('home')->with('error', 'Community not found.');
         }
-    
+
         $validatedData = $request->validate([
-            'community_name' => 'required|string|max:17|unique:communities,community_name',
+            'community_name' => 'required|string|max:17|unique:communities,community_name,' . $community->community_id,
             'community_description' => 'required|string|max:50',
-            'community_coverpic' => 'required|image|mimes:jpeg,png,jpg',
-            'community_pic' => 'required|image|mimes:jpeg,png,jpg',
+            'community_coverpic' => 'nullable|image|mimes:jpeg,png,jpg',
+            'community_pic' => 'nullable|image|mimes:jpeg,png,jpg',
             'main-form3-name' => 'required|string|in:games,technologies,movies,travel,music,education,sport',
         ]);
-    
-        $community = new Communities();
+
         $community->community_name = $validatedData['community_name'];
         $community->community_description = $validatedData['community_description'];
         $community->category = $validatedData['main-form3-name'];
-    
+
         if ($request->hasFile('community_coverpic')) {
             $coverPicPath = $request->file('community_coverpic')->store('community_banners', 'public');
             $community->community_coverpic = $coverPicPath;
         }
-    
+
         if ($request->hasFile('community_pic')) {
             $profilePicPath = $request->file('community_pic')->store('community_profiles', 'public');
             $community->community_pic = $profilePicPath;
         }
-    
-        $community->user_id = $request->session()->get('user_id'); 
-    
+
         $community->save();
-    
-        return redirect()->route('home')->with('success', 'Community created successfully!');
+
+        return redirect()->route('user.communities')->with('success', 'Community updated successfully!');
 
 
     }
@@ -76,8 +75,6 @@ class CommunityController extends Controller
 
 
     public function showMyCommunity($community_name){
-
-
         $community = Communities::where('community_name', $community_name)->first();
 
         if (!$community) {
@@ -89,7 +86,9 @@ class CommunityController extends Controller
             ->latest()
             ->get();
 
-        return view('Community.MyCommunity', compact('community', 'posts'));
+        $totalPosts = $posts->count();
+
+        return view('Community.MyCommunity', compact('community', 'posts', 'totalPosts'));
     }
 
     public function showCommunity($community_name){
@@ -110,5 +109,52 @@ class CommunityController extends Controller
         $otherCommunities = Communities::where('user_id', '!=', $userId)->get();
 
         return view('Community.Explore', compact('otherCommunities'));
+    }
+
+    public function editCommunity($community_name)
+    {
+        $community = Communities::where('community_name', $community_name)->first();
+
+        if (!$community) {
+            return redirect()->route('home')->with('error', 'Community not found.');
+        }
+
+        return view('Community.CreateCommunity', compact('community'));
+    }
+
+    public function updateCommunity(Request $request, $community_name)
+    {
+        $community = Communities::where('community_name', $community_name)->first();
+    
+        if (!$community) {
+            return redirect()->route('home')->with('error', 'Community not found.');
+        }
+    
+        $validatedData = $request->validate([
+            'community_name' => 'required|string|max:17|unique:communities,community_name,' . $community->community_id . ',community_id',
+            'community_description' => 'required|string|max:50',
+            'community_coverpic' => 'nullable|image|mimes:jpeg,png,jpg',
+            'community_pic' => 'nullable|image|mimes:jpeg,png,jpg',
+            'main-form3-name' => 'required|string|in:games,technologies,movies,travel,music,education,sport',
+        ]);
+    
+        $community->community_name = $validatedData['community_name'];
+        $community->community_description = $validatedData['community_description'];
+        $community->category = $validatedData['main-form3-name'];
+    
+        if ($request->hasFile('community_coverpic')) {
+            $coverPicPath = $request->file('community_coverpic')->store('community_banners', 'public');
+            $community->community_coverpic = $coverPicPath;
+        }
+    
+        if ($request->hasFile('community_pic')) {
+            $profilePicPath = $request->file('community_pic')->store('community_profiles', 'public');
+            $community->community_pic = $profilePicPath;
+        }
+    
+        $community->save();
+    
+        return redirect()->route('show.mycommunity', ['community_name' => $community->community_name])
+                         ->with('success', 'Community updated successfully!');
     }
 }
