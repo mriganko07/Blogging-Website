@@ -337,7 +337,7 @@
                     <p class="profile-info1-p">{{ $community->category }}</p>
                 </div>
                 
-                <button href="#" class="create2" style="right: 292px; top:190px">
+                <button href="{{ route ('create')}}" class="create2" style="right: 292px; top:190px">
                     <i class="fa-solid fa-plus"></i> <span>Create Post</span>
                 </button>
             </div>
@@ -1613,7 +1613,7 @@
                             -->
 
                         @elseif($post->post_caption )
-                            <div class="post-wall2">
+                            <div class="post-wall2" style="height: 143px">
                                 <div class="username">
                                     <div class="profile-img2">
                                         {{-- <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture"> --}}
