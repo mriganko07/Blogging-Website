@@ -999,7 +999,8 @@
                                     <span class="username-hover">{{ $post->user->user_name }}</span>
                                     {{-- <p> • 22 hr. ago</p> --}}
                                     <p> • {{ $post->created_at->diffForHumans() }}</p>
-
+                                    <span class="post-wall-admin" style="color: #d0d3da;">Admin</span>
+                                    <span class="post-wall-member" style="color: #d0d3da;">Members</span>
                                 </div>
                                 
                                 {{-- <h3>This is a title</h3> --}}
@@ -1125,7 +1126,8 @@
                                     <span class="username-hover">{{ $post->user->user_name }}</span>
                                     {{-- <p> • 22 hr. ago</p> --}}
                                     <p> • {{ $post->created_at->diffForHumans() }}</p>
-
+                                    <span class="post-wall-admin" style="color: #d0d3da;">Admin</span>
+                                    <span class="post-wall-member" style="color: #d0d3da;">Members</span>
                                 
                                 </div>
                                 
@@ -1232,7 +1234,7 @@
                             -->
 
                         @elseif($post->post_caption )
-                            <div class="post-wall2">
+                            <div class="post-wall2" style="height: 143px">
                                 <div class="username">
                                     <div class="profile-img2">
                                         {{-- <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture"> --}}
@@ -1245,7 +1247,8 @@
                                     <span class="username-hover">{{ $post->user->user_name }}</span>
                                     {{-- <p> • 22 hr. ago</p> --}}
                                     <p> • {{ $post->created_at->diffForHumans() }}</p>
-                                
+                                    <span class="post-wall-admin" style="color: #d0d3da;">Admin</span>
+                                    <span class="post-wall-member" style="color: #d0d3da;">Members</span>
                                 </div>
                                 
                                 {{-- <h3 class="post-wall-first-h3">Who are you? Without reference to your name, job, culture, hobbies, family and relationships? dhfvshfvshvfskfshfshf   </h3> --}}
@@ -1375,7 +1378,8 @@
                                     <span class="username-hover">{{ $post->user->user_name }}</span>
                                     {{-- <p> • 22 hr. ago</p> --}}
                                     <p> • {{ $post->created_at->diffForHumans() }}</p>
-
+                                    <span class="post-wall-admin" style="color: #d0d3da;">Admin</span>
+                                    <span class="post-wall-member" style="color: #d0d3da;">Members</span>
                                 </div>
                                 
                                 {{-- <h3>This is a title</h3> --}}
@@ -1501,7 +1505,8 @@
                                     <span class="username-hover">{{ $post->user->user_name }}</span>
                                     {{-- <p> • 22 hr. ago</p> --}}
                                     <p> • {{ $post->created_at->diffForHumans() }}</p>
-
+                                    <span class="post-wall-admin" style="color: #d0d3da;">Admin</span>
+                                    <span class="post-wall-member" style="color: #d0d3da;">Members</span>
                                 
                                 </div>
                                 
@@ -1621,7 +1626,8 @@
                                     <span class="username-hover">{{ $post->user->user_name }}</span>
                                     {{-- <p> • 22 hr. ago</p> --}}
                                     <p> • {{ $post->created_at->diffForHumans() }}</p>
-                                
+                                    <span class="post-wall-admin" style="color: #d0d3da;">Admin</span>
+                                    <span class="post-wall-member" style="color: #d0d3da;">Members</span>
                                 </div>
                                 
                                 {{-- <h3 class="post-wall-first-h3">Who are you? Without reference to your name, job, culture, hobbies, family and relationships? dhfvshfvshvfskfshfshf   </h3> --}}

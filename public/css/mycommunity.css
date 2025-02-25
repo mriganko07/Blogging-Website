@@ -1537,6 +1537,24 @@ transition: all 0.3s ease;
   margin-top: 10px;
 }
 
+.post-wall-admin{
+  padding: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 3px;
+  color: #d0d3da;
+  background-color: #ff5200a6;
+}
+
+.post-wall-member{
+  padding: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 3px;
+  color: #d0d3da;
+  background-color: #6f2cf7;
+}
+
 .profile-img2{
   max-height: 26px;
 }
@@ -1890,7 +1908,7 @@ transition: all 0.3s ease;
 .post-wall2{
   position: relative;
   /* margin-top: 55px; */
-  max-height: 143px;
+  /* max-height: 143px; */
   height: auto;
   padding-bottom: 10px;
   height: auto;
