@@ -303,7 +303,7 @@
                             </label>
                             <div id="image-preview-profile">
                                 @if($user->profile_pic)
-                                    <img src="{{ asset('storage/'.$user->profile_pic) }}" alt="Profile Picture" style="width: 100px; height: 100px;">
+                                    <img src="{{ asset('storage/'.$user->profile_pic) }}" alt="Profile Picture" style="width: 158px;">
                                 @endif
                             </div>
                         </div> 
@@ -329,7 +329,7 @@
                             </label>
                             <div id="image-preview-cover">
                                 @if($user->cover_img)
-                                    <img src="{{ asset('storage/'.$user->cover_img) }}" alt="Cover Picture" style="width: 200px; height: 100px;">
+                                    <img src="{{ asset('storage/'.$user->cover_img) }}" alt="Cover Picture" style="width: 516px; ">
                                 @endif
                             </div>
                         </div>
