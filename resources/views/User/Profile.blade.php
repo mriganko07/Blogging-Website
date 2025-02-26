@@ -69,7 +69,7 @@
                     </div>
                 </div>
             
-                <button class="create"><i class="fa-solid fa-plus"></i> <span>Create</span></button>
+                <a href="/create" style="position: static"><button href="#" class="create"><i class="fa-solid fa-plus"></i> <span>Create</span></button></a>
 
 
                 <!-- 

@@ -69,7 +69,7 @@
                     </div>
                 </div>
             
-                <button href="#" class="create"><i class="fa-solid fa-plus"></i> <span>Create</span></button>
+                <a href="/create" style="position: static"><button href="#" class="create"><i class="fa-solid fa-plus"></i> <span>Create</span></button></a>
 
 
                 <!-- 
@@ -143,7 +143,7 @@
                             {{-- <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">  --}}
                             <img src="{{ session('user') && session('user')->profile_pic ? asset('storage/' . session('user')->profile_pic) : 'https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}"  alt="Profile Picture" >
                             <div class="section-dropdown3-profile-text">
-                                <button>View Profile</button>
+                                <a href="/profile" style="position: static; cursor: pointer;"><button>View Profile</button></a>
                                 {{-- <p>@username_agent07</p> --}}
                                 <p class="user_name">
                                     @if(session('user'))
@@ -360,7 +360,7 @@
                     </div>
                     
                     {{-- <h3>This is a title</h3> --}}
-                    <h3 class="post-wall-first-h3"></h3>
+                    <h3 class="post-wall-first-h3">This is a title</h3>
 
                     <div class="post-img" style="position: relative; display: inline-block; overflow: hidden;">
                         <div style="
@@ -466,7 +466,7 @@
                 - SECTION POST-WALL2
                 -->
 
-                <div class="post-wall2">
+                <div class="post-wall2" style="max-height: 177px">
                     <div class="username">
                         <div class="profile-img2">
                             <img src="/Pictures/agamani.jpg" alt="Profile Picture">
@@ -791,7 +791,7 @@
                 - SECTION POST-WALL2
                 -->
 
-                <div class="post-wall2">
+                <div class="post-wall2" style="max-height: 177px">
                     <div class="username">
                         <div class="profile-img2">
                             <img src="/Pictures/agamani.jpg" alt="Profile Picture">

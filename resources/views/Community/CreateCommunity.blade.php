@@ -70,7 +70,7 @@
                     </div>
                 </div>
             
-                <button href="#" class="create"><i class="fa-solid fa-plus"></i> <span>Create</span></button>
+                <a href="/create" style="position: static"><button href="#" class="create"><i class="fa-solid fa-plus"></i> <span>Create</span></button></a>
 
 
                 <!-- 
@@ -716,7 +716,7 @@
                 
                     <div class="main-slidebar">
 
-                        <input type="radio" class="main-form3-input" name="main-form3-name" id="main-form3-games" value="games"  {{ (isset($community) && $community->category == 'games') ? 'checked' : '' }}>
+                        <input type="radio" class=" " name="main-form3-name" id="main-form3-games" value="games"  {{ (isset($community) && $community->category == 'games') ? 'checked' : '' }}>
                         <label class="identifier-button" for="main-form3-games">
 
                             <svg rpl="" fill="currentColor" height="16" icon-name="topic-videogaming-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
