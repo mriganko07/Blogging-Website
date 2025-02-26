@@ -1249,8 +1249,8 @@
                         @endif
                         <p>{{ $community->user->name ?? 'Unknown User' }}</p>
                     </div>
-                    <a href="{{ route('viewprofile', ['username' => $community->user->user_name]) }}">
-                        <p>View</p>
+                    <a href="{{ route('viewprofile', ['username' => $community->user->user_name]) }}" onMouseOver="this.style.color='#878ed8'" onMouseOut="this.style.color='#9fa5b5'">
+                        <p >View</p>
                     </a>
                 </div>
             </div>

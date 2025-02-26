@@ -320,7 +320,7 @@
                     {{-- <p>r/adhiphalder</p> --}}
                     <p>r/{{ $user->user_name }}</p>
                 </div>
-                <button onclick="toggleButton(this)" class="join"><span>Join</span></button>
+                <button onclick="toggleButton(this)" class="join" style="position: absolute; left: 900px; top: 48px;"><span>Join</span></button>
             </div>
 
 
