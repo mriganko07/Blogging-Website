@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\UserController;
 use App\Models\Communities;
 use App\Models\User;
 use App\Models\Post; 
@@ -90,21 +91,12 @@ class CommunityController extends Controller
     }
 
     public function showCommunity($community_name){
-        // $community = Communities::where('community_name', $community_name)->first();
-
-        // if (!$community) {
-        //     return redirect()->route('home')->with('error', 'Community not found.');
-        // }
-        // return view('Community.Community', compact('community'));
-
-
-        $community = Communities::where('community_name', $community_name)->first();
+        $community = Communities::with('user')->where('community_name', $community_name)->first();
 
         if (!$community) {
             return redirect()->route('home')->with('error', 'Community not found.');
         }
 
-        // Fetch posts related to the community
         $posts = Post::with('user')
             ->where('community_id', $community->community_id)
             ->latest()
@@ -116,14 +108,6 @@ class CommunityController extends Controller
     public function explore() 
     {
         // return view('Community.Explore');
-
-
-
-        // $userId = session('user_id'); 
-
-        // $otherCommunities = Communities::where('user_id', '!=', $userId)->get();
-
-        // return view('Community.Explore', compact('otherCommunities'));
 
         $userId = session('user_id'); 
         $otherCommunities = Communities::where('user_id', '!=', $userId)->get();
