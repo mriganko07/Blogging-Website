@@ -401,7 +401,8 @@
                                             <img class="profile-img2-img" src="{{ asset('storage/' . $community->community_pic) }}" alt="{{ $community->community_name }}">
                                             <span>r/{{ $community->community_name }}</span>
                                         @else
-                                            <img src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Default Profile">
+                                            <img class="profile-img2-img" src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Default Profile">
+                                            <span>r/{{ $community->community_name }}</span>
                                         @endif
                                     </div>
                                 @endforeach

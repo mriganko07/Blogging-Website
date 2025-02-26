@@ -402,583 +402,387 @@
             </div> --}}
 
             <div class="identifier-body" id="identifier-body-all">
-                @foreach ($otherCommunities as $community)
-                    <div class="identifier">
-                        <div class="identifier-upper">
-                            <div class="identifier-upper-left">
-                                <img src="{{ asset('storage/' . $community->community_pic) }}" alt="{{ $community->community_name }}">
-                                <div>
-                                    <div>r/{{ $community->community_name }}</div>
-                                    <div>{{ $community->members_count ?? '0' }} members</div>
-                                </div>
-                            </div>
-                            <button>Join</button>
-                        </div>
-                        <div class="identifier-middle">
-                            <p>{{ $community->community_description }}</p>
-                        </div>
-                        <div class="identifier-lower">
-                            <img src="{{ asset('storage/' . $community->community_coverpic) }}" alt="{{ $community->community_name }} Cover">
-                        </div>
+                @if ($groupedCommunities->isEmpty())
+                    <div class="not-found">
+                        <img src="https://www.redditstatic.com/shreddit/assets/hmm-snoo.png" alt="">
+                        <h3>Looks like there are no communities yet</h3> 
                     </div>
-                @endforeach
+                @else
+                    @foreach ($groupedCommunities as $category => $communities)
+                        @foreach ($communities as $community)
+                            <a href="{{ route('show.community', ['community_name' => $community->community_name]) }}">
+                                <div class="identifier">
+                                    <div class="identifier-upper">
+                                        <div class="identifier-upper-left">
+                                            <img src="{{ $community->community_pic ? asset('storage/' . $community->community_pic) : 'https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" 
+                                                alt="{{ $community->community_name }}">
+                                            <div>
+                                                <div>r/{{ $community->community_name }}</div>
+                                                <div>{{ $community->members_count ?? '0' }} members</div>
+                                            </div>
+                                        </div>
+                                        <button>Join</button>
+                                    </div>
+                                    <div class="identifier-middle">
+                                        <p>{{ $community->community_description }}</p>
+                                    </div>
+                                    <div class="identifier-lower">
+                                        <img src="{{ $community->community_coverpic ? asset('storage/' . $community->community_coverpic) : 'https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" 
+                                            alt="{{ $community->community_name }} Cover">
+                                    </div>
+                                </div>
+                            </a>
+                        @endforeach
+                    @endforeach
+                @endif
             </div>
 
             <!-- Games -->
             <div class="identifier-body" id="identifier-body-games">
+                @if (empty($groupedCommunities['games'] ?? []))
+                    <div class="not-found">
+                        <img src="https://www.redditstatic.com/shreddit/assets/hmm-snoo.png" alt="">
+                        <h3>Looks like there are no communities yet</h3> 
+                    </div>
+                @else
+                    @foreach ($groupedCommunities['games'] ?? [] as $community)
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
-                        </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body1.webp" alt="">
-                    </div>
-                </div>
-
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
-                        </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body1.webp" alt="">
-                    </div>
-                </div>
-
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
-                        </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body1.webp" alt="">
-                    </div>
-                </div>  
+                        <a href="{{ route('show.community', ['community_name' => $community->community_name]) }}">
+                            <div class="identifier">
+                                <div class="identifier-upper">
+                                    <div class="identifier-upper-left">
+                                        <img src="{{ $community->community_pic ? asset('storage/' . $community->community_pic) : 'https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" 
+                                            alt="{{ $community->community_name }}">
+                                        <div>
+                                            <div>r/{{ $community->community_name }}</div>
+                                            <div>{{ $community->members_count ?? '0' }} members</div>
+                                        </div>
+                                    </div>
+                                    <button>Join</button>
+                                </div>
+                                <div class="identifier-middle">
+                                    <p>{{ $community->community_description }}</p>
+                                </div>
+                                <div class="identifier-lower">
+                                    <img src="{{ $community->community_coverpic ? asset('storage/' . $community->community_coverpic) : 'https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" 
+                                        alt="{{ $community->community_name }} Cover">
+                                </div>
+                            </div> 
+                        </a>
+                    @endforeach
+                @endif
 
             </div>
 
             <!-- Technologies -->
             <div class="identifier-body" id="identifier-body-technologies">
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
-                        </div>
-                        <button>Join</button>
+                @if (empty($groupedCommunities['technologies'] ?? []))
+                    <div class="not-found">
+                        <img src="https://www.redditstatic.com/shreddit/assets/hmm-snoo.png" alt="">
+                        <h3>Looks like there are no communities yet</h3> 
                     </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body2.webp" alt="">
-                    </div>
-                </div>
+                @else
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
-                        </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body2.webp" alt="">
-                    </div>
-                </div>
+                    @foreach ($groupedCommunities['technologies'] ?? [] as $community)
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
+                        <a href="{{ route('show.community', ['community_name' => $community->community_name]) }}">
+                            <div class="identifier">
+                                <div class="identifier-upper">
+                                    <div class="identifier-upper-left">
+                                        <img src="{{ $community->community_pic ? asset('storage/' . $community->community_pic) : 'https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" 
+                                            alt="{{ $community->community_name }}">
+                                        <div>
+                                            <div>r/{{ $community->community_name }}</div>
+                                            <div>{{ $community->members_count ?? '0' }} members</div>
+                                        </div>
+                                    </div>
+                                    <button>Join</button>
+                                </div>
+                                <div class="identifier-middle">
+                                    <p>{{ $community->community_description }}</p>
+                                </div>
+                                <div class="identifier-lower">
+                                    <img src="{{ $community->community_coverpic ? asset('storage/' . $community->community_coverpic) : 'https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" 
+                                        alt="{{ $community->community_name }} Cover">
+                                </div>
                             </div>
-                        </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body2.webp" alt="">
-                    </div>
-                </div>  
+                        </a>
+                    @endforeach
+                @endif
+
 
             </div>
 
             <!-- Movies -->
             <div class="identifier-body" id="identifier-body-movies">
+                @if (empty($groupedCommunities['movies'] ?? []))
+                    <div class="not-found">
+                        <img src="https://www.redditstatic.com/shreddit/assets/hmm-snoo.png" alt="">
+                        <h3>Looks like there are no communities yet</h3> 
+                    </div>
+                @else
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
-                        </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body.webp" alt="">
-                    </div>
-                </div>
+                    @foreach ($groupedCommunities['movies'] ?? [] as $community)
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
+                        <a href="{{ route('show.community', ['community_name' => $community->community_name]) }}">
+                            <div class="identifier">
+                                <div class="identifier-upper">
+                                    <div class="identifier-upper-left">
+                                        <img src="{{ $community->community_pic ? asset('storage/' . $community->community_pic) : 'https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" 
+                                            alt="{{ $community->community_name }}">
+                                        <div>
+                                            <div>r/{{ $community->community_name }}</div>
+                                            <div>{{ $community->members_count ?? '0' }} members</div>
+                                        </div>
+                                    </div>
+                                    <button>Join</button>
+                                </div>
+                                <div class="identifier-middle">
+                                    <p>{{ $community->community_description }}</p>
+                                </div>
+                                <div class="identifier-lower">
+                                    <img src="{{ $community->community_coverpic ? asset('storage/' . $community->community_coverpic) : 'https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" 
+                                        alt="{{ $community->community_name }} Cover">
+                                </div>
                             </div>
-                        </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body1.webp" alt="">
-                    </div>
-                </div>
-
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
-                        </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body2.webp" alt="">
-                    </div>
-                </div>  
+                        </a>
+                    @endforeach
+                @endif
 
             </div>
 
             <!-- Travel -->
             <div class="identifier-body" id="identifier-body-travel">
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
-                        </div>
-                        <button>Join</button>
+                @if (empty($groupedCommunities['travel'] ?? []))
+                    <div class="not-found">
+                        <img src="https://www.redditstatic.com/shreddit/assets/hmm-snoo.png" alt="">
+                        <h3>Looks like there are no communities yet</h3> 
                     </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body.webp" alt="">
-                    </div>
-                </div>
+                @else
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
-                        </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body1.webp" alt="">
-                    </div>
-                </div>
+                    @foreach ($groupedCommunities['travel'] ?? [] as $community)
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
+                        <a href="{{ route('show.community', ['community_name' => $community->community_name]) }}">
+                            <div class="identifier">
+                                <div class="identifier-upper">
+                                    <div class="identifier-upper-left">
+                                        <img src="{{ $community->community_pic ? asset('storage/' . $community->community_pic) : 'https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" 
+                                            alt="{{ $community->community_name }}">
+                                        <div>
+                                            <div>r/{{ $community->community_name }}</div>
+                                            <div>{{ $community->members_count ?? '0' }} members</div>
+                                        </div>
+                                    </div>
+                                    <button>Join</button>
+                                </div>
+                                <div class="identifier-middle">
+                                    <p>{{ $community->community_description }}</p>
+                                </div>
+                                <div class="identifier-lower">
+                                    <img src="{{ $community->community_coverpic ? asset('storage/' . $community->community_coverpic) : 'https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" 
+                                        alt="{{ $community->community_name }} Cover">
+                                </div>
                             </div>
-                        </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body2.webp" alt="">
-                    </div>
-                </div>  
+                        </a>
+                    @endforeach
+                @endif
 
             </div>
 
             <!-- Music -->
             <div class="identifier-body" id="identifier-body-music">
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
-                        </div>
-                        <button>Join</button>
+                @if (empty($groupedCommunities['music'] ?? []))
+                    <div class="not-found">
+                        <img src="https://www.redditstatic.com/shreddit/assets/hmm-snoo.png" alt="">
+                        <h3>Looks like there are no communities yet</h3> 
                     </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body.webp" alt="">
-                    </div>
-                </div>
+                @else
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
-                        </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body1.webp" alt="">
-                    </div>
-                </div>
+                    @foreach ($groupedCommunities['music'] ?? [] as $community)
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
+                        <a href="{{ route('show.community', ['community_name' => $community->community_name]) }}">
+                            <div class="identifier">
+                                <div class="identifier-upper">
+                                    <div class="identifier-upper-left">
+                                        <img src="{{ $community->community_pic ? asset('storage/' . $community->community_pic) : 'https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" 
+                                            alt="{{ $community->community_name }}">
+                                        <div>
+                                            <div>r/{{ $community->community_name }}</div>
+                                            <div>{{ $community->members_count ?? '0' }} members</div>
+                                        </div>
+                                    </div>
+                                    <button>Join</button>
+                                </div>
+                                <div class="identifier-middle">
+                                    <p>{{ $community->community_description }}</p>
+                                </div>
+                                <div class="identifier-lower">
+                                    <img src="{{ $community->community_coverpic ? asset('storage/' . $community->community_coverpic) : 'https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" 
+                                        alt="{{ $community->community_name }} Cover">
+                                </div>
                             </div>
-                        </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body2.webp" alt="">
-                    </div>
-                </div>  
+                        </a>
+                    @endforeach
+                @endif
 
             </div>
 
             <!-- Education -->
             <div class="identifier-body" id="identifier-body-education">
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
-                        </div>
-                        <button>Join</button>
+                @if (empty($groupedCommunities['education'] ?? []))
+                    <div class="not-found">
+                        <img src="https://www.redditstatic.com/shreddit/assets/hmm-snoo.png" alt="">
+                        <h3>Looks like there are no communities yet</h3> 
                     </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body.webp" alt="">
-                    </div>
-                </div>
+                @else
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
-                        </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body1.webp" alt="">
-                    </div>
-                </div>
+                    @foreach ($groupedCommunities['education'] ?? [] as $community)
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
+                        <a href="{{ route('show.community', ['community_name' => $community->community_name]) }}">
+                            <div class="identifier">
+                                <div class="identifier-upper">
+                                    <div class="identifier-upper-left">
+                                        <img src="{{ $community->community_pic ? asset('storage/' . $community->community_pic) : 'https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" 
+                                            alt="{{ $community->community_name }}">
+                                        <div>
+                                            <div>r/{{ $community->community_name }}</div>
+                                            <div>{{ $community->members_count ?? '0' }} members</div>
+                                        </div>
+                                    </div>
+                                    <button>Join</button>
+                                </div>
+                                <div class="identifier-middle">
+                                    <p>{{ $community->community_description }}</p>
+                                </div>
+                                <div class="identifier-lower">
+                                    <img src="{{ $community->community_coverpic ? asset('storage/' . $community->community_coverpic) : 'https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" 
+                                        alt="{{ $community->community_name }} Cover">
+                                </div>
                             </div>
-                        </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body2.webp" alt="">
-                    </div>
-                </div>  
+                        </a>
+                    @endforeach
+                @endif
 
             </div>
 
             <!-- Sport -->
             <div class="identifier-body" id="identifier-body-sport">
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
-                        </div>
-                        <button>Join</button>
+                @if (empty($groupedCommunities['sport'] ?? []))
+                    <div class="not-found">
+                        <img src="https://www.redditstatic.com/shreddit/assets/hmm-snoo.png" alt="">
+                        <h3>Looks like there are no communities yet</h3> 
                     </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body.webp" alt="">
-                    </div>
-                </div>
+                @else
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
-                        </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body1.webp" alt="">
-                    </div>
-                </div>
+                    @foreach ($groupedCommunities['sport'] ?? [] as $community)
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
+                        <a href="{{ route('show.community', ['community_name' => $community->community_name]) }}">
+                            <div class="identifier">
+                                <div class="identifier-upper">
+                                    <div class="identifier-upper-left">
+                                        <img src="{{ $community->community_pic ? asset('storage/' . $community->community_pic) : 'https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" 
+                                            alt="{{ $community->community_name }}">
+                                        <div>
+                                            <div>r/{{ $community->community_name }}</div>
+                                            <div>{{ $community->members_count ?? '0' }} members</div>
+                                        </div>
+                                    </div>
+                                    <button>Join</button>
+                                </div>
+                                <div class="identifier-middle">
+                                    <p>{{ $community->community_description }}</p>
+                                </div>
+                                <div class="identifier-lower">
+                                    <img src="{{ $community->community_coverpic ? asset('storage/' . $community->community_coverpic) : 'https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" 
+                                        alt="{{ $community->community_name }} Cover">
+                                </div>
                             </div>
-                        </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body2.webp" alt="">
-                    </div>
-                </div>  
+                        </a>
+                    @endforeach
+                @endif
 
             </div>
 
             <!-- News -->
             <div class="identifier-body" id="identifier-body-news">
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
-                        </div>
-                        <button>Join</button>
+                @if (empty($groupedCommunities['news_politics'] ?? []))
+                    <div class="not-found">
+                        <img src="https://www.redditstatic.com/shreddit/assets/hmm-snoo.png" alt="">
+                        <h3>Looks like there are no communities yet</h3> 
                     </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body.webp" alt="">
-                    </div>
-                </div>
+                @else
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
-                        </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body1.webp" alt="">
-                    </div>
-                </div>
+                    @foreach ($groupedCommunities['news_politics'] ?? [] as $community)
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
+                        <a href="{{ route('show.community', ['community_name' => $community->community_name]) }}">
+                            <div class="identifier">
+                                <div class="identifier-upper">
+                                    <div class="identifier-upper-left">
+                                        <img src="{{ $community->community_pic ? asset('storage/' . $community->community_pic) : 'https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" 
+                                            alt="{{ $community->community_name }}">
+                                        <div>
+                                            <div>r/{{ $community->community_name }}</div>
+                                            <div>{{ $community->members_count ?? '0' }} members</div>
+                                        </div>
+                                    </div>
+                                    <button>Join</button>
+                                </div>
+                                <div class="identifier-middle">
+                                    <p>{{ $community->community_description }}</p>
+                                </div>
+                                <div class="identifier-lower">
+                                    <img src="{{ $community->community_coverpic ? asset('storage/' . $community->community_coverpic) : 'https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" 
+                                        alt="{{ $community->community_name }} Cover">
+                                </div>
                             </div>
-                        </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body2.webp" alt="">
-                    </div>
-                </div>  
+                        </a>
+                    @endforeach
+                @endif
 
             </div>
 
             <!-- Business -->
             <div class="identifier-body" id="identifier-body-business">
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
-                        </div>
-                        <button>Join</button>
+                @if (empty($groupedCommunities['business_finance'] ?? []))
+                    <div class="not-found">
+                        <img src="https://www.redditstatic.com/shreddit/assets/hmm-snoo.png" alt="">
+                        <h3>Looks like there are no communities yet</h3> 
                     </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body.webp" alt="">
-                    </div>
-                </div>
+                @else
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
-                            </div>
-                        </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body1.webp" alt="">
-                    </div>
-                </div>
+                    @foreach ($groupedCommunities['business_finance'] ?? [] as $community)
 
-                <div class="identifier">
-                    <div class="identifier-upper">
-                        <div class="identifier-upper-left">
-                            <img src="https://styles.redditmedia.com/t5_2rtg9/styles/communityIcon_8hz71uz5lxnb1.jpg?format=pjpg&s=1e181396beae0ec4547e4399b5c6728906eafc18" alt="">
-                            <div>
-                                <div>@Username</div>
-                                <div>21k members</div>
+                        <a href="{{ route('show.community', ['community_name' => $community->community_name]) }}">
+                            <div class="identifier">
+                                <div class="identifier-upper">
+                                    <div class="identifier-upper-left">
+                                        <img src="{{ $community->community_pic ? asset('storage/' . $community->community_pic) : 'https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" 
+                                            alt="{{ $community->community_name }}">
+                                        <div>
+                                            <div>r/{{ $community->community_name }}</div>
+                                            <div>{{ $community->members_count ?? '0' }} members</div>
+                                        </div>
+                                    </div>
+                                    <button>Join</button>
+                                </div>
+                                <div class="identifier-middle">
+                                    <p>{{ $community->community_description }}</p>
+                                </div>
+                                <div class="identifier-lower">
+                                    <img src="{{ $community->community_coverpic ? asset('storage/' . $community->community_coverpic) : 'https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" 
+                                        alt="{{ $community->community_name }} Cover">
+                                </div>
                             </div>
-                        </div>
-                        <button>Join</button>
-                    </div>
-                    <div class="identifier-middle">
-                        <p>So this incident occurred in Singhi Park where the organisers vandalised a phuchka sellers stall. The poor man had said that he will go somewhere else but still the organisers vandalised his stall . Maybe we should boycott Singhi Park this year ? Awaiting everyone's opinion.</p>
-                    </div>
-                    <div class="identifier-lower">
-                        <img src="/Pictures/body2.webp" alt="">
-                    </div>
-                </div>  
+                        </a>
+                    @endforeach
+                @endif
 
             </div>
 

@@ -9,6 +9,8 @@ use App\Http\Controllers\CommunityController;
 use App\Models\Communities;
 use App\Models\User;
 use App\Models\Post;
+use App\Models\Like;
+
 
 
 
@@ -105,3 +107,9 @@ Route::get('/profile', [UserController::class, 'profile'])->name('profile');
 Route::post('/profile', [UserController::class, 'profile'])->name('profile');
 
 Route::get('/viewprofile', [UserController::class, 'outprofile'])->name('viewprofile');
+
+Route::post('/posts/{postId}/like', [UserController::class, 'likePost']);
+
+Route::get('/posts/{postId}/likes', [UserController::class, 'getPostLikes']);
+
+Route::get('/users/{userId}/likes', [UserController::class, 'getUserLikes']);

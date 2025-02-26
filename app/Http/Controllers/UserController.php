@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Post;
+use App\Models\Like;
 use App\Models\Communities;
+use Illuminate\Support\Facades\Auth;
 
 
 class UserController extends Controller
@@ -196,6 +198,46 @@ class UserController extends Controller
 
         return view('User.OutsiderProfile'); 
         
+    }
+
+    public function likePost(Request $request, $postId)
+    {
+        $user = Auth::user(); 
+
+        $post = Post::find($postId);
+        if (!$post) {
+            return response()->json(['message' => 'Post not found.'], 404);
+        }
+
+        if ($user->likes()->where('post_id', $postId)->exists()) {
+            return response()->json(['message' => 'You already liked this post.'], 400);
+        }
+
+        $user->likes()->attach($postId);
+
+        return response()->json(['message' => 'Post liked successfully!']);
+    }
+
+    public function getPostLikes($postId)
+    {
+        $post = Post::with('likes')->find($postId);
+
+        if (!$post) {
+            return response()->json(['message' => 'Post not found.'], 404);
+        }
+
+        return response()->json($post->likes);
+    }
+
+    public function getUserLikes($userId)
+    {
+        $user = User::with('likes')->find($userId);
+
+        if (!$user) {
+            return response()->json(['message' => 'User  not found.'], 404);
+        }
+
+        return response()->json($user->likes);
     }
 
 }

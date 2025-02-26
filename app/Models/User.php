@@ -25,4 +25,9 @@ class User extends Authenticatable
         'cover_picture',
         'password', 
     ];
+
+    public function likes()
+    {
+        return $this->belongsToMany(Post::class, 'likes')->withTimestamps();
+    }
 }

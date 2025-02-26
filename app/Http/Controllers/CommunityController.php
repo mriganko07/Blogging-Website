@@ -90,23 +90,48 @@ class CommunityController extends Controller
     }
 
     public function showCommunity($community_name){
+        // $community = Communities::where('community_name', $community_name)->first();
+
+        // if (!$community) {
+        //     return redirect()->route('home')->with('error', 'Community not found.');
+        // }
+        // return view('Community.Community', compact('community'));
+
+
         $community = Communities::where('community_name', $community_name)->first();
 
         if (!$community) {
             return redirect()->route('home')->with('error', 'Community not found.');
         }
-        return view('Community.Community', compact('community'));
+
+        // Fetch posts related to the community
+        $posts = Post::with('user')
+            ->where('community_id', $community->community_id)
+            ->latest()
+            ->get();
+
+        return view('Community.Community', compact('community', 'posts'));
     }
 
     public function explore() 
     {
         // return view('Community.Explore');
 
-        $userId = session('user_id'); 
 
+
+        // $userId = session('user_id'); 
+
+        // $otherCommunities = Communities::where('user_id', '!=', $userId)->get();
+
+        // return view('Community.Explore', compact('otherCommunities'));
+
+        $userId = session('user_id'); 
         $otherCommunities = Communities::where('user_id', '!=', $userId)->get();
 
-        return view('Community.Explore', compact('otherCommunities'));
+        $groupedCommunities = $otherCommunities->groupBy('category');
+
+        return view('Community.Explore', compact('groupedCommunities'));
+
     }
 
     public function editCommunity($community_name)

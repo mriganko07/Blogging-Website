@@ -1556,7 +1556,7 @@ transition: all 0.3s ease;
   background-color: #6f2cf7;
 }
 
-.profile-img2{
+.profile-img2 img{
   position: relative;
   width: 25px;
   height: 25px;

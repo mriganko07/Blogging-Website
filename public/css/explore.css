@@ -1351,3 +1351,21 @@ div.identifier-middle{
   object-fit: cover;
 }
 
+/*-----------------*\
+  #NOT FOUND
+\*-----------------*/
+
+.not-found {
+  position: relative;
+  left: 291px;
+  top: -104px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  text-align: center; 
+}
+
+.not-found h3{
+    margin-top: 0px;
+}
