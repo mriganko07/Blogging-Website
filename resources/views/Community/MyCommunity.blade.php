@@ -1853,7 +1853,7 @@
                         <p>Edit</p>
                     </a> --}}
 
-                    <a href="{{ route('edit.community', ['community_name' => $community->community_name]) }}">
+                    <a href="{{ route('edit.community', ['community_name' => $community->community_name]) }}"  onMouseOver="this.style.color='#878ed8'" onMouseOut="this.style.color='#9fa5b5'">
                         <p>Edit</p>
                     </a>
                 </div>

@@ -1823,7 +1823,8 @@ small{
   margin-top: 5px;
   background: #FF4D04;
   border-radius: 30px;
-  border: 0;
+  /* border: 0; */
+  border: 1px solid #FF4D04;
   outline: none;
   color: #fff;
   cursor: pointer;
@@ -1831,6 +1832,13 @@ small{
   font-size: 1rem;
   text-align: center;
   float: right;
+  transition: all 0.3s ease-out;
+}
+
+.form-submit:hover{
+  color: #FF4D04;
+  background: none;
+  /* border: 1px solid #FF4D04; */
 }
 
 .main-form2-img-show {

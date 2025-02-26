@@ -1231,7 +1231,7 @@
                         {{-- <p class="settings-img-p" style="margin-top: 0px;">Adhip Halder</p> --}}
                         <p class="settings-img-p" style="margin-top: 0px;">{{ session('user')->name ?? '' }}</p>
                     </div>
-                    <a href="/editprofile">
+                    <a href="/editprofile" onMouseOver="this.style.color='#878ed8'" onMouseOut="this.style.color='#9fa5b5'">
                         <p>Edit</p>
                     </a>
                 </div>
