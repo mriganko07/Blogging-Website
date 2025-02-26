@@ -194,9 +194,20 @@ class UserController extends Controller
         return view('User.Profile', compact('user'));
     }
 
-    public function outprofile(){
+    public function outprofile($username){
 
-        return view('User.OutsiderProfile'); 
+        // return view('User.OutsiderProfile'); 
+
+        $user = User::where('user_name', $username)->first();
+
+        if (!$user) {
+            return redirect()->route('home')->with('error', 'User  not found.');
+        }
+    
+        // Fetch posts for the specific user
+        $posts = Post::where('user_id', $user->user_id)->latest()->get();
+    
+        return view('User.OutsiderProfile', compact('user', 'posts'));
         
     }
 

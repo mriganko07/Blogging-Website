@@ -1249,7 +1249,7 @@
                         @endif
                         <p>{{ $community->user->name ?? 'Unknown User' }}</p>
                     </div>
-                    <a href="">
+                    <a href="{{ route('viewprofile', ['username' => $community->user->user_name]) }}">
                         <p>View</p>
                     </a>
                 </div>

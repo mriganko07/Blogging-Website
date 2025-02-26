@@ -2,14 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExampleController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CommunityController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
+use App\Models\Admin;
 use App\Models\Communities;
-use App\Models\User;
-use App\Models\Post;
 use App\Models\Like;
+use App\Models\Post;
+use App\Models\User;
 
 
 
@@ -107,6 +108,8 @@ Route::get('/profile', [UserController::class, 'profile'])->name('profile');
 Route::post('/profile', [UserController::class, 'profile'])->name('profile');
 
 Route::get('/viewprofile', [UserController::class, 'outprofile'])->name('viewprofile');
+
+Route::get('/viewprofile/{username}', [UserController::class, 'outprofile'])->name('viewprofile');
 
 Route::post('/posts/{postId}/like', [UserController::class, 'likePost']);
 
