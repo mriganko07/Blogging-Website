@@ -339,6 +339,11 @@ cursor: pointer;
 transition: 0.7s;
 }
 
+.chat-button:hover{
+  background: none;
+  color: rgb(255, 77, 0);
+}
+
 .dark-light:checked ~ .sec-center .section-dropdown:after {
 border-bottom: 8px solid #fff;
 }

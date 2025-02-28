@@ -55,7 +55,7 @@
 
                         <div class="section-dropdown-two-body-second">
                             <div class="section-dropdown-two-body-second-img">
-                                <img style="82px" src="https://www.redditstatic.com/chat-web/images/welcome-6AUNLRD4.png" alt="">
+                                <img style="width: 82px" src="https://www.redditstatic.com/chat-web/images/welcome-6AUNLRD4.png" alt="">
                             </div>
                             <div class="section-dropdown-two-body-second-para">
                                 <p>Welcome to chat</p>
@@ -337,7 +337,10 @@
 
 
                 <button href="#" class="create2"><i class="fa-solid fa-plus"></i> <span>Create Post</span></button>
-                <button onclick="toggleButton(this)" class="join"><span>Join</span></button>
+                <form action="{{ route('join.community', ['community_name' => $community->community_name]) }}" method="POST">
+                    @csrf
+                    <button onclick="toggleButton(this)" class="join"><span>Join</span></button>
+                </form>
             </div>
 
 
