@@ -135,3 +135,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+/*-----------------*\
+       #POPUP
+\*-----------------*/
+
+document.querySelector(".join-button").addEventListener("click", function() {
+  alert("You're successfully joined this community");
+});
