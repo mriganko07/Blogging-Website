@@ -208,3 +208,10 @@ document.addEventListener('click', (event) => {
     }
 });
 
+/*-----------------*\
+       #POPUP
+\*-----------------*/
+
+document.querySelector(".join").addEventListener("click", function() {
+    alert("You're successfully joined this community");
+  });
