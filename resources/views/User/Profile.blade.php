@@ -637,7 +637,7 @@
                             -->
 
                         @elseif($post->post_caption )
-                            <div class="post-wall2">
+                            <div class="post-wall2" style="height:143px">
                                 <div class="username">
                                     <div class="profile-img2">
                                         {{-- <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture"> --}}
@@ -1013,7 +1013,7 @@
                             -->
 
                         @elseif($post->post_caption )
-                            <div class="post-wall2">
+                            <div class="post-wall2" style="height:143px">
                                 <div class="username">
                                     <div class="profile-img2">
                                         {{-- <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Profile Picture"> --}}
