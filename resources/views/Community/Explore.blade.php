@@ -46,7 +46,7 @@
 
                         <div class="section-dropdown-two-body-second">
                             <div class="section-dropdown-two-body-second-img">
-                                <img style="width: 82px" src="https://www.redditstatic.com/chat-web/images/welcome-6AUNLRD4.png" alt="">
+                                <img style="82px" src="https://www.redditstatic.com/chat-web/images/welcome-6AUNLRD4.png" alt="">
                             </div>
                             <div class="section-dropdown-two-body-second-para">
                                 <p>Welcome to chat</p>
@@ -425,7 +425,7 @@
 
                                         <form action="{{ route('join.community', ['community_name' => $community->community_name]) }}" method="POST">
                                             @csrf
-                                            <button class="join-button">Join</button>
+                                            <button type="submit">Join</button>
                                         </form>
                                     </div>
                                     <div class="identifier-middle">
@@ -463,10 +463,7 @@
                                             <div>{{ $community->members_count ?? '0' }} members</div>
                                         </div>
                                     </div>
-                                    <form action="{{ route('join.community', ['community_name' => $community->community_name]) }}" method="POST">
-                                        @csrf
-                                        <button class="join-button">Join</button>
-                                    </form>
+                                    <button>Join</button>
                                 </div>
                                 <div class="identifier-middle">
                                     <p>{{ $community->community_description }}</p>
@@ -505,10 +502,7 @@
                                             <div>{{ $community->members_count ?? '0' }} members</div>
                                         </div>
                                     </div>
-                                    <form action="{{ route('join.community', ['community_name' => $community->community_name]) }}" method="POST">
-                                        @csrf
-                                        <button class="join-button">Join</button>
-                                    </form>
+                                    <button>Join</button>
                                 </div>
                                 <div class="identifier-middle">
                                     <p>{{ $community->community_description }}</p>
@@ -547,10 +541,7 @@
                                             <div>{{ $community->members_count ?? '0' }} members</div>
                                         </div>
                                     </div>
-                                    <form action="{{ route('join.community', ['community_name' => $community->community_name]) }}" method="POST">
-                                        @csrf
-                                        <button class="join-button">Join</button>
-                                    </form>
+                                    <button>Join</button>
                                 </div>
                                 <div class="identifier-middle">
                                     <p>{{ $community->community_description }}</p>
@@ -589,10 +580,7 @@
                                             <div>{{ $community->members_count ?? '0' }} members</div>
                                         </div>
                                     </div>
-                                    <form action="{{ route('join.community', ['community_name' => $community->community_name]) }}" method="POST">
-                                        @csrf
-                                        <button class="join-button">Join</button>
-                                    </form>
+                                    <button>Join</button>
                                 </div>
                                 <div class="identifier-middle">
                                     <p>{{ $community->community_description }}</p>
@@ -631,10 +619,7 @@
                                             <div>{{ $community->members_count ?? '0' }} members</div>
                                         </div>
                                     </div>
-                                    <form action="{{ route('join.community', ['community_name' => $community->community_name]) }}" method="POST">
-                                        @csrf
-                                        <button class="join-button">Join</button>
-                                    </form>
+                                    <button>Join</button>
                                 </div>
                                 <div class="identifier-middle">
                                     <p>{{ $community->community_description }}</p>
@@ -673,10 +658,7 @@
                                             <div>{{ $community->members_count ?? '0' }} members</div>
                                         </div>
                                     </div>
-                                    <form action="{{ route('join.community', ['community_name' => $community->community_name]) }}" method="POST">
-                                        @csrf
-                                        <button class="join-button">Join</button>
-                                    </form>
+                                    <button>Join</button>
                                 </div>
                                 <div class="identifier-middle">
                                     <p>{{ $community->community_description }}</p>
@@ -715,10 +697,7 @@
                                             <div>{{ $community->members_count ?? '0' }} members</div>
                                         </div>
                                     </div>
-                                    <form action="{{ route('join.community', ['community_name' => $community->community_name]) }}" method="POST">
-                                        @csrf
-                                        <button class="join-button">Join</button>
-                                    </form>
+                                    <button>Join</button>
                                 </div>
                                 <div class="identifier-middle">
                                     <p>{{ $community->community_description }}</p>
@@ -757,10 +736,7 @@
                                             <div>{{ $community->members_count ?? '0' }} members</div>
                                         </div>
                                     </div>
-                                    <form action="{{ route('join.community', ['community_name' => $community->community_name]) }}" method="POST">
-                                        @csrf
-                                        <button class="join-button">Join</button>
-                                    </form>
+                                    <button>Join</button>
                                 </div>
                                 <div class="identifier-middle">
                                     <p>{{ $community->community_description }}</p>
@@ -799,10 +775,7 @@
                                             <div>{{ $community->members_count ?? '0' }} members</div>
                                         </div>
                                     </div>
-                                    <form action="{{ route('join.community', ['community_name' => $community->community_name]) }}" method="POST">
-                                        @csrf
-                                        <button class="join-button">Join</button>
-                                    </form>
+                                    <button>Join</button>
                                 </div>
                                 <div class="identifier-middle">
                                     <p>{{ $community->community_description }}</p>
