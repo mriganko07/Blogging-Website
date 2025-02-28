@@ -109,8 +109,25 @@ class CommunityController extends Controller
     {
         // return view('Community.Explore');
 
+
+        // $userId = session('user_id'); 
+        // $otherCommunities = Communities::where('user_id', '!=', $userId)->get();
+
+        // $groupedCommunities = $otherCommunities->groupBy('category');
+
+        // return view('Community.Explore', compact('groupedCommunities'));
+
+
         $userId = session('user_id'); 
-        $otherCommunities = Communities::where('user_id', '!=', $userId)->get();
+
+        // Get communities that the user has not joined
+        $otherCommunities = Communities::where('user_id', '!=', $userId)
+            ->whereNotIn('community_id', function($query) use ($userId) {
+                $query->select('community_id')
+                    ->from('join')
+                    ->where('user_id', $userId);
+            })
+            ->get();
 
         $groupedCommunities = $otherCommunities->groupBy('category');
 

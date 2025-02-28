@@ -342,8 +342,38 @@
                         </div> --}}
 
                         @php
-                            $user = \App\Models\User::find(session('user_id')); 
-                            $communities = \App\Models\Communities::where('user_id', session('user_id'))->get();
+                            $userId = session('user_id');
+                            $user = \App\Models\User::find($userId);
+
+                            $createdCommunities = \App\Models\Communities::where('user_id', $userId)->get();
+
+                            $joinedCommunities = \DB::table('join')
+                                ->join('communities', 'join.community_id', '=', 'communities.community_id')
+                                ->where('join.user_id', $userId)
+                                ->select('communities.community_name', 'communities.community_pic', 'join.created_at as joined_at')
+                                ->get();
+
+                            $allCommunities = collect();
+
+                            foreach ($createdCommunities as $community) {
+                                $allCommunities->push((object) [
+                                    'community_name' => $community->community_name,
+                                    'community_pic' => $community->community_pic,
+                                    'created_at' => $community->created_at, 
+                                    'type' => 'created'
+                                ]);
+                            }
+
+                            foreach ($joinedCommunities as $community) {
+                                $allCommunities->push((object) [
+                                    'community_name' => $community->community_name,
+                                    'community_pic' => $community->community_pic,
+                                    'created_at' => $community->joined_at,
+                                    'type' => 'joined'
+                                ]);
+                            }
+
+                            $sortedCommunities = $allCommunities->sortByDesc('created_at');
                         @endphp
                         
                         <div class="create-post-community-community-bar-community">
@@ -393,23 +423,26 @@
                             </p>
                         
                             <h3>Your Community</h3>
-                        
-                            @if ($communities->isNotEmpty())
-                                @foreach ($communities as $community)
+
+                            @if ($sortedCommunities->isNotEmpty())
+                                @foreach ($sortedCommunities as $community)
                                     <div class="profile-img2" onclick="selectCommunity('r/{{ $community->community_name }}')">
-                                        @if (!empty($community->community_pic))
-                                            <img class="profile-img2-img" src="{{ asset('storage/' . $community->community_pic) }}" alt="{{ $community->community_name }}">
-                                            <span>r/{{ $community->community_name }}</span>
-                                        @else
-                                            <img class="profile-img2-img" src="https://plus.unsplash.com/premium_photo-1701090939615-1794bbac5c06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Default Profile">
-                                            <span>r/{{ $community->community_name }}</span>
-                                        @endif
+                                        <img 
+                                            class="profile-img2-img" 
+                                            src="{{ !empty($community->community_pic) ? asset('storage/' . $community->community_pic) : $defaultProfilePic }}" 
+                                            alt="{{ $community->community_name }}"
+                                        >
+                                        <span>r/{{ $community->community_name }}</span>
                                     </div>
                                 @endforeach
                             @else
                                 <div class="profile-img3">
-                                    <img class="profile-img2-img" style="width: 33px; height:auto; border:none; box-shadow:none;" 
-                                        src="https://www.redditstatic.com/shreddit/assets/hmm-snoo.png" alt="">
+                                    <img 
+                                        class="profile-img2-img" 
+                                        style="width: 33px; height:auto; border:none; box-shadow:none;" 
+                                        src="https://www.redditstatic.com/shreddit/assets/hmm-snoo.png" 
+                                        alt=""
+                                    >
                                     <span style="font-size: 11px; color: rgb(198, 198, 198);">You have No Community Yet</span>
                                 </div>
                             @endif
