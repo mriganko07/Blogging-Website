@@ -204,7 +204,6 @@ class UserController extends Controller
             return redirect()->route('home')->with('error', 'User  not found.');
         }
     
-        // Fetch posts for the specific user
         $posts = Post::where('user_id', $user->user_id)->latest()->get();
     
         return view('User.OutsiderProfile', compact('user', 'posts'));

@@ -83,6 +83,8 @@ Route::get('/editcommunity/{community_name}', [CommunityController::class, 'edit
 
 Route::post('/updatecommunity/{community_name}', [CommunityController::class, 'updateCommunity'])->name('update.community');
 
+Route::post('/community/join/{community_name}', [CommunityController::class, 'joinCommunity'])->name('join.community');
+
 /*-------------*\
   #USER
 \*--------------*/

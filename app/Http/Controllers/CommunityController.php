@@ -164,4 +164,30 @@ class CommunityController extends Controller
         return redirect()->route('show.mycommunity', ['community_name' => $community->community_name])
                          ->with('success', 'Community updated successfully!');
     }
+
+    public function joinCommunity(Request $request, $community_name)
+    {
+        $userId = Auth::id(); 
+        $community = Communities::where('community_name', $community_name)->first();
+
+        if (!$community) {
+            return redirect()->route('home')->with('error', 'Community not found.');
+        }
+
+        $alreadyJoined = \DB::table('join')->where('user_id', $userId)->where('community_id', $community->community_id)->exists();
+
+        if ($alreadyJoined) {
+            return redirect()->back()->with('error', 'You are already a member of this community.');
+        }
+
+        \DB::table('join')->insert([
+            'user_id' => $userId,
+            'community_id' => $community->community_id,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        return redirect()->route('show.community', ['community_name' => $community_name])
+                        ->with('success', "You're successfully joined this community!");
+    }
 }

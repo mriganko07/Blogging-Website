@@ -421,7 +421,12 @@
                                                 <div>{{ $community->members_count ?? '0' }} members</div>
                                             </div>
                                         </div>
-                                        <button>Join</button>
+                                        {{-- <button>Join</button> --}}
+
+                                        <form action="{{ route('join.community', ['community_name' => $community->community_name]) }}" method="POST">
+                                            @csrf
+                                            <button type="submit">Join</button>
+                                        </form>
                                     </div>
                                     <div class="identifier-middle">
                                         <p>{{ $community->community_description }}</p>
