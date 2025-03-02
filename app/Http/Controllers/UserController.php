@@ -255,4 +255,12 @@ class UserController extends Controller
         return response()->json($user->likes);
     }
 
+
+    public function welcome() {
+        return view('welcome');
+    }
+
+    public function viewmember(){
+        return view('User.ViewMember');
+    }
 }
