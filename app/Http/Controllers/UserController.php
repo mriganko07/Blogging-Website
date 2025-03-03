@@ -263,4 +263,9 @@ class UserController extends Controller
     public function viewmember(){
         return view('User.ViewMember');
     }
+
+    public function viewmembercom(){
+        return view('User.ViewMemberCom');
+    }
+
 }

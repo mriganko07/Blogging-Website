@@ -125,3 +125,5 @@ Route::get('/posts/{postId}/likes', [UserController::class, 'getPostLikes']);
 Route::get('/users/{userId}/likes', [UserController::class, 'getUserLikes']);
 
 Route::get('/viewmember', [UserController::class, 'viewmember']);
+
+Route::get('/viewmembercom', [UserController::class, 'viewmembercom']);

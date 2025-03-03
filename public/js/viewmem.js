@@ -108,6 +108,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".text-info-inner-button");
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", function (event) {
+            // event.preventDefault(); // Prevents unwanted page jumps
+
+            if (this.innerText === "Follow") {
+                this.innerText = "Followed";
+                this.classList.add("followed");
+                alert("You're successfully following this user");
+            } else {
+                this.innerText = "Follow";
+                this.classList.remove("followed");
+            }
+        });
+    });
+});
+
 /*-----------------*\
        #POPUP
 \*-----------------*/
