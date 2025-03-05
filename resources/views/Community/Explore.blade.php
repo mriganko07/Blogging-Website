@@ -425,7 +425,7 @@
 
                                         <form action="{{ route('join.community', ['community_name' => $community->community_name]) }}" method="POST">
                                             @csrf
-                                            <button type="submit">Join</button>
+                                            <button class="join-button">Join</button>
                                         </form>
                                     </div>
                                     <div class="identifier-middle">
@@ -463,7 +463,7 @@
                                             <div>{{ $community->members_count ?? '0' }} members</div>
                                         </div>
                                     </div>
-                                    <button>Join</button>
+                                    <button class="join-button">Join</button>
                                 </div>
                                 <div class="identifier-middle">
                                     <p>{{ $community->community_description }}</p>
@@ -502,7 +502,7 @@
                                             <div>{{ $community->members_count ?? '0' }} members</div>
                                         </div>
                                     </div>
-                                    <button>Join</button>
+                                    <button class="join-button">Join</button>
                                 </div>
                                 <div class="identifier-middle">
                                     <p>{{ $community->community_description }}</p>
@@ -541,7 +541,7 @@
                                             <div>{{ $community->members_count ?? '0' }} members</div>
                                         </div>
                                     </div>
-                                    <button>Join</button>
+                                    <button class="join-button">Join</button>
                                 </div>
                                 <div class="identifier-middle">
                                     <p>{{ $community->community_description }}</p>
@@ -580,7 +580,7 @@
                                             <div>{{ $community->members_count ?? '0' }} members</div>
                                         </div>
                                     </div>
-                                    <button>Join</button>
+                                    <button class="join-button">Join</button>
                                 </div>
                                 <div class="identifier-middle">
                                     <p>{{ $community->community_description }}</p>
@@ -619,7 +619,7 @@
                                             <div>{{ $community->members_count ?? '0' }} members</div>
                                         </div>
                                     </div>
-                                    <button>Join</button>
+                                    <button class="join-button">Join</button>
                                 </div>
                                 <div class="identifier-middle">
                                     <p>{{ $community->community_description }}</p>
@@ -658,7 +658,7 @@
                                             <div>{{ $community->members_count ?? '0' }} members</div>
                                         </div>
                                     </div>
-                                    <button>Join</button>
+                                    <button class="join-button">Join</button>
                                 </div>
                                 <div class="identifier-middle">
                                     <p>{{ $community->community_description }}</p>
@@ -697,7 +697,7 @@
                                             <div>{{ $community->members_count ?? '0' }} members</div>
                                         </div>
                                     </div>
-                                    <button>Join</button>
+                                    <button class="join-button">Join</button>
                                 </div>
                                 <div class="identifier-middle">
                                     <p>{{ $community->community_description }}</p>
@@ -736,7 +736,7 @@
                                             <div>{{ $community->members_count ?? '0' }} members</div>
                                         </div>
                                     </div>
-                                    <button>Join</button>
+                                    <button class="join-button">Join</button>
                                 </div>
                                 <div class="identifier-middle">
                                     <p>{{ $community->community_description }}</p>
@@ -775,7 +775,7 @@
                                             <div>{{ $community->members_count ?? '0' }} members</div>
                                         </div>
                                     </div>
-                                    <button>Join</button>
+                                    <button class="join-button">Join</button>
                                 </div>
                                 <div class="identifier-middle">
                                     <p>{{ $community->community_description }}</p>

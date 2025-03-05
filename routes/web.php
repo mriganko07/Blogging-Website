@@ -17,9 +17,12 @@ use App\Models\Join;
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('home');
+
+Route::get('/', [UserController::class, 'welcome'])->name('home');
+
 
 
 /*---------------------------------*\
@@ -120,3 +123,7 @@ Route::post('/posts/{postId}/like', [UserController::class, 'likePost']);
 Route::get('/posts/{postId}/likes', [UserController::class, 'getPostLikes']);
 
 Route::get('/users/{userId}/likes', [UserController::class, 'getUserLikes']);
+
+Route::get('/viewmember', [UserController::class, 'viewmember']);
+
+Route::get('/viewmembercom', [UserController::class, 'viewmembercom']);
