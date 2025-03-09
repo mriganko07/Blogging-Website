@@ -129,10 +129,15 @@ class CommunityController extends Controller
 
     public function editCommunity($community_name)
     {
+
         $community = Communities::where('community_name', $community_name)->first();
 
         if (!$community) {
             return redirect()->route('home')->with('error', 'Community not found.');
+        }
+
+        if (Auth::id() !== $community->user_id) {
+            return redirect()->route('home')->with('error', 'You do not have permission to edit this community.');
         }
 
         return view('Community.CreateCommunity', compact('community'));

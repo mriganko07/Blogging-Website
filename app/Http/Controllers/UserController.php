@@ -188,13 +188,21 @@ class UserController extends Controller
         // $user = auth()->user(); 
         // return view('profile', compact('user'));
 
-        $userId = session('user_id'); 
+        // $userId = session('user_id'); 
 
-        if (!$userId) {
-            return redirect()->route('login')->with('error', 'Please log in to view your profile.');
+        // if (!$userId) {
+        //     return redirect()->route('login')->with('error', 'Please log in to view your profile.');
+        // }
+
+        // $user = User::findOrFail($userId); 
+
+        // return view('User.Profile', compact('user'));
+
+        $user = User::find($user_id);
+
+        if (!$user) {
+            return redirect()->route('home')->with('error', 'User not found.');
         }
-
-        $user = User::findOrFail($userId); 
 
         return view('User.Profile', compact('user'));
     }
